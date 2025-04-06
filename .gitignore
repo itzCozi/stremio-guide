@@ -1,0 +1,13 @@
+# Basic
+node_modules
+.git
+
+# Output
+.output
+.vercel
+.svelte-kit
+build
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

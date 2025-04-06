@@ -1,1 +1,1 @@
-# stremio-guide
+a guide to use stremio
