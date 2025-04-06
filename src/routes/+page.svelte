@@ -1,3 +1,7 @@
+<script>
+  import { Info } from 'lucide-svelte';
+</script>
+
 <style>
   h1 {
     font-size: 2.5rem;
@@ -115,10 +119,6 @@
     background: #cccccc;
   }
 
-  .flex {
-    display: flex;
-  }
-
   .items-center {
     align-items: center;
   }
@@ -131,21 +131,9 @@
     min-height: 100vh;
   }
 
-  .p-6 {
-    padding: 1.5rem;
-  }
-
   .mx-auto {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .flex-col {
-    flex-direction: column;
-  }
-
-  .gap-2 {
-    gap: 0.5rem;
   }
 
   .max-w-2xl {
@@ -163,9 +151,9 @@
   <div class="mx-auto max-w-2xl">
     <h1>How to Use Stremio</h1>
     <p>
-      Hi! Say goodbye to Sudo's prime and hello to devs leaving a project 💀. In light of this, we
-      all need media, so I put together a guide to get the best streaming service that works on
-      desktop, mobile (Android, NOT IOS), and FireStick!
+      Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of this, we
+      all need free media, so I put together a guide to get the best streaming service that works on
+      desktop, mobile (Android, <strong>NOT</strong> iOS), and FireStick!
     </p>
     <p>
       <strong>Preview of Stremio</strong><br />
@@ -232,7 +220,10 @@
     </ol>
 
     <div class="admonition note">
-      <p class="admonition-title">Real Debrid Limits</p>
+      <div class="flex flex-row gap-1">
+        <Info class="h-5 w-auto items-center text-[#699269]" />
+        <p class="admonition-title">Real Debrid Limits</p>
+      </div>
       <p>
         Keep in mind Real Debrid will only allow devices on the same network as you, Real debrid
         allows unlimited devices on one IP at a time. You do <strong>NOT</strong> need to use a VPN while
@@ -332,7 +323,7 @@
         Open Downloader and go to <a
           href="https://www.stremio.com/downloads"
           rel=""
-          target="_blank">stremio.com/downloads</a> to download the Android version.
+          target="_blank">stremio.com/downloads</a> to download the Android TV version.
       </li>
       <li>
         Once downloaded, click "Install" and then "Open." <em
@@ -395,10 +386,10 @@
     <h3>Different Debrid Providers</h3>
     <p>
       There are multiple debrid providers, some better than others. I (and many others) recommend
-      Real-Debrid due to its popularity, speed, and affordability. However, there are many other
+      Real-Debrid due to its popularity, speed, features, and affordability. However, there are many other
       providers. The reason these aren't used in this guide is due to their lack of compatibility
-      with other addons, whereas Real-Debrid is widely supported however their are cheaper
-      providers, alldebrid, debrid-link and torbox are cheaper.
+      with other addons, whereas Real-Debrid is widely supported. However, there are cheaper
+      providers such as AllDebrid, Debrid-Link, and Torbox.
     </p>
     <ul>
       <li>
