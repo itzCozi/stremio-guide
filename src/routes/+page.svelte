@@ -513,7 +513,7 @@
         href="https://github.com/itzcozi/stremio-guide"
         rel=""
         target="_blank">here</a
-      >. I'm open to additions via pull requests. :)
+      >. I'm open to additions and corrections via pull requests :)
     </p>
   </div>
 </div>
