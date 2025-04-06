@@ -1,5 +1,5 @@
 <script>
-  import { Info } from 'lucide-svelte';
+  import { Info } from "lucide-svelte";
 </script>
 
 <style>
@@ -137,7 +137,7 @@
   }
 
   .max-w-2xl {
-    max-width: 56rem;
+    max-width: 60rem;
     background-color: #272727;
     padding: 2rem;
     border-radius: 4px;
@@ -151,19 +151,23 @@
   <div class="mx-auto max-w-2xl">
     <h1>How to Use Stremio</h1>
     <p>
-      Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of this, we
-      all need free media, so I put together a guide to get the best streaming service that works on
-      desktop, mobile (Android, <strong>NOT</strong> iOS), and FireStick!
+      Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of
+      this, we all need free media, so I put together a guide (it's super simple just follow the
+      steps) to get the best streaming service that works on desktop, mobile (Android, <strong
+        >NOT</strong> iOS), and FireStick!
     </p>
+
     <p>
       <strong>Preview of Stremio</strong><br />
+    </p>
+    <div class="flex justify-center">
       <img
         alt="Preview"
         referrerpolicy="same-origin"
         src="https://i.postimg.cc/P5CBwrVn/preview.gif"
         style=""
         title="Preview" />
-    </p>
+    </div>
 
     <h3>Prerequisites</h3>
     <ol>
@@ -181,7 +185,7 @@
 
     <h2>Guide</h2>
     <hr />
-    <h2>Real-Debrid Token Guide</h2>
+    <h2>1. Real-Debrid Token Guide</h2>
 
     <p>
       What is Real-Debrid? Real-Debrid is a service that allows you to download and stream all kinds
@@ -231,7 +235,7 @@
       </p>
     </div>
 
-    <h2>Stremio Setup</h2>
+    <h2>2. Stremio Setup</h2>
     <hr />
 
     <p>
@@ -265,7 +269,7 @@
       </li>
       <li>
         In your browser, go to <a
-          href="https://torrentio.strem.fun/configure"
+          href="https://torrentio.strem.fun/lite/configure"
           rel=""
           target="_blank">torrentio.strem.fun</a
         >. There will be many options; most are self-explanatory, so I won’t go over them.
@@ -299,7 +303,7 @@
       the "Community Addons" section are fair game.
     </p>
 
-    <h2>Extra Setup &amp; Customization</h2>
+    <h2>3. Extra Setup &amp; Customization</h2>
     <hr />
 
     <h3>FireStick Setup</h3>
@@ -386,10 +390,10 @@
     <h3>Different Debrid Providers</h3>
     <p>
       There are multiple debrid providers, some better than others. I (and many others) recommend
-      Real-Debrid due to its popularity, speed, features, and affordability. However, there are many other
-      providers. The reason these aren't used in this guide is due to their lack of compatibility
-      with other addons, whereas Real-Debrid is widely supported. However, there are cheaper
-      providers such as AllDebrid, Debrid-Link, and Torbox.
+      Real-Debrid due to its popularity, speed, features, and affordability. However, there are many
+      other providers. The reason these aren't used in this guide is due to their lack of
+      compatibility with other addons, whereas Real-Debrid is widely supported. However, there are
+      cheaper providers such as AllDebrid, Debrid-Link, and Torbox.
     </p>
     <ul>
       <li>
@@ -440,27 +444,53 @@
     <p>
       <strong
         >Other unlisted addons can be found <a
-          href="https://stremio-addons.netlify.app/"
+          href="https://stremio-addons.com/"
           rel=""
           target="_blank">here</a> for download</strong>
     </p>
     <ul>
       <li>
-        Trakt TV: Addon for getting Trakt's public user lists, recommendations, and watch list.
+        <a
+          href="https://subhero.onrender.com/configure"
+          rel=""
+          target="_blank">SubHero</a
+        >: SubHero is a Stremio addon that provides subtitles for movies and TV shows using the
+        Wyzie Subs API (which I also run).
       </li>
       <li>
-        USA TV: USA TV provides access to channels across various categories including local
-        channels, news, sports, entertainment, and more.
+        <a
+          href="https://2ecbbd610840-trakt.baby-beamup.club/"
+          rel=""
+          target="_blank">Trakt TV</a
+        >: Addon for getting Trakt's public user lists, recommendations, and watch list.
       </li>
-      <li>Annatar: Search popular torrent sites and Debrid caches for streamable content.</li>
       <li>
-        Orion: Orion Stremio Addon allows Orion-indexed torrent, usenet, and hoster links to be
-        played on Stremio.
+        <a
+          href="https://stremio-addons.com/usa-tv.html"
+          rel=""
+          target="_blank">USA TV</a
+        >: USA TV provides access to channels across various categories including local channels,
+        news, sports, entertainment, and more.
+      </li>
+      <li>
+        <a
+          href="https://mediafusion.elfhosted.com/configure/"
+          rel=""
+          target="_blank">MediaFusion</a
+        >: Addon for live TV and sports events.
+      </li>
+      <li>
+        <a
+          href="https://5a0d1888fa64-orion.baby-beamup.club/"
+          rel=""
+          target="_blank">Orion</a
+        >: Orion Stremio Addon allows Orion-indexed torrent, usenet, and hoster links to be played
+        on Stremio.
       </li>
     </ul>
     <p>
       <em
-        >All of these are "Community Addons" and can be found in the Stremio "Community Addons"
+        >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
         section for quick install.</em>
     </p>
 
