@@ -223,7 +223,7 @@
       <li>Complete the payment using your selected method.</li>
       <li>
         Once you have a subscription, go to <a
-          href="https://real-debrid.com/apitoken"
+          href="https://real-debrid.com/apitoken?id=11626869"
           rel=""
           target="_blank">real-debrid.com/apitoken</a>
         and copy your token.
@@ -288,8 +288,8 @@
         "Configure," or "Cancel." <em>Click "Install."</em>
       </li>
       <li>
-        If the purple button did not open Stremio and prompt you instead copy the link of the button
-        and then paste that into your Stremio search bar.
+        If the purple button does not open Stremio, right-click the button to copy its link, then
+        paste it into the Stremio search bar
       </li>
     </ol>
 
@@ -403,7 +403,7 @@
     <ul>
       <li>
         <a
-          href="https://real-debrid.com/"
+          href="https://real-debrid.com/?id=11626869"
           rel=""
           target="_blank">Real Debrid</a>
       </li>
@@ -509,7 +509,7 @@
       </li>
       <li>
         <a
-          href="https://real-debrid.com/"
+          href="https://real-debrid.com/?id=11626869"
           rel=""
           target="_blank">Real-Debrid</a>
       </li>
