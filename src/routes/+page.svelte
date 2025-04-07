@@ -541,7 +541,7 @@
     <p class="flex justify-center items-center space-x-2">
       <!-- svelte-ignore a11y_consider_explicit_label -->
       <a
-        href="https://github.com/itzcozi/wyzie-subs"
+        href="https://github.com/itzcozi/stremio-guide"
         target="_blank"
         rel="noopener noreferrer"
         class="hover:scale-105 text-dark transition duration-200"
