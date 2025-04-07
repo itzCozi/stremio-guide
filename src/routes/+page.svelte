@@ -71,34 +71,38 @@
     list-style-type: decimal;
   }
 
-  li::marker {
+  li::marker,
+  ol::marker {
     font-style: italic;
     font-weight: bold;
+    color: #dfdfdf;
   }
 
   img {
     max-width: 100%;
     height: auto;
     margin-block: 1rem;
+    border-radius: 1px;
     border: solid rgba(0, 0, 0, 0.3) 1px;
   }
 
   .admonition {
     padding: 0.8rem 1rem;
     margin-block: 1rem;
+    border-radius: 1px;
   }
 
   .admonition.note {
     background-color: #2d3829;
-    color: #8fbf8f; /* Lighter green */
+    color: #8fbf8f;
   }
 
   .admonition.note p {
-    color: #8fbf8f; /* Lighter green */
+    color: #8fbf8f;
   }
 
   .admonition.note strong {
-    color: #8fbf8f; /* Lighter green */
+    color: #8fbf8f;
   }
 
   .admonition-title {
@@ -108,7 +112,7 @@
 
   blockquote {
     margin-block: 1rem;
-    padding: 0.3rem 0.8rem;
+    padding: 0.25rem 0.8rem;
     border-left: 4px solid #4caf50;
   }
 
@@ -119,33 +123,17 @@
     background: #757575;
   }
 
-  .items-center {
-    align-items: center;
-  }
-
-  .justify-center {
-    justify-content: center;
-  }
-
-  .min-h-screen {
-    min-height: 100vh;
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .max-w-2xl {
+  .block {
     max-width: 62rem;
     border: solid #353535 1px;
-    background-color: #2c2c2c;
-    padding: 2rem;
+    background-color: #2b2b2b;
+    padding: 1.7rem;
+    border-radius: 1px;
   }
 </style>
 
 <div class="items-center justify-center min-h-screen p-3">
-  <div class="mx-auto max-w-2xl">
+  <div class="mx-auto max-w-2xl block">
     <h1>How to Use Stremio</h1>
     <p>
       Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of
@@ -186,8 +174,8 @@
       What is Real-Debrid? Real-Debrid is a service that allows you to download and stream all kinds
       of content, from software, music, and games to adult content and 4K movies (40GB+), hosted on
       supported premium file hosters like Rapidgator, Uploaded, FileFactory, Turbobit, Nitroflare,
-      etc., at great speeds (1+ Gbps). It also caches a lot of torrent movies, giving you instant
-      download/streaming without the need for seeders.
+      etc at great speeds (1+ Gbps). It also caches a lot of torrents, giving you instant
+      download/streaming capabilities without the need for seeders.
     </p>
     <br />
 
@@ -225,7 +213,7 @@
         <p class="admonition-title">Real Debrid Limits</p>
       </div>
       Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
-      devices on one IP at a time. You do<strong>NOT</strong> need to use a VPN while using Real Debrid.
+      devices on one IP at a time. You do <strong>NOT</strong> need to use a VPN while using Real Debrid.
     </div>
 
     <h2><em>2.</em> Stremio Setup</h2>
@@ -385,7 +373,17 @@
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
       there are many other providers. The reason these aren't used in this guide is due to their
       lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
-      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox.
+      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox to name a few.
+    </p>
+    <br />
+
+    <p>
+      <strong
+        >Other Debrid providers can be found <a
+          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+          rel=""
+          target="_blank">here</a
+        >.</strong>
     </p>
     <ul>
       <li>
@@ -430,6 +428,12 @@
           rel=""
           target="_blank">Torbox</a>
       </li>
+      <li>
+        <a
+          href="https://bestdebrid.com/"
+          rel=""
+          target="_blank">Best Debrid</a>
+      </li>
     </ul>
 
     <h3>Other Addons</h3>
@@ -444,7 +448,7 @@
     <ul>
       <li>
         <a
-          href="https://subhero.onrender.com/configure"
+          href="https://stremio-addons.com/subhero.html"
           rel=""
           target="_blank">SubHero</a
         >: SubHero is a Stremio addon that provides subtitles for movies and TV shows using the
@@ -456,6 +460,14 @@
           rel=""
           target="_blank">Trakt TV</a
         >: Addon for getting Trakt's public user lists, recommendations, and watch list.
+      </li>
+      <li>
+        <a
+          href="https://stremio-addons.com/cyberflix-catalog.html"
+          rel=""
+          target="_blank">Cyberflix Catalog</a
+        >: Aggregates the most popular steaming platforms such as Netflix, Amazon Prime or Hulu, and
+        also specific catalogs for Kids, Asian or Anime.
       </li>
       <li>
         <a
@@ -508,12 +520,6 @@
           href="https://www.firesticktricks.com/stremio-firestick.html"
           rel=""
           target="_blank">FireStick Stremio Setup</a>
-      </li>
-      <li>
-        <a
-          href="https://www.firesticktricks.com/"
-          rel=""
-          target="_blank">FireStick Tricks</a>
       </li>
       <li>
         <a
