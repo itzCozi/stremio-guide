@@ -28,8 +28,9 @@
   code {
     font-family: monospace;
     font-style: bold;
-    background-color: #2f2f2f;
+    background-color: #2e2e2e;
     color: #ffffff;
+    border: solid rgba(0, 0, 0, 0.3) 1px;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
   }
@@ -79,10 +80,11 @@
     height: auto;
     border-radius: 4px;
     margin-block: 1rem;
+    border: solid rgba(0, 0, 0, 0.3) 1px;
   }
 
   .admonition {
-    padding: 0.7rem 1rem 0.1rem;
+    padding: 0.8rem 1rem;
     margin-block: 1rem;
     border-radius: 4px;
   }
@@ -108,7 +110,7 @@
   blockquote {
     margin-block: 1rem;
     border-radius: 4px;
-    padding: 0.7rem 1rem 0.1rem;
+    padding: 0.8rem 1rem;
     border-left: 4px solid #4caf50;
   }
 
@@ -165,7 +167,6 @@
         alt="Preview"
         referrerpolicy="same-origin"
         src="https://i.postimg.cc/P5CBwrVn/preview.gif"
-        style=""
         title="Preview" />
     </div>
 
@@ -185,7 +186,7 @@
 
     <h2>Guide</h2>
     <hr />
-    <h2>1. Real-Debrid Token Guide</h2>
+    <h2><em>1.</em> Real-Debrid Token Guide</h2>
 
     <p>
       What is Real-Debrid? Real-Debrid is a service that allows you to download and stream all kinds
@@ -228,14 +229,12 @@
         <Info class="h-5 w-auto items-center text-[#699269]" />
         <p class="admonition-title">Real Debrid Limits</p>
       </div>
-      <p>
         Keep in mind Real Debrid will only allow devices on the same network as you, Real debrid
         allows unlimited devices on one IP at a time. You do <strong>NOT</strong> need to use a VPN while
         using Real Debrid
-      </p>
     </div>
 
-    <h2>2. Stremio Setup</h2>
+    <h2><em>2.</em> Stremio Setup</h2>
     <hr />
 
     <p>
@@ -275,7 +274,7 @@
         >. There will be many options; most are self-explanatory, so I won’t go over them.
       </li>
       <li>
-        Scroll down to where it says "Debrid provider," select <code>RealDebrid</code>, then paste
+        Scroll down to where it says "Debrid provider," select "RealDebrid", then paste
         <em>your</em> API token into the "RealDebrid API Key" input field.
       </li>
       <li>
@@ -289,10 +288,8 @@
     </ol>
 
     <blockquote>
-      <p>
         I Highly recommend you turn on "Hardware-accelerated decoding" in the "Advanced" section of
         the player settings (setting can be found below plugins on the sidebar).
-      </p>
     </blockquote>
 
     <p><strong>Additional Addons May Ask for Your API Key</strong></p>
@@ -303,7 +300,7 @@
       the "Community Addons" section are fair game.
     </p>
 
-    <h2>3. Extra Setup &amp; Customization</h2>
+    <h2><em>3.</em> Extra Setup &amp; Customization</h2>
     <hr />
 
     <h3>FireStick Setup</h3>
@@ -311,8 +308,7 @@
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
         Click on "Settings," then "My Fire TV," and then click "About" <strong>7 times</strong>
-        quickly to enable developer options (
-        <a
+        quickly to enable developer options (<a
           href="https://www.firesticktricks.com/developer-options-firestick.html"
           rel=""
           target="_blank">guide</a
@@ -320,8 +316,8 @@
       </li>
       <li>Head to the Amazon App Store, search for "Downloader," and install it.</li>
       <li>
-        Once "Downloader" is installed, go back to developer settings and turn on <code
-          >Install Unkown Apps</code> for "Downloader".
+        Once "Downloader" is installed, go back to developer settings and turn on "Install Unkown
+        Apps" for "Downloader".
       </li>
       <li>
         Open Downloader and go to <a
