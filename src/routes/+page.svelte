@@ -35,19 +35,13 @@
     border-radius: 4px;
   }
 
-  p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #dddddd;
-  }
-
   strong {
-    color: #dadada;
+    color: #dfdfdf;
   }
 
   em {
     font-style: italic;
-    color: #dddddd;
+    color: #dfdfdf;
   }
 
   a {
@@ -204,13 +198,13 @@
           rel=""
           target="_blank">real-debrid.com</a> and click "Sign Up" in the top right.
       </li>
-      <li>Make sure your VPN is turned <em>off</em>, create an account, and then sign in.</li>
+      <li>Ensure your VPN is turned <em>off</em>, create an account, and then sign in.</li>
       <li>
         Now that you have an account, go to <a
           href="http://real-debrid.com/?id=11626869"
           rel=""
           target="_blank">real-debrid.com/premium</a>
-        and purchase a premium subscription.
+        and purchase a premium subscription plan.
         <em>(I recommend the 90-day option ~10$ USD)</em>
       </li>
       <li>Complete the payment using your selected method.</li>
@@ -220,7 +214,7 @@
           rel=""
           target="_blank">real-debrid.com/apitoken</a>
         and copy your token.
-        <em>Store it somewhere safe, as we <strong>WILL</strong> need it.</em>
+        <em>Store it somewhere safe, as you <strong>WILL</strong> need it later.</em>
       </li>
     </ol>
 
@@ -229,22 +223,22 @@
         <Info class="h-5 w-auto items-center text-[#699269]" />
         <p class="admonition-title">Real Debrid Limits</p>
       </div>
-        Keep in mind Real Debrid will only allow devices on the same network as you, Real debrid
-        allows unlimited devices on one IP at a time. You do <strong>NOT</strong> need to use a VPN while
-        using Real Debrid
+      Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
+      devices on one IP at a time. You do<strong>NOT</strong> need to use a VPN while using Real Debrid.
     </div>
 
     <h2><em>2.</em> Stremio Setup</h2>
     <hr />
 
     <p>
-      Stremio is a streaming client built around P2P file sharing. It is highly customizable, even
-      featuring an SDK so you can add your own features. The big advantage is that it syncs to
+      Stremio is a streaming client designed around P2P file sharing. It is highly customizable,
+      even featuring an SDK that allows you to add your own features. Its biggest advantage is that
+      it syncs to
       <a
         href="https://trakt.tv"
         rel=""
         target="_blank">Trakt.tv</a
-      >, which can recommend new media and keep track of your progress/watch lists.
+      >, which can recommend new media and track your progress and watch lists.
     </p>
 
     <p><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
@@ -256,8 +250,8 @@
           target="_blank">stremio.com/downloads</a> and selecting the appropriate version for your device.
       </li>
       <li>
-        Run the downloaded file and follow the setup. You will need to create an account. <em
-          >Your login is important to remember.</em>
+        Run the downloaded file and follow the setup instructions. You will need to create an
+        account. <em>Your login is important to remember.</em>
       </li>
       <li>
         You should now be on the Stremio home screen. It should look purplish, similar to Sudo-flix
@@ -274,12 +268,12 @@
         >. There will be many options; most are self-explanatory, so I won’t go over them.
       </li>
       <li>
-        Scroll down to where it says "Debrid provider," select "RealDebrid", then paste
-        <em>your</em> API token into the "RealDebrid API Key" input field.
+        Scroll down to "Debrid provider," select "Real-Debrid," and paste your API token into the
+        "Real-Debrid API Key" input field.
       </li>
       <li>
-        Click the purple "Install" button. This should open Stremio and prompt you to "Install,"
-        "Configure," or "Cancel." <em>Click "Install."</em>
+        Click the purple "Install" button. This should open Stremio and prompt you to choose
+        "Install," "Configure," or "Cancel".
       </li>
       <li>
         If the purple button does not open Stremio, right-click the button to copy its link, then
@@ -288,16 +282,16 @@
     </ol>
 
     <blockquote>
-        I Highly recommend you turn on "Hardware-accelerated decoding" in the "Advanced" section of
-        the player settings (setting can be found below plugins on the sidebar).
+      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the
+      player settings (this setting can be found below the plugins on the sidebar).
     </blockquote>
 
     <p><strong>Additional Addons May Ask for Your API Key</strong></p>
     <p>
       When installing other addons that aren't Torrentio, you may be asked for your Real-Debrid API
       token again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
-      up your streaming experience. Any addons found online from reputable sources and those listed in
-      the "Community Addons" section are fair game.
+      up your streaming experience. Any addons found online from reputable sources, as well as those
+      listed in the "Community Addons" section, are fair game.
     </p>
 
     <h2><em>3.</em> Extra Setup &amp; Customization</h2>
@@ -307,8 +301,8 @@
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
-        Click on "Settings," then "My Fire TV," and then click "About" <strong>7 times</strong>
-        quickly to enable developer options (<a
+        Click on "Settings," then "My Fire TV," and click "About" <strong>7 times</strong> quickly
+        to enable developer options (<a
           href="https://www.firesticktricks.com/developer-options-firestick.html"
           rel=""
           target="_blank">guide</a
@@ -385,11 +379,11 @@
 
     <h3>Different Debrid Providers</h3>
     <p>
-      There are multiple debrid providers, some better than others. I (and many others) recommend
-      Real-Debrid due to its popularity, speed, features, and affordability. However, there are many
-      other providers. The reason these aren't used in this guide is due to their lack of
-      compatibility with other addons, whereas Real-Debrid is widely supported. However, there are
-      cheaper providers such as AllDebrid, Debrid-Link, and Torbox.
+      There are multiple debrid providers available, some better than others. I (and many others)
+      recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
+      there are many other providers. The reason these aren't used in this guide is due to their
+      lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
+      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox.
     </p>
     <ul>
       <li>
@@ -439,10 +433,11 @@
     <h3>Other Addons</h3>
     <p>
       <strong
-        >Other unlisted addons can be found <a
+        >Other unlisted addons can be downloaded from <a
           href="https://stremio-addons.com/"
           rel=""
-          target="_blank">here</a> for download</strong>
+          target="_blank">here</a
+        >.</strong>
     </p>
     <ul>
       <li>
@@ -487,7 +482,7 @@
     <p>
       <em
         >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
-        section for quick install.</em>
+        section of your client for quick install.</em>
     </p>
 
     <h2>More Questions?</h2>
