@@ -32,7 +32,6 @@
     color: #ffffff;
     border: solid rgba(0, 0, 0, 0.3) 1px;
     padding: 0.2rem 0.4rem;
-    border-radius: 4px;
   }
 
   strong {
@@ -44,8 +43,16 @@
     color: #dfdfdf;
   }
 
+  footer {
+    color: #a0a0a0;
+  }
+
+  .dimmed {
+    color: #c0c0c0;
+  }
+
   a {
-    color: #4caf50;
+    color: #64e668;
     text-decoration: none;
   }
 
@@ -72,7 +79,6 @@
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 4px;
     margin-block: 1rem;
     border: solid rgba(0, 0, 0, 0.3) 1px;
   }
@@ -80,20 +86,19 @@
   .admonition {
     padding: 0.8rem 1rem;
     margin-block: 1rem;
-    border-radius: 4px;
   }
 
   .admonition.note {
     background-color: #2d3829;
-    color: #699269;
+    color: #8fbf8f; /* Lighter green */
   }
 
   .admonition.note p {
-    color: #699269;
+    color: #8fbf8f; /* Lighter green */
   }
 
   .admonition.note strong {
-    color: #699269;
+    color: #8fbf8f; /* Lighter green */
   }
 
   .admonition-title {
@@ -103,8 +108,7 @@
 
   blockquote {
     margin-block: 1rem;
-    border-radius: 4px;
-    padding: 0.8rem 1rem;
+    padding: 0.3rem 0.8rem;
     border-left: 4px solid #4caf50;
   }
 
@@ -112,7 +116,7 @@
     border: 0;
     height: 1px;
     margin-block: 1rem;
-    background: #cccccc;
+    background: #757575;
   }
 
   .items-center {
@@ -133,29 +137,25 @@
   }
 
   .max-w-2xl {
-    max-width: 60rem;
-    background-color: #272727;
+    max-width: 62rem;
+    border: solid #353535 1px;
+    background-color: #2c2c2c;
     padding: 2rem;
-    border-radius: 4px;
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.1),
-      0 1px 3px rgba(0, 0, 0, 0.06);
   }
 </style>
 
-<div class="items-center justify-center min-h-screen p-4">
+<div class="items-center justify-center min-h-screen p-3">
   <div class="mx-auto max-w-2xl">
     <h1>How to Use Stremio</h1>
     <p>
       Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of
       this, we all need free media, so I put together a guide (it's super simple just follow the
-      steps) to get the best streaming service that works on desktop, mobile (Android, <strong
-        >NOT</strong> iOS), and FireStick!
+      steps) to get the best streaming service that works on desktop, mobile (Android, NOT iOS), and
+      FireStick!
     </p>
+    <br />
 
-    <p>
-      <strong>Preview of Stremio</strong><br />
-    </p>
+    <p><strong>Preview of Stremio<strong></strong></strong></p>
     <div class="flex justify-center">
       <img
         alt="Preview"
@@ -189,6 +189,7 @@
       etc., at great speeds (1+ Gbps). It also caches a lot of torrent movies, giving you instant
       download/streaming without the need for seeders.
     </p>
+    <br />
 
     <p><strong>Getting Your Real-Debrid Subscription and API Token</strong></p>
     <ol>
@@ -214,13 +215,13 @@
           rel=""
           target="_blank">real-debrid.com/apitoken</a>
         and copy your token.
-        <em>Store it somewhere safe, as you <strong>WILL</strong> need it later.</em>
+        <em>Store it somewhere safe, as you WILL need it later.</em>
       </li>
     </ol>
 
     <div class="admonition note">
       <div class="flex flex-row gap-1">
-        <Info class="h-5 w-auto items-center text-[#699269]" />
+        <Info class="h-5 w-auto items-center" />
         <p class="admonition-title">Real Debrid Limits</p>
       </div>
       Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
@@ -240,6 +241,7 @@
         target="_blank">Trakt.tv</a
       >, which can recommend new media and track your progress and watch lists.
     </p>
+    <br />
 
     <p><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
     <ol>
@@ -254,7 +256,7 @@
         account. <em>Your login is important to remember.</em>
       </li>
       <li>
-        You should now be on the Stremio home screen. It should look purplish, similar to Sudo-flix
+        You should now be on the Stremio home screen. It should look purplish, similar to sudo-flix
         but slightly different.
       </li>
       <li>
@@ -301,8 +303,8 @@
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
-        Click on "Settings," then "My Fire TV," and click "About" <strong>7 times</strong> quickly
-        to enable developer options (<a
+        Click on "Settings," then "My Fire TV," and click the "About" button 7 times quickly to
+        enable developer options (<a
           href="https://www.firesticktricks.com/developer-options-firestick.html"
           rel=""
           target="_blank">guide</a
@@ -379,7 +381,7 @@
 
     <h3>Different Debrid Providers</h3>
     <p>
-      There are multiple debrid providers available, some better than others. I (and many others)
+      There are multiple Debrid providers available, some better than others. I (and many others)
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
       there are many other providers. The reason these aren't used in this guide is due to their
       lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
@@ -493,7 +495,7 @@
         <a
           href="https://guides.viren070.me/stremio"
           rel=""
-          target="_blank">Ultimate User Manual to Stremio</a>
+          target="_blank">Stremio User Manual</a>
       </li>
       <li>
         <a
@@ -527,9 +529,8 @@
       </li>
     </ul>
 
-    <p>
-      <strong>Note:</strong> Please reach out to me if any issues arise. This guide's source code is
-      available
+    <p class="dimmed">
+      Please reach out to me if any issues arise. This guide's source code is available
       <a
         href="https://github.com/itzcozi/stremio-guide"
         rel=""
@@ -590,7 +591,7 @@
         </svg>
       </a>
     </p>
-    <p class="mt-2 text-dark">
+    <p class="mt-2 footer">
       Created by
       <a
         href="https://github.com/itzcozi"

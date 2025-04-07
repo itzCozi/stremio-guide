@@ -5,10 +5,10 @@
 :root ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border-left: #2f2f2f solid 0.5px;
+  border-left: #454545 solid 0.5px;
 }
 :root ::-webkit-scrollbar-thumb {
-  background-color: #2e2e2e;
+  background-color: #505050;
   cursor: pointer;
 }
 
@@ -20,7 +20,7 @@
 html,
 body {
   background-color: var(--background-color);
-  color: #e0e0e0;
+  color: #dedede;
   font-family: "open sans";
   font-size: 16.2px;
   margin: 0;
