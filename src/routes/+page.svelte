@@ -40,7 +40,6 @@
 
   em {
     font-style: italic;
-    color: #dfdfdf;
   }
 
   footer {
@@ -213,7 +212,7 @@
         <p class="admonition-title">Real Debrid Limits</p>
       </div>
       Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
-      devices on one IP at a time. You do <strong>NOT</strong> need to use a VPN while using Real Debrid.
+      devices on one IP at a time. You do<strong>NOT</strong> need to use a VPN while using Real Debrid.
     </div>
 
     <h2><em>2.</em> Stremio Setup</h2>
@@ -373,17 +372,12 @@
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
       there are many other providers. The reason these aren't used in this guide is due to their
       lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
-      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox to name a few.
-    </p>
-    <br />
-
-    <p>
-      <strong
-        >Other Debrid providers can be found <a
-          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
-          rel=""
-          target="_blank">here</a
-        >.</strong>
+      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox to name a few. Other
+      Debrid providers can be found <a
+        href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+        rel=""
+        target="_blank">here</a
+      >.
     </p>
     <ul>
       <li>
@@ -437,14 +431,6 @@
     </ul>
 
     <h3>Other Addons</h3>
-    <p>
-      <strong
-        >Other unlisted addons can be downloaded from <a
-          href="https://stremio-addons.com/"
-          rel=""
-          target="_blank">here</a
-        >.</strong>
-    </p>
     <ul>
       <li>
         <a
@@ -496,7 +482,11 @@
     <p>
       <em
         >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
-        section of your client for quick install.</em>
+        section of your client for quick install. Other unlisted addons can be downloaded from <a
+          href="https://stremio-addons.com/"
+          rel=""
+          target="_blank">here</a
+        >.</em>
     </p>
 
     <h2>More Questions?</h2>
