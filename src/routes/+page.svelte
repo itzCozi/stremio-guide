@@ -72,6 +72,7 @@
   ol,
   ul {
     margin-block: 1rem;
+    line-height: 1.6rem;
     padding-left: 1.5rem;
     list-style-type: disc;
   }
@@ -79,6 +80,7 @@
   ol.sm,
   ul.sm {
     margin: 0;
+    line-height: normal;
     padding-left: 1.3rem;
     list-style-type: "- ";
   }
@@ -169,7 +171,7 @@
     border: solid #383838 1px;
     color: #ffffff;
     font-size: 0.9rem;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.28s ease-in-out;
     transform: translateX(0);
   }
 
@@ -225,11 +227,11 @@
       <div class="toc-content">
         <!-- svelte-ignore a11y_click_events_have_key_events -->
         <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div class="flex items-center justify-between mb-4 -mx-1 -mt-1">
+        <div class="flex items-center justify-between mb-4">
           <p class="font-bold text-center">Table of Contents</p>
           <div class="items-center -mr-1 w-fit mx-auto">
             <span on:click={toggleToc}>
-              <X class="h-[1.25rem] w-auto cursor-pointer" />
+              <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
             </span>
           </div>
         </div>
@@ -274,7 +276,7 @@
     </div>
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="flex mx-auto justify-end items-center">
+    <div class="flex justify-end items-center -m-3">
       <div
         class="toc-toggle"
         on:click={toggleToc}>
@@ -549,6 +551,52 @@
       <li>Login to your Stremio account.</li>
       <li>Sync addons in the "Addons" menu.</li>
     </ol>
+
+    <h3 id="usenet">Usenet Setup</h3>
+    <!-- https://guides.viren070.me/stremio/setup#usenet -->
+    <p>
+      Usenet is a decentralized platform for sharing content, organized into "newsgroups," which
+      function like forums for posting messages and files. In Stremio, the focus is on NZB files
+      binaries for video content shared within these groups. To access Usenet, you'll need a paid
+      Usenet provider, which hosts the servers storing this content. These providers charge for
+      access due to the costs of hosting and bandwidth required for downloading from newsgroups.
+    </p>
+    <ol>
+      <li>
+        Head to <a
+          href="https://torbox.app/login?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">torbox.app/login</a> and create an account or login if you already have one.
+      </li>
+      <li>
+        Now, go to <a
+          href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">torbox.app/subscription</a> and purchase the "Pro" plan. This includes the
+        usenet as well as Torbox's Debrid service.
+      </li>
+      <li>
+        To use Torbox in Stremio, visit <a
+          href="https://torrentio.strem.fun/lite"
+          target="_blank">this link</a
+        >, scroll to the "Debrid provider" section, select "Torbox," and enter your API key.
+      </li>
+      <li>
+        Click the purple "Install" button. This should open Stremio and prompt you to choose
+        "Install," "Configure," or "Cancel".
+      </li>
+      <li>
+        If the purple button does not open Stremio, right-click the button to copy its link, then
+        paste it into the Stremio search bar
+      </li>
+    </ol>
+    <em>
+      Learn more about Torbox's usenet service and Stremio <a
+        href="https://torbox.app/usenet?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+        rel=""
+        target="_blank">here</a
+      >.
+    </em>
 
     <h3 id="trakt">
       Logging Into <a
