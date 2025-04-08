@@ -6,7 +6,7 @@
   import { ChevronRight } from "lucide-svelte";
   import { X } from "lucide-svelte";
 
-  let isTocOpen = true;
+  let isTocOpen = false;
 
   function toggleToc() {
     isTocOpen = !isTocOpen;
@@ -160,21 +160,21 @@
 
   .toc {
     position: fixed;
-    top: 5rem;
     right: 0;
     width: 235px;
-    background-color: #303030;
+    height: screen;
+    background-color: #2b2b2b;
     padding: 0.8rem 1.2rem;
-    margin-inline: 0.5rem;
-    border: solid #3d3d3d 1px;
+    margin-inline: 1.1rem;
+    border: solid #383838 1px;
     color: #ffffff;
     font-size: 0.9rem;
     transition: transform 0.3s ease-in-out;
-    transform: translateX(0); /* Default open state */
+    transform: translateX(0);
   }
 
   .toc.collapsed {
-    transform: translateX(150%); /* Slide out of view */
+    transform: translateX(150%);
   }
 
   .toc-toggle {
@@ -215,17 +215,21 @@
   }
 </style>
 
-<div class="items-center justify-center min-h-screen p-3">
-  <div class="mx-auto max-w-2xl block">
+<div class="items-center justify-center min-h-screen p-4">
+  <div
+    class="mx-auto max-w-2xl block"
+    style="
+      margin-right: {isTocOpen ? '0' : 'auto'};
+      margin-left: {isTocOpen ? '0' : 'auto'};">
     <div class="toc {isTocOpen ? '' : 'collapsed'}">
       <div class="toc-content">
         <!-- svelte-ignore a11y_click_events_have_key_events -->
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <div class="flex items-center justify-between mb-4 -mx-1 -mt-1">
           <p class="font-bold text-center">Table of Contents</p>
-          <div class="items-center -mr-1 bg-red-500 w-fit mx-auto">
+          <div class="items-center -mr-1 w-fit mx-auto">
             <span on:click={toggleToc}>
-              <X class="h-[1.18rem] w-auto cursor-pointer" />
+              <X class="h-[1.25rem] w-auto cursor-pointer" />
             </span>
           </div>
         </div>
@@ -275,11 +279,7 @@
         class="toc-toggle"
         on:click={toggleToc}>
         <span>
-          {#if isTocOpen}
-            <ChevronRight class="h-6 w-auto" />
-          {:else}
-            <TableOfContents class="h-6 w-auto" />
-          {/if}
+          <TableOfContents class="h-6 w-auto" />
         </span>
       </div>
     </div>
@@ -489,8 +489,8 @@
 
     <p id="more-addons"><strong>Additional Addons May Ask for Your API Key</strong></p>
     <p>
-      When installing other addons that aren't Torrentio, you may be asked for your Debrid API
-      token again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
+      When installing other addons that aren't Torrentio, you may be asked for your Debrid API token
+      again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
       up your streaming experience. Any addons found online from reputable sources, as well as those
       listed in the "Community Addons" section, are fair game.
     </p>
