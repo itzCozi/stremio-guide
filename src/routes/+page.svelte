@@ -1,12 +1,24 @@
 <script>
-  import { Info } from "lucide-svelte";
+  import { Info, Share } from "lucide-svelte";
   import { TriangleAlert } from "lucide-svelte";
   import { BookOpen } from "lucide-svelte";
   import { TableOfContents } from "lucide-svelte";
   import { ChevronRight } from "lucide-svelte";
-  import { X } from "lucide-svelte";
 
   let isTocOpen = false;
+
+  function copyToClipboard() {
+    const textToCopy =
+      "Learn how to use Stremio by following this simple guide: https://bye.undi.rest";
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        alert("Share link copied to clipboard...");
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  }
 
   function toggleToc() {
     isTocOpen = !isTocOpen;
@@ -276,13 +288,16 @@
     </div>
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="flex justify-end items-center -m-3">
+    <div class="flex justify-between items-center -m-2">
+      <div
+        class="cursor-pointer"
+        on:click={copyToClipboard}>
+        <Share class="h-6 w-auto" />
+      </div>
       <div
         class="toc-toggle"
         on:click={toggleToc}>
-        <span>
-          <TableOfContents class="h-6 w-auto" />
-        </span>
+        <TableOfContents class="h-6 w-auto" />
       </div>
     </div>
     <h1>How to Use Stremio</h1>
