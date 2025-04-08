@@ -19,6 +19,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   background-color: var(--background-color);
   color: #dedede;
   font-family: "open sans";

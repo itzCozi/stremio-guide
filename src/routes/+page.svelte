@@ -1,10 +1,26 @@
 <script>
   import { Info } from "lucide-svelte";
   import { TriangleAlert } from "lucide-svelte";
-  import { BookOpen } from "lucide-svelte"; // used for info admonition
+  import { BookOpen } from "lucide-svelte";
+  import { TableOfContents } from "lucide-svelte";
+  import { ChevronRight } from "lucide-svelte";
+  import { X } from "lucide-svelte";
+
+  let isTocOpen = true;
+
+  function toggleToc() {
+    isTocOpen = !isTocOpen;
+  }
 </script>
 
 <style>
+  .block {
+    max-width: 62rem;
+    border: solid #383838 1px;
+    background-color: #2b2b2b;
+    padding: 1.7rem;
+  }
+
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -60,6 +76,13 @@
     list-style-type: disc;
   }
 
+  ol.sm,
+  ul.sm {
+    margin: 0;
+    padding-left: 1.3rem;
+    list-style-type: "- ";
+  }
+
   ol {
     list-style-type: decimal;
   }
@@ -93,6 +116,15 @@
     color: #7caf7c;
   }
 
+  .admonition a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  .admonition a:hover {
+    text-decoration: none;
+  }
+
   .admonition-title {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -119,17 +151,161 @@
     background: #7a7a7a;
   }
 
-  .block {
-    max-width: 62rem;
-    border: solid #373737 1px;
-    background-color: #2b2b2b;
-    padding: 1.7rem;
+  hr.sm {
+    border: 0;
+    height: 1px;
+    background: #7a7a7a;
+    margin-block: 0.3rem;
+  }
+
+  .toc {
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    width: 235px;
+    background-color: #303030;
+    padding: 0.8rem 1.2rem;
+    margin-inline: 0.5rem;
+    border: solid #3d3d3d 1px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0); /* Default open state */
+  }
+
+  .toc.collapsed {
+    transform: translateX(150%); /* Slide out of view */
+  }
+
+  .toc-toggle {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .toc-content {
+    margin-top: 0.5rem;
+  }
+
+  .toc a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #6fcf6f;
+    text-decoration: none;
+  }
+
+  .toc a:hover {
+    text-decoration: underline;
+  }
+
+  .intro {
+    margin-block: 1rem;
+    padding: 0.8rem 1rem;
+    color: #6d9fb8;
+    background-color: #2b383e;
+  }
+
+  .intro a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  .intro a:hover {
+    text-decoration: none;
   }
 </style>
 
 <div class="items-center justify-center min-h-screen p-3">
   <div class="mx-auto max-w-2xl block">
+    <div class="toc {isTocOpen ? '' : 'collapsed'}">
+      <div class="toc-content">
+        <!-- svelte-ignore a11y_click_events_have_key_events -->
+        <!-- svelte-ignore a11y_no_static_element_interactions -->
+        <div class="flex items-center justify-between mb-4 -mx-1 -mt-1">
+          <p class="font-bold text-center">Table of Contents</p>
+          <div class="items-center -mr-1 bg-red-500 w-fit mx-auto">
+            <span on:click={toggleToc}>
+              <X class="h-[1.18rem] w-auto cursor-pointer" />
+            </span>
+          </div>
+        </div>
+        <a href="#token">Debrid Service Token</a>
+        <ul class="sm">
+          <li>
+            <a href="#real-debrid-sub">Real-Debrid Subscription</a>
+          </li>
+          <li>
+            <a href="#torbox-sub">Torbox Subscription</a>
+          </li>
+        </ul>
+        <a href="#stremio">Stremio Setup</a>
+        <ul class="sm">
+          <li>
+            <a href="#install">Install</a>
+          </li>
+          <li>
+            <a href="#more-addons">Additional Addons</a>
+          </li>
+        </ul>
+        <a href="#extra">Extra Setup</a>
+        <ul class="sm">
+          <li>
+            <a href="#firestick">FireStick Setup</a>
+          </li>
+          <li>
+            <a href="#android">Android Setup</a>
+          </li>
+          <li>
+            <a href="#trakt">Logging Into Trakt.tv</a>
+          </li>
+          <li>
+            <a href="#debrid">Different Debrid Providers</a>
+          </li>
+          <li>
+            <a href="#addons">Other Addons</a>
+          </li>
+        </ul>
+        <a href="#more">More Questions?</a>
+      </div>
+    </div>
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="flex mx-auto justify-end items-center">
+      <div
+        class="toc-toggle"
+        on:click={toggleToc}>
+        <span>
+          {#if isTocOpen}
+            <ChevronRight class="h-6 w-auto" />
+          {:else}
+            <TableOfContents class="h-6 w-auto" />
+          {/if}
+        </span>
+      </div>
+    </div>
     <h1>How to Use Stremio</h1>
+
+    <div class="intro">
+      <div class="flex flex-row gap-2 mb-[0.5rem]">
+        <BookOpen class="h-5 w-auto" />
+        <p class="font-bold">Disclaimer</p>
+      </div>
+      <p>
+        This guide is intended for people who read (it's a short guide, so please read it all). This
+        is not a drawn-out piece of text by any means, and if you can't maintain an attention span
+        for this long, <a
+          href="https://www.reddit.com/"
+          rel="">leave</a
+        >. This is not a "how to pirate" guide; this is a "how to use Stremio" guide. If you are
+        looking for a "how to pirate" guide, I suggest you look
+        <a
+          href="https://fmhy.net/beginners-guide"
+          rel=""
+          target="_blank">elsewhere</a
+        >.
+      </p>
+    </div>
+
     <p>
       Welcome! As we move on from Sudo's prime, it's the perfect time to explore fresh and exciting
       ways to enjoy your favorite content. Streaming has become a big part of our daily lives, and
@@ -141,7 +317,7 @@
     </p>
     <br />
 
-    <p><strong>Preview of Stremio<strong></strong></strong></p>
+    <p id="preview"><strong>Preview of Stremio<strong></strong></strong></p>
     <div class="flex justify-center">
       <img
         alt="Preview"
@@ -150,34 +326,34 @@
         title="Preview" />
     </div>
 
-    <h3>Prerequisites</h3>
+    <h3 id="prerequisites">Prerequisites</h3>
     <ol>
       <li>You need the Stremio client.</li>
       <li>You need the appropriate addons for streaming.</li>
       <li>You need a Real-Debrid subscription (~$5 a month).</li>
     </ol>
-    <p><strong>Can I Do This for Free?</strong></p>
+    <p id="for-da-free"><strong>Can I Do This for Free?</strong></p>
     <p>
-      Yes. Skip the Real-Debrid subscription and just use the plain Torrentio addon. The setup is
-      the same, but you must set the "Debrid Provider" to "None" in the Torrentio configuration.
-      This will not be nearly as fast, and you may need to use a VPN based on where you live as a
-      Debrid service will not be protecting you.
+      Yes. Skip the Debrid subscription and just use the plain Torrentio addon. The setup is the
+      same, but you must set the "Debrid Provider" to "None" in the Torrentio configuration. This
+      will not be nearly as fast, and you may need to use a VPN based on where you live as a Debrid
+      service will not be protecting you.
     </p>
 
-    <h2>Guide</h2>
+    <h2 id="guide">Guide</h2>
     <hr />
-    <h2><em>1.</em> Real-Debrid Token Guide</h2>
+    <h2 id="token"><em>1.</em> Debrid Service Token</h2>
 
     <p>
-      What is Real-Debrid? Real-Debrid is a service that allows you to download and stream all kinds
-      of content, from software, music, and games to adult content and 4K movies (40GB+), hosted on
+      What is Debrid? Debrid is a service that allows you to download and stream all kinds of
+      content, from software, music, and games to adult content and 4K movies (40GB+), hosted on
       supported premium file hosters like Rapidgator, Uploaded, FileFactory, Turbobit, Nitroflare,
       etc at great speeds (1+ Gbps). It also caches a lot of torrents, giving you instant
       download/streaming capabilities without the need for seeders.
     </p>
     <br />
 
-    <p><strong>Getting Your Real-Debrid Subscription and API Token</strong></p>
+    <p id="real-debrid-sub"><strong>Getting Your Real-Debrid Subscription and API Token</strong></p>
     <ol>
       <li>
         Head to <a
@@ -192,7 +368,7 @@
           rel=""
           target="_blank">real-debrid.com/premium</a>
         and purchase a premium subscription plan.
-        <em>(I recommend the 90-day option ~10$ USD)</em>
+        <em>(I recommend the 90-day option ~10$ USD/3mo)</em>
       </li>
       <li>Complete the payment using your selected method.</li>
       <li>
@@ -201,9 +377,39 @@
           rel=""
           target="_blank">real-debrid.com/apitoken</a>
         and copy your token.
-        <em>Store it somewhere safe, as you WILL need it later.</em>
       </li>
     </ol>
+
+    <p id="torbox-sub"><strong>Getting Your Torbox Subscription and API Token</strong></p>
+    <ol>
+      <li>
+        Go to <a
+          href="https://torbox.app/login?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">torbox.app/login</a> and click "Don't have an account yet?" below the "Continue"
+        button.
+      </li>
+      <li>Ensure your VPN is turned <em>off</em> and proceed to create an account.</li>
+      <li>
+        Now that you have an account, go to <a
+          href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">real-debrid.com/subscription</a>
+        and purchase a subscription plan.
+        <em>(I recommend the PRO option ~10$ USD/mo)</em>
+      </li>
+      <li>Complete the payment using your selected method.</li>
+      <li>
+        Head to <a
+          href="https://torbox.app/settings?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">torbox.app/settings</a>
+        and scroll down to "API Key" then, click the green "Copy API Key" button.
+      </li>
+    </ol>
+
+    <em class="underline"
+      >Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
 
     <div class="admonition">
       <div class="flex flex-row gap-2">
@@ -214,13 +420,14 @@
           target="_blank">
           <TriangleAlert class="h-5 w-auto" />
         </a>
-        <p class="admonition-title">Real-Debrid Limits</p>
+        <p class="admonition-title">Limits of Debrid Providers</p>
       </div>
-      Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
-      devices on one IP at a time. You do NOT need to use a VPN while using Real-Debrid.
+      Keep in mind that Real-Debrid supports unlimited devices on the same network but restricts usage
+      to a single IP address. If this limitation is an issue, consider using Torbox, which does not track
+      IPs. A VPN is not required when using a Debrid service as traffic is routed through their servers.
     </div>
 
-    <h2><em>2.</em> Stremio Setup</h2>
+    <h2 id="stremio"><em>2.</em> Stremio Setup</h2>
     <hr />
 
     <p>
@@ -235,7 +442,7 @@
     </p>
     <br />
 
-    <p><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
+    <p id="install"><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
     <ol>
       <li>
         Download the client by heading to <a
@@ -262,8 +469,8 @@
         >. There will be many options; most are self-explanatory, so I won’t go over them.
       </li>
       <li>
-        Scroll down to "Debrid provider," select "Real-Debrid," and paste your API token into the
-        "Real-Debrid API Key" input field.
+        Scroll down to "Debrid provider," select your provider and paste your API token into the
+        "API Key" input field.
       </li>
       <li>
         Click the purple "Install" button. This should open Stremio and prompt you to choose
@@ -280,18 +487,18 @@
       player settings (this setting can be found below the plugins on the sidebar).
     </blockquote>
 
-    <p><strong>Additional Addons May Ask for Your API Key</strong></p>
+    <p id="more-addons"><strong>Additional Addons May Ask for Your API Key</strong></p>
     <p>
-      When installing other addons that aren't Torrentio, you may be asked for your Real-Debrid API
+      When installing other addons that aren't Torrentio, you may be asked for your Debrid API
       token again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
       up your streaming experience. Any addons found online from reputable sources, as well as those
       listed in the "Community Addons" section, are fair game.
     </p>
 
-    <h2><em>3.</em> Extra Setup &amp; Customization</h2>
+    <h2 id="extra"><em>3.</em> Extra Setup &amp; Customization</h2>
     <hr />
 
-    <h3>FireStick Setup</h3>
+    <h3 id="firestick">FireStick Setup</h3>
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
@@ -324,7 +531,7 @@
       </li>
     </ol>
 
-    <h3>Android Setup</h3>
+    <h3 id="android">Android Setup</h3>
     <p>
       <strong
         >Stremio can be installed from the <a
@@ -340,9 +547,10 @@
       </li>
       <li>Install the downloaded APK.</li>
       <li>Login to your Stremio account.</li>
+      <li>Sync addons in the "Addons" menu.</li>
     </ol>
 
-    <h3>
+    <h3 id="trakt">
       Logging Into <a
         href="http://Trakt.tv"
         rel=""
@@ -371,7 +579,7 @@
       </li>
     </ol>
 
-    <h3>Different Debrid Providers</h3>
+    <h3 id="debrid">Different Debrid Providers</h3>
     <p>
       There are multiple Debrid providers available, some better than others. I (and many others)
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
@@ -388,7 +596,7 @@
           target="_blank">
           <Info class="h-5 w-auto" />
         </a>
-        <p class="admonition-title">Legal Limitations of Debrid Providers</p>
+        <p class="admonition-title">Legal Limitations</p>
       </div>
       Before purchasing a Debrid service other than Real-Debrid, please check the laws and regulations
       of the municipality where the service is based. Some providers operate in countries with strict
@@ -403,9 +611,7 @@
           rel=""
           target="_blank">Real-Debrid</a
         >,
-        <span
-          class="underline"
-          title="France">🇫🇷</span>
+        <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
@@ -413,9 +619,7 @@
           rel=""
           target="_blank">Torbox</a
         >,
-        <span
-          class="underline"
-          title="South Africa">🇿🇦</span>
+        <span title="South Africa">🇿🇦</span>
       </li>
       <li>
         <a
@@ -423,9 +627,7 @@
           rel=""
           target="_blank">AllDebrid</a
         >,
-        <span
-          class="underline"
-          title="France">🇫🇷</span>
+        <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
@@ -433,9 +635,7 @@
           rel=""
           target="_blank">Premiumize</a
         >,
-        <span
-          class="underline"
-          title="Malaysia">🇲🇾</span>
+        <span title="Malaysia">🇲🇾</span>
       </li>
       <li>
         <a
@@ -443,9 +643,7 @@
           rel=""
           target="_blank">Debrid-Link</a
         >,
-        <span
-          class="underline"
-          title="France">🇫🇷</span>
+        <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
@@ -453,9 +651,7 @@
           rel=""
           target="_blank">Put.io</a
         >,
-        <span
-          class="underline"
-          title="Turkey">🇹🇷</span>
+        <span title="Turkey">🇹🇷</span>
       </li>
       <li>
         <a
@@ -463,9 +659,7 @@
           rel=""
           target="_blank">OffCloud</a
         >,
-        <span
-          class="underline"
-          title="Bulgaria">🇧🇬</span>
+        <span title="Bulgaria">🇧🇬</span>
       </li>
       <li>
         <a
@@ -473,13 +667,11 @@
           rel=""
           target="_blank">Deepbrid</a
         >,
-        <span
-          class="underline"
-          title="Switzerland">🇨🇭</span>
+        <span title="Switzerland">🇨🇭</span>
       </li>
     </ol>
 
-    <h3>Other Addons</h3>
+    <h3 id="addons">Other Addons</h3>
     <ul>
       <li>
         <a
@@ -544,7 +736,7 @@
         >.</em>
     </p>
 
-    <h2>More Questions?</h2>
+    <h2 id="more">More Questions?</h2>
     <hr />
 
     <ul>
