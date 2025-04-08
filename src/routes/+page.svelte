@@ -1,19 +1,25 @@
 <script>
-  import { Info, Share } from "lucide-svelte";
+  import { CopyCheck } from "lucide-svelte";
+  import { Share } from "lucide-svelte";
+  import { Info } from "lucide-svelte";
   import { TriangleAlert } from "lucide-svelte";
-  import { BookOpen } from "lucide-svelte";
   import { TableOfContents } from "lucide-svelte";
   import { ChevronRight } from "lucide-svelte";
+  import { BadgeInfo } from "lucide-svelte";
 
   let isTocOpen = false;
+  let isPopupVisible = false;
 
   function copyToClipboard() {
-    const textToCopy =
-      "Learn how to use Stremio by following this simple guide: https://bye.undi.rest";
+    const refCode = Math.random().toString(36).substring(2, 8);
+    const textToCopy = `Learn how to use Stremio by following this simple guide: https://bye.undi.rest/?ref=${refCode}`;
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        alert("Share link copied to clipboard...");
+        isPopupVisible = true;
+        setTimeout(() => {
+          isPopupVisible = false;
+        }, 3000); // Hide popup after 3 seconds
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);
@@ -31,6 +37,17 @@
     border: solid #383838 1px;
     background-color: #2b2b2b;
     padding: 1.7rem;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   h1 {
@@ -139,6 +156,19 @@
     text-decoration: none;
   }
 
+  .admonition.info {
+    color: #6d9fb8;
+    background-color: #2b383e;
+  }
+
+  .admonition.info a {
+    color: #6d9fb8;
+  }
+
+  .admonition.info strong {
+    color: #6d9fb8;
+  }
+
   .admonition-title {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -227,6 +257,18 @@
   .intro a:hover {
     text-decoration: none;
   }
+
+  .popup {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background-color: #2b2b2b;
+    border: solid #383838 1px;
+    color: #ffffff;
+    padding: 0.5rem;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
 </style>
 
 <div class="items-center justify-center min-h-screen p-4">
@@ -300,11 +342,20 @@
         <TableOfContents class="h-6 w-auto" />
       </div>
     </div>
-    <h1>How to Use Stremio</h1>
+    {#if isPopupVisible}
+      <div class="popup">
+        <div class="flex items-center justify-center flex-row gap-3">
+          <CopyCheck class="h-5 w-auto" />
+          Copied to clipboard
+        </div>
+      </div>
+    {/if}
+
+    <h1 id="how-to">How to Use Stremio</h1>
 
     <div class="intro">
-      <div class="flex flex-row gap-2 mb-[0.5rem]">
-        <BookOpen class="h-5 w-auto" />
+      <div class="flex flex-row gap-1 mb-[0.5rem]">
+        <BadgeInfo class="h-5 w-auto" />
         <p class="font-bold">Disclaimer</p>
       </div>
       <p>
@@ -324,13 +375,11 @@
     </div>
 
     <p>
-      Welcome! As we move on from Sudo's prime, it's the perfect time to explore fresh and exciting
-      ways to enjoy your favorite content. Streaming has become a big part of our daily lives, and
-      finding the right platform can make all the difference. That’s why I’ve put together this
-      detailed, step-by-step guide to help you get the most out of the best free streaming service
-      available today. Whether you’re on a desktop, Android device (sorry, iOS users!), or even a
-      FireStick, this guide will walk you through everything so you can make the most of your
-      streaming experience no matter your skill level.
+      Welcome! As we move beyond Sudo's prime, it's the perfect time to explore professional ways to
+      stream your favorite content. This step-by-step guide is designed to help you get the most out
+      of the best free streaming service available today. Whether you're using a desktop, mobile
+      device (Samsung, iOS, Android), or even a FireStick, this guide will walk you through
+      everything you need to know—no matter your skill level.
     </p>
     <br />
 
@@ -429,9 +478,9 @@
       >Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
 
     <div class="admonition">
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-row gap-1">
         <a
-          href="https://guides.viren070.me/stremio/faq#do-i-need-a-vpn"
+          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
           rel=""
           title="User Manual FAQ Reference"
           target="_blank">
@@ -441,7 +490,11 @@
       </div>
       Keep in mind that Real-Debrid supports unlimited devices on the same network but restricts usage
       to a single IP address. If this limitation is an issue, consider using Torbox, which does not track
-      IPs. A VPN is not required when using a Debrid service as traffic is routed through their servers.
+      IPs. A {" "}<a
+        href="https://guides.viren070.me/stremio/faq#do-i-need-a-vpn"
+        rel=""
+        target="_blank">VPN is not required</a
+      >{" "} when using a Debrid service as traffic is routed through their servers.
     </div>
 
     <h2 id="stremio"><em>2.</em> Stremio Setup</h2>
@@ -457,7 +510,31 @@
         target="_blank">Trakt.tv</a
       >, which can recommend new media and track your progress and watch lists.
     </p>
-    <br />
+
+    <div class="admonition info">
+      <div class="flex flex-row gap-1">
+        <a
+          href="https://stremio.zendesk.com/"
+          rel=""
+          title="Helpdesk Reference"
+          target="_blank">
+          <BadgeInfo class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Stremio Device Support</p>
+      </div>
+      Stremio is compatible with a wide range of platforms, including Android, iOS, Windows, Mac, Linux,
+      and most TVs, such as Firestick devices. You can find most downloads conveniently available{" "}
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://www.stremio.com/downloads">here</a
+      >. However, iOS users will need to use{" "}
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://vidi.plomo.se/">Vidi</a
+      >, a specialized fork of Stremio made for Apple platforms.
+    </div>
 
     <p id="install"><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
     <ol>
@@ -469,40 +546,49 @@
       </li>
       <li>
         Run the downloaded file and follow the setup instructions. You will need to create an
-        account. <em>Your login is important to remember.</em>
+        account.
+        <em>Make sure to remember your login credentials.</em>
       </li>
       <li>
-        You should now be on the Stremio home screen. It should look purplish, similar to sudo-flix
-        but slightly different.
+        Once installed, open Stremio. The home screen should appear with a purple theme, similar to
+        Sudo-Flix.
       </li>
       <li>
-        Click the puzzle piece in the left sidebar labeled "Addons" and switch to your browser.
+        Click the puzzle piece icon labeled "Addons" in the left sidebar, then switch to your
+        browser.
       </li>
       <li>
-        In your browser, go to <a
+        Visit <a
           href="https://torrentio.strem.fun/lite/configure"
           rel=""
-          target="_blank">torrentio.strem.fun</a
-        >. There will be many options; most are self-explanatory, so I won’t go over them.
+          target="_blank">torrentio.strem.fun</a>
+        to configure the Torrentio addon. Adjust the settings as needed.
       </li>
       <li>
-        Scroll down to "Debrid provider," select your provider and paste your API token into the
-        "API Key" input field.
+        Scroll to the "Debrid provider" section, select your provider, and paste your API token into
+        the "API Key" field.
       </li>
       <li>
-        Click the purple "Install" button. This should open Stremio and prompt you to choose
-        "Install," "Configure," or "Cancel".
-      </li>
-      <li>
-        If the purple button does not open Stremio, right-click the button to copy its link, then
-        paste it into the Stremio search bar
+        Click the purple "Install" button. If it doesn't open Stremio, right-click the button, copy
+        the link, and paste it into Stremio's search bar.
       </li>
     </ol>
 
-    <blockquote>
-      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the
-      player settings (this setting can be found below the plugins on the sidebar).
-    </blockquote>
+    <div class="admonition">
+      <div class="flex flex-row gap-1">
+        <a
+          href="https://www.reddit.com/r/Stremio/comments/okjz1y/what_is_hardware_accelerated_decoding_and_what/"
+          rel=""
+          title="What is Hardware-Accelerated Decoding Article"
+          target="_blank">
+          <Info class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Hardware-Accelerated Decoding</p>
+      </div>
+      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the player
+      settings (this decodes video using your GPU instead of CPU). This option is only avaliable for
+      Desktops users sadly.
+    </div>
 
     <p id="more-addons"><strong>Additional Addons May Ask for Your API Key</strong></p>
     <p>
@@ -651,7 +737,7 @@
       there are cheaper providers such as Torbox, Debrid-Link, and AllDebrid to name a few.
     </p>
     <div class="admonition">
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-row gap-1">
         <a
           href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
           rel=""
