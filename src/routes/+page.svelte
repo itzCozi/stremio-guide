@@ -206,7 +206,6 @@
     position: fixed;
     right: 0;
     width: 235px;
-    height: screen;
     background-color: #2b2b2b;
     padding: 0.8rem 1.2rem;
     margin-inline: 1.1rem;
@@ -272,58 +271,58 @@
 </style>
 
 <div class="items-center justify-center min-h-screen p-4">
-  <div class="mx-auto max-w-2xl block">
-    <div class="toc {isTocOpen ? '' : 'collapsed'}">
-      <div class="toc-content">
-        <!-- svelte-ignore a11y_click_events_have_key_events -->
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div class="flex items-center justify-between mb-4">
-          <p class="font-bold text-center">Table of Contents</p>
-          <div class="items-center -mr-1 w-fit mx-auto">
-            <span on:click={toggleToc}>
-              <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
-            </span>
-          </div>
+  <div class="toc {isTocOpen ? '' : 'collapsed'}">
+    <div class="toc-content">
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_static_element_interactions -->
+      <div class="flex items-center justify-between mb-4">
+        <p class="font-bold text-center">Table of Contents</p>
+        <div class="items-center -mr-1 w-fit mx-auto">
+          <span on:click={toggleToc}>
+            <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
+          </span>
         </div>
-        <a href="#token">Debrid Service Token</a>
-        <ul class="sm">
-          <li>
-            <a href="#real-debrid-sub">Real-Debrid Subscription</a>
-          </li>
-          <li>
-            <a href="#torbox-sub">Torbox Subscription</a>
-          </li>
-        </ul>
-        <a href="#stremio">Stremio Setup</a>
-        <ul class="sm">
-          <li>
-            <a href="#install">Install</a>
-          </li>
-          <li>
-            <a href="#more-addons">Additional Addons</a>
-          </li>
-        </ul>
-        <a href="#extra">Extra Setup</a>
-        <ul class="sm">
-          <li>
-            <a href="#firestick">FireStick Setup</a>
-          </li>
-          <li>
-            <a href="#android">Android Setup</a>
-          </li>
-          <li>
-            <a href="#trakt">Logging Into Trakt.tv</a>
-          </li>
-          <li>
-            <a href="#debrid">Different Debrid Providers</a>
-          </li>
-          <li>
-            <a href="#addons">Other Addons</a>
-          </li>
-        </ul>
-        <a href="#more">More Questions?</a>
       </div>
+      <a href="#token">Debrid Service Token</a>
+      <ul class="sm">
+        <li>
+          <a href="#real-debrid-sub">Real-Debrid Subscription</a>
+        </li>
+        <li>
+          <a href="#torbox-sub">Torbox Subscription</a>
+        </li>
+      </ul>
+      <a href="#stremio">Stremio Setup</a>
+      <ul class="sm">
+        <li>
+          <a href="#install">Install</a>
+        </li>
+        <li>
+          <a href="#more-addons">Additional Addons</a>
+        </li>
+      </ul>
+      <a href="#extra">Extra Setup</a>
+      <ul class="sm">
+        <li>
+          <a href="#firestick">FireStick Setup</a>
+        </li>
+        <li>
+          <a href="#android">Android Setup</a>
+        </li>
+        <li>
+          <a href="#trakt">Logging Into Trakt.tv</a>
+        </li>
+        <li>
+          <a href="#debrid">Different Debrid Providers</a>
+        </li>
+        <li>
+          <a href="#addons">Other Addons</a>
+        </li>
+      </ul>
+      <a href="#more">More Questions?</a>
     </div>
+  </div>
+  <div class="mx-auto max-w-2xl block">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="flex justify-between items-center -m-2">
@@ -528,7 +527,7 @@
       <a
         rel="noopener noreferrer"
         target="_blank"
-        href="https://vidi.plomo.se/">Vidi</a
+        href="https://vidi.norsb.org/">Vidi</a
       >, a specialized fork of Stremio made for Apple platforms.
     </div>
 
