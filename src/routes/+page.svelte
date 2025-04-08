@@ -1,5 +1,7 @@
 <script>
   import { Info } from "lucide-svelte";
+  import { TriangleAlert } from "lucide-svelte";
+  import { BookOpen } from "lucide-svelte"; // used for info admonition
 </script>
 
 <style>
@@ -8,7 +10,8 @@
     font-weight: bold;
     text-align: center;
     color: #ffffff;
-    margin-block: 1rem;
+    margin-top: -0.2rem;
+    margin-bottom: 0.7rem;
   }
 
   h2 {
@@ -23,15 +26,6 @@
     font-weight: bold;
     color: #ffffff;
     margin-block: 0.5rem;
-  }
-
-  code {
-    font-family: monospace;
-    font-style: bold;
-    background-color: #2e2e2e;
-    color: #ffffff;
-    border: solid rgba(0, 0, 0, 0.3) 1px;
-    padding: 0.2rem 0.4rem;
   }
 
   strong {
@@ -51,7 +45,7 @@
   }
 
   a {
-    color: #64e668;
+    color: #6fcf6f;
     text-decoration: none;
   }
 
@@ -81,27 +75,22 @@
     max-width: 100%;
     height: auto;
     margin-block: 1rem;
-    border-radius: 1px;
     border: solid rgba(0, 0, 0, 0.3) 1px;
   }
 
   .admonition {
     padding: 0.8rem 1rem;
     margin-block: 1rem;
-    border-radius: 1px;
-  }
-
-  .admonition.note {
+    color: #7caf7c;
     background-color: #2d3829;
-    color: #8fbf8f;
   }
 
-  .admonition.note p {
-    color: #8fbf8f;
+  .admonition a {
+    color: #7caf7c;
   }
 
-  .admonition.note strong {
-    color: #8fbf8f;
+  .admonition strong {
+    color: #7caf7c;
   }
 
   .admonition-title {
@@ -109,10 +98,18 @@
     margin-bottom: 0.5rem;
   }
 
+  code {
+    font-family: monospace;
+    background-color: #303030;
+    border: solid rgba(0, 0, 0, 0.25) 1px;
+    padding: 0.25rem 0.3rem 0.1rem;
+  }
+
   blockquote {
     margin-block: 1rem;
-    padding: 0.25rem 0.8rem;
-    border-left: 4px solid #4caf50;
+    padding: 0.5rem 0.8rem;
+    border-left: 4.5px solid #4caf50;
+    background-color: #353535;
   }
 
   hr {
@@ -124,10 +121,9 @@
 
   .block {
     max-width: 62rem;
-    border: solid #353535 1px;
+    border: solid #373737 1px;
     background-color: #2b2b2b;
     padding: 1.7rem;
-    border-radius: 1px;
   }
 </style>
 
@@ -135,10 +131,13 @@
   <div class="mx-auto max-w-2xl block">
     <h1>How to Use Stremio</h1>
     <p>
-      Hi! Say goodbye to Sudo's prime and hello to developers leaving a project 💀. In light of
-      this, we all need free media, so I put together a guide (it's super simple just follow the
-      steps) to get the best streaming service that works on desktop, mobile (Android, NOT iOS), and
-      FireStick!
+      Welcome! As we move on from Sudo's prime, it's the perfect time to explore fresh and exciting
+      ways to enjoy your favorite content. Streaming has become a big part of our daily lives, and
+      finding the right platform can make all the difference. That’s why I’ve put together this
+      detailed, step-by-step guide to help you get the most out of the best free streaming service
+      available today. Whether you’re on a desktop, Android device (sorry, iOS users!), or even a
+      FireStick, this guide will walk you through everything so you can make the most of your
+      streaming experience no matter your skill level.
     </p>
     <br />
 
@@ -206,13 +205,19 @@
       </li>
     </ol>
 
-    <div class="admonition note">
-      <div class="flex flex-row gap-1">
-        <Info class="h-5 w-auto items-center" />
-        <p class="admonition-title">Real Debrid Limits</p>
+    <div class="admonition">
+      <div class="flex flex-row gap-2">
+        <a
+          href="https://guides.viren070.me/stremio/faq#do-i-need-a-vpn"
+          rel=""
+          title="User Manual FAQ Reference"
+          target="_blank">
+          <TriangleAlert class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Real-Debrid Limits</p>
       </div>
       Keep in mind that Real-Debrid only allows devices on the same network as you. It supports unlimited
-      devices on one IP at a time. You do<strong>NOT</strong> need to use a VPN while using Real Debrid.
+      devices on one IP at a time. You do NOT need to use a VPN while using Real-Debrid.
     </div>
 
     <h2><em>2.</em> Stremio Setup</h2>
@@ -372,63 +377,83 @@
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
       there are many other providers. The reason these aren't used in this guide is due to their
       lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
-      there are cheaper providers such as AllDebrid, Debrid-Link, and Torbox to name a few. Other
-      Debrid providers can be found <a
-        href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
-        rel=""
-        target="_blank">here</a
-      >.
+      there are cheaper providers such as Torbox, Debrid-Link, and AllDebrid to name a few.
     </p>
-    <ul>
+    <div class="admonition">
+      <div class="flex flex-row gap-2">
+        <a
+          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+          rel=""
+          title="List of Legal Limitations for Debrid Providers"
+          target="_blank">
+          <Info class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Legal Limitations of Debrid Providers</p>
+      </div>
+      Before purchasing a Debrid service other than Real-Debrid, please check the laws and regulations
+      of the municipality where the service is based. Some providers operate in countries with strict
+      anti-piracy laws, which may be acceptable if the provider does not succumb to external pressure.
+      In conclusion, I recommend researching the provider and its limitations thoroughly before purchasing
+      a plan.
+    </div>
+    <ol>
       <li>
         <a
-          href="https://real-debrid.com/?id=11626869"
+          href="https://real-debrid.com/premium?id=11626869"
           rel=""
-          target="_blank">Real Debrid</a>
+          target="_blank">Real-Debrid</a
+        >, <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
-          href="https://alldebrid.com/"
+          href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
           rel=""
-          target="_blank">AllDebrid</a>
+          target="_blank">Torbox</a
+        >, <span title="South Africa">🇿🇦</span>
       </li>
       <li>
         <a
-          href="https://www.premiumize.me/"
+          href="https://alldebrid.com/offer"
           rel=""
-          target="_blank">Premiumize</a>
+          target="_blank">AllDebrid</a
+        >, <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
-          href="https://debrid-link.com/"
+          href="https://www.premiumize.me/premium"
           rel=""
-          target="_blank">Debrid-Link</a>
+          target="_blank">Premiumize</a
+        >, <span title="Malaysia">🇲🇾</span>
       </li>
       <li>
         <a
-          href="https://offcloud.com/"
+          href="https://debrid-link.com/webapp/register"
           rel=""
-          target="_blank">Offcloud</a>
+          target="_blank">Debrid-Link</a
+        >, <span title="France">🇫🇷</span>
       </li>
       <li>
         <a
-          href="https://put.io/"
+          href="https://put.io/plans/"
           rel=""
-          target="_blank">Put.io</a>
+          target="_blank">Put.io</a
+        >, <span title="Turkey">🇹🇷</span>
       </li>
       <li>
         <a
-          href="https://torbox.app/"
+          href="https://offcloud.com/#pricing"
           rel=""
-          target="_blank">Torbox</a>
+          target="_blank">OffCloud</a
+        >, <span title="Bulgaria">🇧🇬</span>
       </li>
       <li>
         <a
-          href="https://bestdebrid.com/"
+          href="https://www.deepbrid.com/home#pricing"
           rel=""
-          target="_blank">Best Debrid</a>
+          target="_blank">Deepbrid</a
+        >, <span title="Switzerland">🇨🇭</span>
       </li>
-    </ul>
+    </ol>
 
     <h3>Other Addons</h3>
     <ul>
@@ -438,7 +463,37 @@
           rel=""
           target="_blank">SubHero</a
         >: SubHero is a Stremio addon that provides subtitles for movies and TV shows using the
-        Wyzie Subs API (which I also run).
+        Wyzie Subs API.
+      </li>
+      <li>
+        <a
+          href="https://5a0d1888fa64-orion.baby-beamup.club/"
+          rel=""
+          target="_blank">Orion</a
+        >: Orion Stremio Addon allows Orion-indexed torrent, usenet, and hoster links to be played
+        on Stremio.
+      </li>
+      <li>
+        <a
+          href="https://stremio-addons.com/usa-tv.html"
+          rel=""
+          target="_blank">USA TV</a
+        >: Provides access to channels including local channels, news, sports, entertainment, and
+        more.
+      </li>
+      <li>
+        <a
+          href="https://stremio-addons.com/cyberflix-catalog.html"
+          rel=""
+          target="_blank">Cyberflix Catalog</a
+        >: Aggregates popular steaming platforms such as Netflix, Amazon Prime or Hulu.
+      </li>
+      <li>
+        <a
+          href="https://chromewebstore.google.com/detail/imdb-trakt-open-in-stremi/jlmmgfkhpanoeigimlaadjcdjljihmfb"
+          rel=""
+          target="_blank">Open in Stremio</a
+        >: Allow you to open movies you see on IMDB or Trakt straight to your Stremio.
       </li>
       <li>
         <a
@@ -449,34 +504,10 @@
       </li>
       <li>
         <a
-          href="https://stremio-addons.com/cyberflix-catalog.html"
-          rel=""
-          target="_blank">Cyberflix Catalog</a
-        >: Aggregates the most popular steaming platforms such as Netflix, Amazon Prime or Hulu, and
-        also specific catalogs for Kids, Asian or Anime.
-      </li>
-      <li>
-        <a
-          href="https://stremio-addons.com/usa-tv.html"
-          rel=""
-          target="_blank">USA TV</a
-        >: USA TV provides access to channels across various categories including local channels,
-        news, sports, entertainment, and more.
-      </li>
-      <li>
-        <a
           href="https://mediafusion.elfhosted.com/configure/"
           rel=""
           target="_blank">MediaFusion</a
-        >: Addon for live TV and sports events.
-      </li>
-      <li>
-        <a
-          href="https://5a0d1888fa64-orion.baby-beamup.club/"
-          rel=""
-          target="_blank">Orion</a
-        >: Orion Stremio Addon allows Orion-indexed torrent, usenet, and hoster links to be played
-        on Stremio.
+        >: Addon for live TV and sports events across the globe.
       </li>
     </ul>
     <p>
@@ -495,15 +526,9 @@
     <ul>
       <li>
         <a
-          href="https://guides.viren070.me/stremio"
-          rel=""
-          target="_blank">Stremio User Manual</a>
-      </li>
-      <li>
-        <a
           href="https://www.reddit.com/r/StremioAddons/comments/yi5jdw/ultimate_guide_to_stremio_torrentio_rd/"
           rel=""
-          target="_blank">Guide to Stremio Torrentio RD</a>
+          target="_blank">Guide to Stremio Torrentio</a>
       </li>
       <li>
         <a
@@ -513,15 +538,27 @@
       </li>
       <li>
         <a
+          href="https://guides.viren070.me/stremio"
+          rel=""
+          target="_blank">Stremio User Manual</a>
+      </li>
+      <li>
+        <a
           href="https://www.comparitech.com/kodi/what-is-stremio/#:~:text=First%20you'll%20need%20a,allowed%20to%20access%20your%20account."
           rel=""
           target="_blank">Signing Into Trakt</a>
       </li>
       <li>
         <a
-          href="https://real-debrid.com/?id=11626869"
+          href="https://www.reddit.com/r/Addons4Kodi/comments/1hfa8cp/comparison_of_debrid_services_for_streaming/"
           rel=""
-          target="_blank">Real-Debrid</a>
+          target="_blank">Debrid Services</a>
+      </li>
+      <li>
+        <a
+          href="https://stremio.zendesk.com/hc/en-us/categories/115000394751-Frequently-Asked-Questions"
+          rel=""
+          target="_blank">Stremio FAQ's'</a>
       </li>
     </ul>
 
