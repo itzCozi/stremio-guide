@@ -116,7 +116,7 @@
     border: 0;
     height: 1px;
     margin-block: 1rem;
-    background: #757575;
+    background: #7a7a7a;
   }
 
   .block {
@@ -402,56 +402,80 @@
           href="https://real-debrid.com/premium?id=11626869"
           rel=""
           target="_blank">Real-Debrid</a
-        >, <span title="France">🇫🇷</span>
+        >,
+        <span
+          class="underline"
+          title="France">🇫🇷</span>
       </li>
       <li>
         <a
           href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
           rel=""
           target="_blank">Torbox</a
-        >, <span title="South Africa">🇿🇦</span>
+        >,
+        <span
+          class="underline"
+          title="South Africa">🇿🇦</span>
       </li>
       <li>
         <a
           href="https://alldebrid.com/offer"
           rel=""
           target="_blank">AllDebrid</a
-        >, <span title="France">🇫🇷</span>
+        >,
+        <span
+          class="underline"
+          title="France">🇫🇷</span>
       </li>
       <li>
         <a
           href="https://www.premiumize.me/premium"
           rel=""
           target="_blank">Premiumize</a
-        >, <span title="Malaysia">🇲🇾</span>
+        >,
+        <span
+          class="underline"
+          title="Malaysia">🇲🇾</span>
       </li>
       <li>
         <a
           href="https://debrid-link.com/webapp/register"
           rel=""
           target="_blank">Debrid-Link</a
-        >, <span title="France">🇫🇷</span>
+        >,
+        <span
+          class="underline"
+          title="France">🇫🇷</span>
       </li>
       <li>
         <a
           href="https://put.io/plans/"
           rel=""
           target="_blank">Put.io</a
-        >, <span title="Turkey">🇹🇷</span>
+        >,
+        <span
+          class="underline"
+          title="Turkey">🇹🇷</span>
       </li>
       <li>
         <a
           href="https://offcloud.com/#pricing"
           rel=""
           target="_blank">OffCloud</a
-        >, <span title="Bulgaria">🇧🇬</span>
+        >,
+        <span
+          class="underline"
+          title="Bulgaria">🇧🇬</span>
       </li>
       <li>
         <a
           href="https://www.deepbrid.com/home#pricing"
           rel=""
           target="_blank">Deepbrid</a
-        >, <span title="Switzerland">🇨🇭</span>
+        >,
+        <span
+          class="underline"
+          title="Switzerland">🇨🇭</span>
       </li>
     </ol>
 
