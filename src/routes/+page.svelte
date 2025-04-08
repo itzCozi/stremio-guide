@@ -272,11 +272,7 @@
 </style>
 
 <div class="items-center justify-center min-h-screen p-4">
-  <div
-    class="mx-auto max-w-2xl block"
-    style="
-      margin-right: {isTocOpen ? '0' : 'auto'};
-      margin-left: {isTocOpen ? '0' : 'auto'};">
+  <div class="mx-auto max-w-2xl block">
     <div class="toc {isTocOpen ? '' : 'collapsed'}">
       <div class="toc-content">
         <!-- svelte-ignore a11y_click_events_have_key_events -->
