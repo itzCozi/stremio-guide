@@ -38,10 +38,6 @@
     transition: margin-right 0.3s ease-in-out; /* Smooth transition */
   }
 
-  .block.toc-open {
-    margin-right: 14.8rem; /* Adjust this value to match the TOC width */
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -220,7 +216,7 @@
       height 0.3s ease,
       width 0.3s ease;
     transform: translateX(0);
-    height: 50px;
+    height: 100vh;
   }
 
   .toc.collapsed {
@@ -228,7 +224,6 @@
   }
 
   .toc:not(.collapsed) {
-    height: 100%;
     overflow-y: auto;
   }
 
@@ -372,7 +367,7 @@
       <a href="#more">More Questions?</a>
     </div>
   </div>
-  <div class="mx-auto block {isTocOpen ? 'toc-open' : ''}">
+  <div class="mx-auto block">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="flex justify-between items-center -m-2">
@@ -398,7 +393,7 @@
 
     <h1
       id="how-to"
-      class="flex justify-center items-center relative">
+      class="flex flex-row gap-2 justify-center items-center relative">
       <button
         class="jump-to absolute font-normal"
         type="button"
