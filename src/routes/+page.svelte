@@ -340,6 +340,9 @@
           <a href="#android">Android Setup</a>
         </li>
         <li>
+          <a href="#usenet">Usenet Setup</a>
+        </li>
+        <li>
           <a href="#trakt">Logging Into Trakt.tv</a>
         </li>
         <li>
