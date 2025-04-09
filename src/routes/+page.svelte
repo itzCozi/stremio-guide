@@ -31,10 +31,15 @@
 
 <style>
   .block {
-    max-width: 62rem;
+    max-width: 60rem;
     border-inline: solid #383838 1px;
     background-color: #2b2b2b;
     padding: 1.7rem;
+    transition: margin-right 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  .block.toc-open {
+    margin-right: 14.8rem; /* Adjust this value to match the TOC width */
   }
 
   @keyframes fadeIn {
@@ -106,8 +111,9 @@
 
   ol.sm,
   ul.sm {
-    margin-block: 0.5rem;
-    line-height: normal;
+    padding-left: 1.25rem;
+    margin-block: 0.1rem;
+    line-height: 0.9rem;
     list-style-type: "- ";
   }
 
@@ -196,7 +202,7 @@
     border: 0;
     height: 1px;
     background: #7a7a7a;
-    margin-block: 0.3rem;
+    margin-block: 0.5rem;
   }
 
   .toc {
@@ -208,6 +214,7 @@
     border-left: solid #383838 1px;
     color: #ffffff;
     font-size: 0.9rem;
+    width: 14.5rem;
     transition:
       transform 0.2s ease-in-out,
       height 0.3s ease,
@@ -304,7 +311,7 @@
       <!-- svelte-ignore a11y_no_static_element_interactions -->
       <div class="flex items-center justify-between">
         <p class="font-bold text-center">Table of Contents</p>
-        <div class="items-center -mr-1 w-fit mx-auto">
+        <div class="flex items-center">
           <span on:click={toggleToc}>
             <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
           </span>
@@ -365,7 +372,7 @@
       <a href="#more">More Questions?</a>
     </div>
   </div>
-  <div class="mx-auto max-w-2xl block">
+  <div class="mx-auto block {isTocOpen ? 'toc-open' : ''}">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="flex justify-between items-center -m-2">
