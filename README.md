@@ -6,5 +6,5 @@ tips.
 Please contribute if you think something is missing or incorrect!
 
 - [Contribution Guide](CONTRIBUTING.md)
+- [Community Telegram](https://t.me/+B3UIJrNsWf0wNzJh)
 - [FMHY Discord](https://rentry.co/fmhy-invite)
-- [Stremio](https://www.stremio.com/)

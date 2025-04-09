@@ -566,8 +566,7 @@
       </li>
     </ol>
 
-    <em class="underline"
-      >Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
+    <em>Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
 
     <div class="admonition">
       <div class="flex flex-row gap-1">
@@ -776,12 +775,12 @@
       Android Setup
     </h3>
     <p>
-      <strong
+      <em
         >Stremio can be installed from the <a
           href="https://play.google.com/store/apps/details?id=com.stremio.one"
           rel=""
           target="_blank">Play Store</a
-        ></strong>
+        ></em>
     </p>
     <ol>
       <li>
@@ -1112,7 +1111,11 @@
         href="https://github.com/itzcozi/stremio-guide"
         rel=""
         target="_blank">here</a
-      >. I'm open to additions and corrections via pull requests :)
+      >. I'm open to additions and corrections via pull requests on Github. Join our community on{" "}
+      <a
+        href="https://t.me/+B3UIJrNsWf0wNzJh"
+        rel=""
+        target="_blank">Telegram</a> for discussions and support regarding Stremio!
     </p>
   </div>
   <footer class="mt-8 text-center text-type-dimmed text-sm">
