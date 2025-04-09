@@ -10,16 +10,14 @@
   let isTocOpen = false;
   let isPopupVisible = false;
 
-  function copyToClipboard() {
-    const refCode = Math.random().toString(36).substring(2, 8);
-    const textToCopy = `Learn how to use Stremio by following this simple guide: https://bye.undi.rest/?ref=${refCode}`;
+  function copyToClipboard(textToCopy) {
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
         isPopupVisible = true;
         setTimeout(() => {
           isPopupVisible = false;
-        }, 3000); // Hide popup after 3 seconds
+        }, 3000);
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);
@@ -110,7 +108,6 @@
   ul.sm {
     margin: 0;
     line-height: normal;
-    padding-left: 1.3rem;
     list-style-type: "- ";
   }
 
@@ -205,19 +202,18 @@
   .toc {
     position: fixed;
     right: 0;
-    width: 235px;
     background-color: #2b2b2b;
     padding: 0.8rem 1.2rem;
     margin-inline: 1.1rem;
     border: solid #383838 1px;
     color: #ffffff;
     font-size: 0.9rem;
-    transition: transform 0.28s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     transform: translateX(0);
   }
 
   .toc.collapsed {
-    transform: translateX(150%);
+    transform: translateX(110%);
   }
 
   .toc-toggle {
@@ -259,14 +255,36 @@
 
   .popup {
     position: fixed;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
     background-color: #2b2b2b;
     border: solid #383838 1px;
     color: #ffffff;
     padding: 0.5rem;
     z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .jump-to {
+    left: 0;
+    font-size: 1.2rem;
+    color: #6fcf6fc0;
+    font-weight: normal;
+  }
+
+  .jump-to:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .jump-to-2 {
+    left: 0;
+    color: #6fcf6fc0;
+  }
+
+  .jump-to:hover-2 {
+    cursor: pointer;
+    text-decoration: underline;
   }
 </style>
 
@@ -283,6 +301,18 @@
           </span>
         </div>
       </div>
+      <a href="#how-to">Intro</a>
+      <ul class="sm">
+        <li>
+          <a href="#preview">Preview</a>
+        </li>
+        <li>
+          <a href="#prerequisites">Prerequisites</a>
+        </li>
+        <li>
+          <a href="#for-da-free">For Free?</a>
+        </li>
+      </ul>
       <a href="#token">Debrid Service Token</a>
       <ul class="sm">
         <li>
@@ -339,14 +369,22 @@
     </div>
     {#if isPopupVisible}
       <div class="popup">
-        <div class="flex items-center justify-center flex-row gap-3">
+        <div class="flex items-center justify-center flex-row gap-2">
           <CopyCheck class="h-5 w-auto" />
           Copied to clipboard
         </div>
       </div>
     {/if}
 
-    <h1 id="how-to">How to Use Stremio</h1>
+    <h1
+      id="how-to"
+      class="flex justify-center items-center relative">
+      <button
+        class="jump-to absolute font-normal"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#how-to")}>#</button>
+      How to Use Stremio
+    </h1>
 
     <div class="intro">
       <div class="flex flex-row gap-1 mb-[0.5rem]">
@@ -378,7 +416,15 @@
     </p>
     <br />
 
-    <p id="preview"><strong>Preview of Stremio<strong></strong></strong></p>
+    <p
+      id="preview"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#preview")}>#</button>
+      <strong>Preview of Stremio<strong> </strong></strong>
+    </p>
     <div class="flex justify-center">
       <img
         alt="Preview"
@@ -387,13 +433,29 @@
         title="Preview" />
     </div>
 
-    <h3 id="prerequisites">Prerequisites</h3>
+    <h3
+      id="prerequisites"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#prerequisites")}>#</button>
+      Prerequisites
+    </h3>
     <ol>
       <li>You need the Stremio client.</li>
       <li>You need the appropriate addons for streaming.</li>
       <li>You need a Real-Debrid subscription (~$5 a month).</li>
     </ol>
-    <p id="for-da-free"><strong>Can I Do This for Free?</strong></p>
+    <p
+      id="for-da-free"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#for-da-free")}>#</button>
+      <strong>Can I Do This for Free?</strong>
+    </p>
     <p>
       Yes. Skip the Debrid subscription and just use the plain Torrentio addon. The setup is the
       same, but you must set the "Debrid Provider" to "None" in the Torrentio configuration. This
@@ -401,9 +463,25 @@
       service will not be protecting you.
     </p>
 
-    <h2 id="guide">Guide</h2>
+    <h2
+      id="guide"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#guide")}>#</button>
+      Guide
+    </h2>
     <hr />
-    <h2 id="token"><em>1.</em> Debrid Service Token</h2>
+    <h2
+      id="token"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to-2"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#token")}><em>1.</em></button>
+      Debrid Service Token
+    </h2>
 
     <p>
       What is Debrid? Debrid is a service that allows you to download and stream all kinds of
@@ -414,7 +492,15 @@
     </p>
     <br />
 
-    <p id="real-debrid-sub"><strong>Getting Your Real-Debrid Subscription and API Token</strong></p>
+    <p
+      id="real-debrid-sub"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#real-debrid-sub")}>#</button>
+      <strong>Getting Your Real-Debrid Subscription and API Token</strong>
+    </p>
     <ol>
       <li>
         Head to <a
@@ -441,7 +527,15 @@
       </li>
     </ol>
 
-    <p id="torbox-sub"><strong>Getting Your Torbox Subscription and API Token</strong></p>
+    <p
+      id="torbox-sub"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#torbox-sub")}>#</button>
+      <strong>Getting Your Torbox Subscription and API Token</strong>
+    </p>
     <ol>
       <li>
         Go to <a
@@ -492,7 +586,15 @@
       >{" "} when using a Debrid service as traffic is routed through their servers.
     </div>
 
-    <h2 id="stremio"><em>2.</em> Stremio Setup</h2>
+    <h2
+      id="stremio"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to-2"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#stremio")}><em>2.</em></button> Stremio
+      Setup
+    </h2>
     <hr />
 
     <p>
@@ -531,7 +633,15 @@
       >, a specialized fork of Stremio made for Apple platforms.
     </div>
 
-    <p id="install"><strong>Installing Stremio &amp; Setting up Torrentio</strong></p>
+    <p
+      id="install"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#install")}>#</button>
+      <strong>Installing Stremio &amp; Setting up Torrentio</strong>
+    </p>
     <ol>
       <li>
         Download the client by heading to <a
@@ -585,7 +695,15 @@
       Desktops users sadly.
     </div>
 
-    <p id="more-addons"><strong>Additional Addons May Ask for Your API Key</strong></p>
+    <p
+      id="more-addons"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#more-addons")}>#</button>
+      <strong>Additional Addons May Ask for Your API Key</strong>
+    </p>
     <p>
       When installing other addons that aren't Torrentio, you may be asked for your Debrid API token
       again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
@@ -593,10 +711,26 @@
       listed in the "Community Addons" section, are fair game.
     </p>
 
-    <h2 id="extra"><em>3.</em> Extra Setup &amp; Customization</h2>
+    <h2
+      id="extra"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to-2"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#extra")}><em>3.</em></button> Extra
+      Setup &amp; Customization
+    </h2>
     <hr />
 
-    <h3 id="firestick">FireStick Setup</h3>
+    <h3
+      id="firestick"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#firestick")}>#</button>
+      FireStick Setup
+    </h3>
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
@@ -629,7 +763,15 @@
       </li>
     </ol>
 
-    <h3 id="android">Android Setup</h3>
+    <h3
+      id="android"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#android")}>#</button>
+      Android Setup
+    </h3>
     <p>
       <strong
         >Stremio can be installed from the <a
@@ -648,7 +790,15 @@
       <li>Sync addons in the "Addons" menu.</li>
     </ol>
 
-    <h3 id="usenet">Usenet Setup</h3>
+    <h3
+      id="usenet"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#usenet")}>#</button>
+      Usenet Setup
+    </h3>
     <!-- https://guides.viren070.me/stremio/setup#usenet -->
     <p>
       Usenet is a decentralized platform for sharing content, organized into "newsgroups," which
@@ -694,8 +844,15 @@
       >.
     </em>
 
-    <h3 id="trakt">
-      Logging Into <a
+    <h3
+      id="trakt"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#trakt")}>#</button>
+      Logging Into
+      <a
         href="http://Trakt.tv"
         rel=""
         target="_blank">Trakt.tv</a>
@@ -723,7 +880,15 @@
       </li>
     </ol>
 
-    <h3 id="debrid">Different Debrid Providers</h3>
+    <h3
+      id="debrid"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#debrid")}>#</button>
+      Different Debrid Providers
+    </h3>
     <p>
       There are multiple Debrid providers available, some better than others. I (and many others)
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
@@ -815,7 +980,15 @@
       </li>
     </ol>
 
-    <h3 id="addons">Other Addons</h3>
+    <h3
+      id="addons"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#addons")}>#</button>
+      Other Addons
+    </h3>
     <ul>
       <li>
         <a
@@ -880,7 +1053,15 @@
         >.</em>
     </p>
 
-    <h2 id="more">More Questions?</h2>
+    <h2
+      id="more"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => copyToClipboard(window.location.origin + "/#more")}>#</button>
+      More Questions?
+    </h2>
     <hr />
 
     <ul>
