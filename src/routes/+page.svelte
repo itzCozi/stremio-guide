@@ -31,11 +31,10 @@
 
 <style>
   .block {
-    max-width: 60rem;
-    border-inline: solid #383838 1px;
+    max-width: 62rem;
     background-color: #2b2b2b;
-    padding: 1.7rem;
-    transition: margin-right 0.3s ease-in-out; /* Smooth transition */
+    border-inline: solid #383838 1px;
+    padding: 1.6rem;
   }
 
   @keyframes fadeIn {
@@ -73,7 +72,7 @@
   }
 
   strong {
-    color: #dfdfdf;
+    color: #f0f0f0;
   }
 
   em {
@@ -81,15 +80,15 @@
   }
 
   footer {
-    color: #a0a0a0;
+    color: #aaaaaa;
   }
 
   .dimmed {
-    color: #c0c0c0;
+    color: #c8c8c8;
   }
 
   a {
-    color: #6fcf6f;
+    color: #65dd65;
     text-decoration: none;
   }
 
@@ -239,8 +238,7 @@
 
   .toc a {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #6fcf6f;
+    margin-bottom: 0.38rem;
     text-decoration: none;
   }
 
@@ -279,7 +277,7 @@
   .jump-to {
     left: 0;
     font-size: 1.2rem;
-    color: #6fcf6fc0;
+    color: #65dd65;
     font-weight: normal;
   }
 
@@ -290,7 +288,7 @@
 
   .jump-to-2 {
     left: 0;
-    color: #6fcf6fc0;
+    color: #65dd65;
   }
 
   .jump-to:hover-2 {
@@ -299,7 +297,7 @@
   }
 </style>
 
-<div class="items-center justify-center min-h-screen">
+<div class="items-center justify-center">
   <div class="toc {isTocOpen ? '' : 'collapsed'}">
     <div class="toc-content">
       <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -370,10 +368,12 @@
   <div class="mx-auto block">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="flex justify-between items-center -m-2">
+    <div class="flex justify-between items-center -m-1">
       <div
         class="cursor-pointer"
-        on:click={copyToClipboard}>
+        on:click={copyToClipboard(
+          window.location.origin + `/?id=${Math.random().toString(36).substring(2, 8)}`,
+        )}>
         <Share class="h-6 w-auto" />
       </div>
       <div
@@ -397,7 +397,11 @@
       <button
         class="jump-to absolute font-normal"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#how-to")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#how-to";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       How to Use Stremio
     </h1>
 
@@ -437,7 +441,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#preview")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#preview";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Preview of Stremio<strong> </strong></strong>
     </p>
     <div class="flex justify-center">
@@ -454,7 +462,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#prerequisites")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#prerequisites";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Prerequisites
     </h3>
     <ol>
@@ -468,7 +480,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#for-da-free")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#for-da-free";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Can I Do This for Free?</strong>
     </p>
     <p>
@@ -478,15 +494,6 @@
       service will not be protecting you.
     </p>
 
-    <h2
-      id="guide"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#guide")}>#</button>
-      Guide
-    </h2>
     <hr />
     <h2
       id="token"
@@ -494,7 +501,11 @@
       <button
         class="jump-to-2"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#token")}><em>1.</em></button>
+        on:click={() => {
+          const url = window.location.origin + "/#token";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}><em>1.</em></button>
       Debrid Service Token
     </h2>
 
@@ -513,7 +524,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#real-debrid-sub")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#real-debrid-sub";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Getting Your Real-Debrid Subscription and API Token</strong>
     </p>
     <ol>
@@ -548,7 +563,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#torbox-sub")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#torbox-sub";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Getting Your Torbox Subscription and API Token</strong>
     </p>
     <ol>
@@ -606,8 +625,11 @@
       <button
         class="jump-to-2"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#stremio")}><em>2.</em></button> Stremio
-      Setup
+        on:click={() => {
+          const url = window.location.origin + "/#stremio";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}><em>2.</em></button> Stremio Setup
     </h2>
     <hr />
 
@@ -653,7 +675,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#install")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#install";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Installing Stremio &amp; Setting up Torrentio</strong>
     </p>
     <ol>
@@ -715,7 +741,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#more-addons")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#more-addons";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       <strong>Additional Addons May Ask for Your API Key</strong>
     </p>
     <p>
@@ -731,8 +761,11 @@
       <button
         class="jump-to-2"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#extra")}><em>3.</em></button> Extra
-      Setup &amp; Customization
+        on:click={() => {
+          const url = window.location.origin + "/#extra";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}><em>3.</em></button> Extra Setup &amp; Customization
     </h2>
     <hr />
 
@@ -742,7 +775,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#firestick")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#firestick";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       FireStick Setup
     </h3>
     <ol>
@@ -783,7 +820,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#android")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#android";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Android Setup
     </h3>
     <p>
@@ -810,7 +851,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#usenet")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#usenet";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Usenet Setup
     </h3>
     <!-- https://guides.viren070.me/stremio/setup#usenet -->
@@ -864,7 +909,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#trakt")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#trakt";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Logging Into
       <a
         href="http://Trakt.tv"
@@ -900,7 +949,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#debrid")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#debrid";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Different Debrid Providers
     </h3>
     <p>
@@ -1000,7 +1053,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#addons")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#addons";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       Other Addons
     </h3>
     <ul>
@@ -1073,7 +1130,11 @@
       <button
         class="jump-to"
         type="button"
-        on:click={() => copyToClipboard(window.location.origin + "/#more")}>#</button>
+        on:click={() => {
+          const url = window.location.origin + "/#more";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
       More Questions?
     </h2>
     <hr />
@@ -1129,7 +1190,7 @@
         rel=""
         target="_blank">Telegram</a> for discussions and support regarding Stremio!
     </p>
-    <footer class="mt-9 text-center text-type-dimmed text-sm">
+    <footer class="mt-6 text-center text-type-dimmed text-sm">
       <p class="flex justify-center items-center space-x-2">
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <a
