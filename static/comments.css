@@ -77,11 +77,11 @@ main {
   --color-neutral-muted: rgb(175 184 193 / 19%);
 
   /* --color-accent-fg: rgba(var(--primary-default), 1); */
-  --color-accent-fg: #aaa; /* needed for links contrast */
+  --color-accent-fg: #65dd65; /* needed for links contrast */
   --color-accent-emphasis: rgba(var(--primary-default), 0.95);
   --color-accent-muted: rgba(var(--primary-default), 0.4);
   --color-accent-subtle: rgba(var(--primary-default), 0.1);
-  --color-success-fg: #3fb950;
+  --color-success-fg: #4caf50;
   --color-attention-fg: #d29922;
   --color-attention-muted: rgb(187 128 9 / 40%);
   --color-attention-subtle: rgb(187 128 9 / 15%);
@@ -92,7 +92,7 @@ main {
     0 1px 0 rgba(var(--bg-default), 1), inset 0 1px 0 rgba(var(--bg-default), 1);
   --color-scale-gray-7: rgb(22 22 24 / 100%);
   --color-scale-blue-8: rgb(16 185 129 / 15%);
-  --color-text-link: #aaa;
+  --color-text-link: #65dd65;
 
   /*! Extensions from @primer/css/alerts/flash.scss */
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
