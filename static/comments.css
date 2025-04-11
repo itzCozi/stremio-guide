@@ -79,14 +79,25 @@ main {
 .gsc-comments .gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
-  font-weight: bold;
+  text-underline-offset: 4px;
   transition: all 0.2s;
 }
-.gsc-comments .gsc-header .gsc-left-header em a:hover {
-  color: var(--text-normal-color);
+.gsc-comments .gsc-header .gsc-left-header em a {
+  color: var(--text-muted-color);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.gsc-comment-box-main .gsc-comment-box-write .gsc-comment-box-textarea-extras {
+  border-radius: 0;
 }
 .gsc-right-header {
   border-radius: 0;
+}
+.gsc-right-header li {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 .gsc-right-header li:not(.BtnGroup-item--selected) {
   border-top: none;
