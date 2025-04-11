@@ -1,5 +1,5 @@
 :host, html {
-  --font-family-serif: "Open Sans", Arial, Helvetica, sans-serif;
+  --font-family-serif: "Open Sans", Helvetica, Arial,sans-serif;
   --font-family-default: var(--font-family-serif);
 }
 main {
@@ -7,71 +7,71 @@ main {
   --color-prettylights-syntax-constant: #65dd65;
   --color-prettylights-syntax-entity: #ffffff;
   --color-prettylights-syntax-storage-modifier-import: #2b2b2b;
-  --color-prettylights-syntax-entity-tag: #65dd65; /* Matches link color */
-  --color-prettylights-syntax-keyword: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-string: #65dd65; /* Matches link color */
-  --color-prettylights-syntax-variable: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69; /* Matches error color */
-  --color-prettylights-syntax-invalid-illegal-text: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-invalid-illegal-bg: #e82a2f; /* Matches error background */
-  --color-prettylights-syntax-carriage-return-text: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-carriage-return-bg: #ff4445; /* Matches error background */
-  --color-prettylights-syntax-string-regexp: #65dd65; /* Matches link color */
-  --color-prettylights-syntax-markup-list: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-markup-heading: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-markup-italic: #c8c8c8; /* Matches dimmed text */
-  --color-prettylights-syntax-markup-bold: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-markup-deleted-text: #ff6a69; /* Matches error color */
-  --color-prettylights-syntax-markup-deleted-bg: #e82a2f; /* Matches error background */
-  --color-prettylights-syntax-markup-inserted-text: #65dd65; /* Matches link color */
-  --color-prettylights-syntax-markup-inserted-bg: #2b383e; /* Matches intro background */
-  --color-prettylights-syntax-markup-changed-text: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-markup-changed-bg: #ffc67b; /* Matches highlight color */
-  --color-prettylights-syntax-markup-ignored-text: #c8c8c8; /* Matches dimmed text */
-  --color-prettylights-syntax-markup-ignored-bg: #2b2b2b; /* Matches block background */
-  --color-prettylights-syntax-meta-diff-range: #ffffff; /* Matches white text */
-  --color-prettylights-syntax-brackethighlighter-angle: #c8c8c8; /* Matches dimmed text */
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #7a7a7a; /* Matches hr color */
-  --color-prettylights-syntax-constant-other-reference-link: #65dd65; /* Matches link color */
-  --text-muted-color: #c8c8c8; /* Matches dimmed text */
-  --text-normal-color: #ffffff; /* Matches white text */
+  --color-prettylights-syntax-entity-tag: #65dd65;
+  --color-prettylights-syntax-keyword: #ffffff;
+  --color-prettylights-syntax-string: #65dd65;
+  --color-prettylights-syntax-variable: #ffffff;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69;
+  --color-prettylights-syntax-invalid-illegal-text: #ffffff;
+  --color-prettylights-syntax-invalid-illegal-bg: #e82a2f;
+  --color-prettylights-syntax-carriage-return-text: #ffffff;
+  --color-prettylights-syntax-carriage-return-bg: #ff4445;
+  --color-prettylights-syntax-string-regexp: #65dd65;
+  --color-prettylights-syntax-markup-list: #ffffff;
+  --color-prettylights-syntax-markup-heading: #ffffff;
+  --color-prettylights-syntax-markup-italic: #c8c8c8;
+  --color-prettylights-syntax-markup-bold: #ffffff;
+  --color-prettylights-syntax-markup-deleted-text: #ff6a69;
+  --color-prettylights-syntax-markup-deleted-bg: #e82a2f;
+  --color-prettylights-syntax-markup-inserted-text: #65dd65;
+  --color-prettylights-syntax-markup-inserted-bg: #2b383e;
+  --color-prettylights-syntax-markup-changed-text: #ffffff;
+  --color-prettylights-syntax-markup-changed-bg: #ffc67b;
+  --color-prettylights-syntax-markup-ignored-text: #c8c8c8;
+  --color-prettylights-syntax-markup-ignored-bg: #2b2b2b;
+  --color-prettylights-syntax-meta-diff-range: #ffffff;
+  --color-prettylights-syntax-brackethighlighter-angle: #c8c8c8;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #7a7a7a;
+  --color-prettylights-syntax-constant-other-reference-link: #65dd65;
+  --text-muted-color: #c8c8c8;
+  --text-normal-color: #ffffff;
   --color-segmented-control-bg: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
   main {
-    --color-prettylights-syntax-comment: #aaaaaa; /* Matches dimmed text */
-    --color-prettylights-syntax-constant: #65dd65; /* Matches link color */
-    --color-prettylights-syntax-entity: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-storage-modifier-import: #2b2b2b; /* Matches block background */
-    --color-prettylights-syntax-entity-tag: #65dd65; /* Matches link color */
-    --color-prettylights-syntax-keyword: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-string: #65dd65; /* Matches link color */
-    --color-prettylights-syntax-variable: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69; /* Matches error color */
-    --color-prettylights-syntax-invalid-illegal-text: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-invalid-illegal-bg: #e82a2f; /* Matches error background */
-    --color-prettylights-syntax-carriage-return-text: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-carriage-return-bg: #ff4445; /* Matches error background */
-    --color-prettylights-syntax-string-regexp: #65dd65; /* Matches link color */
-    --color-prettylights-syntax-markup-list: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-markup-heading: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-markup-italic: #c8c8c8; /* Matches dimmed text */
-    --color-prettylights-syntax-markup-bold: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-markup-deleted-text: #ff6a69; /* Matches error color */
-    --color-prettylights-syntax-markup-deleted-bg: #e82a2f; /* Matches error background */
-    --color-prettylights-syntax-markup-inserted-text: #65dd65; /* Matches link color */
-    --color-prettylights-syntax-markup-inserted-bg: #2b383e; /* Matches intro background */
-    --color-prettylights-syntax-markup-changed-text: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-markup-changed-bg: #ffc67b; /* Matches highlight color */
-    --color-prettylights-syntax-markup-ignored-text: #c8c8c8; /* Matches dimmed text */
-    --color-prettylights-syntax-markup-ignored-bg: #2b2b2b; /* Matches block background */
-    --color-prettylights-syntax-meta-diff-range: #ffffff; /* Matches white text */
-    --color-prettylights-syntax-brackethighlighter-angle: #c8c8c8; /* Matches dimmed text */
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #7a7a7a; /* Matches hr color */
-    --color-prettylights-syntax-constant-other-reference-link: #65dd65; /* Matches link color */
-    --text-muted-color: #c8c8c8; /* Matches dimmed text */
-    --text-normal-color: #ffffff; /* Matches white text */
+    --color-prettylights-syntax-comment: #aaaaaa;
+    --color-prettylights-syntax-constant: #65dd65;
+    --color-prettylights-syntax-entity: #ffffff;
+    --color-prettylights-syntax-storage-modifier-import: #2b2b2b;
+    --color-prettylights-syntax-entity-tag: #65dd65;
+    --color-prettylights-syntax-keyword: #ffffff;
+    --color-prettylights-syntax-string: #65dd65;
+    --color-prettylights-syntax-variable: #ffffff;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69;
+    --color-prettylights-syntax-invalid-illegal-text: #ffffff;
+    --color-prettylights-syntax-invalid-illegal-bg: #e82a2f;
+    --color-prettylights-syntax-carriage-return-text: #ffffff;
+    --color-prettylights-syntax-carriage-return-bg: #ff4445;
+    --color-prettylights-syntax-string-regexp: #65dd65;
+    --color-prettylights-syntax-markup-list: #ffffff;
+    --color-prettylights-syntax-markup-heading: #ffffff;
+    --color-prettylights-syntax-markup-italic: #c8c8c8;
+    --color-prettylights-syntax-markup-bold: #ffffff;
+    --color-prettylights-syntax-markup-deleted-text: #ff6a69;
+    --color-prettylights-syntax-markup-deleted-bg: #e82a2f;
+    --color-prettylights-syntax-markup-inserted-text: #65dd65;
+    --color-prettylights-syntax-markup-inserted-bg: #2b383e;
+    --color-prettylights-syntax-markup-changed-text: #ffffff;
+    --color-prettylights-syntax-markup-changed-bg: #ffc67b;
+    --color-prettylights-syntax-markup-ignored-text: #c8c8c8;
+    --color-prettylights-syntax-markup-ignored-bg: #2b2b2b;
+    --color-prettylights-syntax-meta-diff-range: #ffffff;
+    --color-prettylights-syntax-brackethighlighter-angle: #c8c8c8;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #7a7a7a;
+    --color-prettylights-syntax-constant-other-reference-link: #65dd65;
+    --text-muted-color: #c8c8c8;
+    --text-normal-color: #ffffff;
     --color-segmented-control-bg: transparent;
   }
 }
