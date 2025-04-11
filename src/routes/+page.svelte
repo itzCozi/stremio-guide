@@ -1277,7 +1277,26 @@
         rel=""
         target="_blank">Telegram</a> for discussions and support regarding Stremio!
     </p>
-    <footer class="mt-6 text-center text-type-dimmed text-sm">
+    <div class="my-6t">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="itzcozi/stremio-guide"
+        data-repo-id="R_kgDOOU_qwg"
+        data-category="General"
+        data-category-id="DIC_kwDOOU_qws4Co_AB"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="fro"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+    <footer class="text-center text-type-dimmed text-sm">
       <p class="flex justify-center items-center space-x-2">
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <a
