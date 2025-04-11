@@ -200,7 +200,8 @@
     width: 13rem;
     transition:
       transform 0.2s ease-in-out,
-      width 0.3s ease;
+      width 0.3s ease,
+      height 0s;
     transform: translateX(0);
     height: 100%;
   }
