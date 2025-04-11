@@ -128,6 +128,9 @@ main {
 .gsc-comment-box-buttons {
   border-radius: 0;
 }
+.gsc-comment-box-buttons button {
+  border-radius: 0;
+}
 .gsc-comment-box-bottom button:hover {
   color: var(--text-normal-color);
 }
@@ -136,4 +139,7 @@ main {
 }
 .gsc-comment-box-buttons .btn-primary:disabled {
   color: var(--text-muted-color);
+}
+.gsc-comment {
+  border-radius: 0;
 }
