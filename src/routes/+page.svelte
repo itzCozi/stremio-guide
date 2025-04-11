@@ -1277,7 +1277,7 @@
         rel=""
         target="_blank">Telegram</a> for discussions and support regarding Stremio!
     </p>
-    <div class="my-6t">
+    <div class="my-6">
       <script
         src="https://giscus.app/client.js"
         data-repo="itzcozi/stremio-guide"
