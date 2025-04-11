@@ -2,6 +2,7 @@
   text-decoration: none !important;
   font-weight: normal !important;
   border: none !important;
+  border-radius: 0 !important;
 }
 main {
   --primary-default: 99, 99, 99;
