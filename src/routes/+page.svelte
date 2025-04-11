@@ -113,7 +113,7 @@
   ol.sm,
   ul.sm {
     padding-left: 1.25rem;
-    margin-block: 0.1rem;
+    margin-block: 0.3rem;
     line-height: 0.9rem;
     list-style-type: "- ";
   }
@@ -363,6 +363,9 @@
         </li>
         <li>
           <a href="#debrid">Different Debrid Providers</a>
+        </li>
+        <li>
+          <a href="#speed-tests">Debrid Speed Tests</a>
         </li>
         <li>
           <a href="#addons">Other Addons</a>
@@ -1051,6 +1054,76 @@
           target="_blank">Deepbrid</a
         >,
         <span title="Switzerland">🇨🇭</span>
+      </li>
+    </ol>
+
+    <h3
+      id="speed-tests"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#speed-tests";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Debrid Speed Tests
+    </h3>
+    <p>
+      Each debrid provider includes links to speed tests. These tests offer valuable insights into
+      the connection speeds you can expect when using their services.
+    </p>
+    <div class="admonition">
+      <div class="flex flex-row gap-1">
+        <a
+          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+          rel=""
+          title="User Manual FAQ Reference"
+          target="_blank">
+          <TriangleAlert class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Restricted Access</p>
+      </div>
+      You may need to log in to access these pages. If you encounter any errors while trying to access
+      them, please log in to the Debrid service and then try clicking the link again.
+    </div>
+    <ol>
+      <li>
+        <a
+          href="https://real-debrid.com/speedtest"
+          rel=""
+          target="_blank">Real-Debrid</a>
+      </li>
+      <li>
+        <a
+          href="https://torbox.app/tools?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
+          rel=""
+          target="_blank">Torbox</a>
+      </li>
+      <li>
+        <a
+          href="https://alldebrid.com/speedtest"
+          rel=""
+          target="_blank">AllDebrid</a>
+      </li>
+      <li>
+        <a
+          href="https://www.premiumize.me/speedtest"
+          rel=""
+          target="_blank">Premiumize</a>
+      </li>
+      <li>
+        <a
+          href="https://debrid-link.fr/webapp/speedtest"
+          rel=""
+          target="_blank">Debrid-Link</a>
+      </li>
+      <li>
+        <a
+          href="https://app.put.io/settings/route"
+          rel=""
+          target="_blank">Put.io</a>
       </li>
     </ol>
 
