@@ -78,7 +78,8 @@ main {
 
 .gsc-comments .gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
-  text-underline-offset: 4px;
+  text-decoration: none;
+  font-weight: bold;
   transition: all 0.2s;
 }
 .gsc-comments .gsc-header .gsc-left-header em a:hover {
