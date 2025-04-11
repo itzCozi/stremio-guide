@@ -121,14 +121,11 @@ main .gsc-loading-image {
 }
 .gsc-right-header li {
   border-radius: 0;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
 }
 .gsc-right-header li:not(.BtnGroup-item--selected) {
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border-radius: 0;
+  border: none;
 }
 .gsc-right-header li:not(.BtnGroup-item--selected) .btn:hover {
   background-color: transparent;
