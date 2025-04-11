@@ -114,32 +114,3 @@ main {
 .gsc-comment-box-tabs {
   display: none;
 }
-.gsc-comment-box {
-  border: none;
-  background-color: transparent;
-}
-.gsc-reply-box {
-  border-radius: 0;
-}
-.gsc-comment-box-main .gsc-comment-box-write textarea.gsc-comment-box-textarea {
-  border-radius: 0;
-  border-bottom-style: solid;
-}
-.gsc-comment-box-buttons {
-  border-radius: 0;
-}
-.gsc-comment-box-buttons button {
-  border-radius: 0;
-}
-.gsc-comment-box-bottom button:hover {
-  color: var(--text-normal-color);
-}
-.gsc-comment-box-buttons .btn-primary {
-  color: var(--text-normal-color);
-}
-.gsc-comment-box-buttons .btn-primary:disabled {
-  color: var(--text-muted-color);
-}
-.gsc-comment {
-  border-radius: 0;
-}
