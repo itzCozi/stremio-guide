@@ -202,7 +202,7 @@
       transform 0.2s ease-in-out,
       width 0.3s ease;
     transform: translateX(0);
-    height: 100vh;
+    height: 100%;
   }
 
   .toc.collapsed {
