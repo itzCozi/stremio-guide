@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { TableOfContents } from "lucide-svelte";
   import { TriangleAlert } from "lucide-svelte";
   import { ChevronRight } from "lucide-svelte";
@@ -11,7 +11,7 @@
   let isTocOpen = false;
   let isPopupVisible = false;
 
-  function copyToClipboard(textToCopy: string) {
+  function copyToClipboard(textToCopy) {
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
@@ -44,6 +44,7 @@
         </div>
       </div>
       <hr class="sm" />
+
       <a href="#how-to">Intro</a>
       <ul class="sm">
         <li>

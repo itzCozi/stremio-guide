@@ -63,8 +63,8 @@ ul {
 ol.sm,
 ul.sm {
   padding-left: 1.25rem;
-  margin-block: 0;
-  line-height: 0;
+  margin-block: 0.7rem;
+  line-height: normal;
   list-style-type: "- ";
 }
 
@@ -194,8 +194,8 @@ hr.sm {
 
 .toc a {
   display: block;
-  margin-bottom: 0.6rem;
-  line-height: 1.2rem;
+  margin-block: 0.5rem;
+  line-height: 0.9rem;
   text-decoration: none;
 }
 
