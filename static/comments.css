@@ -3,10 +3,10 @@
   --font-family-default: var(--font-family-serif);
 }
 main {
-  --color-prettylights-syntax-comment: #aaaaaa; /* Matches dimmed text in +page.svelte */
-  --color-prettylights-syntax-constant: #65dd65; /* Matches link color in +page.svelte */
-  --color-prettylights-syntax-entity: #ffffff; /* Matches white text in +page.svelte */
-  --color-prettylights-syntax-storage-modifier-import: #2b2b2b; /* Matches block background */
+  --color-prettylights-syntax-comment: #aaaaaa;
+  --color-prettylights-syntax-constant: #65dd65;
+  --color-prettylights-syntax-entity: #ffffff;
+  --color-prettylights-syntax-storage-modifier-import: #2b2b2b;
   --color-prettylights-syntax-entity-tag: #65dd65; /* Matches link color */
   --color-prettylights-syntax-keyword: #ffffff; /* Matches white text */
   --color-prettylights-syntax-string: #65dd65; /* Matches link color */
@@ -75,7 +75,10 @@ main {
     --color-segmented-control-bg: transparent;
   }
 }
-
+* {
+  text-decoration: none !important;
+  font-weight: normal !important;
+}
 .gsc-comments .gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
@@ -115,11 +118,14 @@ main {
   border: none;
   background-color: transparent;
 }
+.gsc-reply-box {
+  border-radius: 0;
+}
 .gsc-comment-box-main .gsc-comment-box-write textarea.gsc-comment-box-textarea {
   border-radius: 0;
   border-bottom-style: solid;
 }
-.gsc-comment-box-buttons button {
+.gsc-comment-box-buttons {
   border-radius: 0;
 }
 .gsc-comment-box-bottom button:hover {
