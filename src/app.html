@@ -20,24 +20,24 @@
         rel="stylesheet" />
     </noscript>
     <meta charset="utf-8" />
-    <link
-      rel="icon"
-      href="/stremur.png" />
+    <meta
+      name="mobile-web-app-capable"
+      content="yes" />
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta
       name="theme-color"
       content="#65dd65" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <meta
       name="description"
-      content="A short, yet comprehensive guide to using Stremio." />
+      content="Learn how to set up and use Stremio with this comprehensive guide. Includes tips for Real-Debrid, add-ons, and more!" />
     <meta
       name="keywords"
-      content="free, open-source, stremio, guide, realdebrid" />
+      content="free, open-source, stremio, guide, realdebrid, stremio guide, stremio setup, stremio tips, real-debrid stremio, stremio add-ons, torbox, torbox stremio, stremio install, stremio download" />
     <meta
       name="author"
       content="BadDeveloper" />
@@ -47,15 +47,39 @@
     <meta
       name="language"
       content="en" />
+    <meta
+      property="og:locale"
+      content="en_US" />
+    <meta
+      property="og:site_name"
+      content="Sudo-Flix's Stremio Guide" />
+    <meta
+      name="twitter:creator"
+      content="@sudoflix" />
+    <meta
+      name="robots"
+      content="index, follow" />
+    <link
+      rel="icon"
+      href="/stremur.png"
+      alt="Stremio Guide Icon" />
     <link
       rel="canonical"
       href="https://bye.undi.rest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml" />
     <meta
       property="og:title"
       content="Sudo-Flix's Stremio Guide" />
     <meta
       property="og:description"
-      content="A short, yet comprehensive guide to using Stremio." />
+      content="Learn how to set up and use Stremio with this comprehensive guide. Includes tips for Real-Debrid, add-ons, and more!" />
     <meta
       property="og:image"
       content="/stremur.png" />
@@ -73,35 +97,50 @@
       content="Sudo-Flix's Stremio Guide" />
     <meta
       name="twitter:description"
-      content="A short, yet comprehensive guide to using Stremio." />
+      content="Learn how to set up and use Stremio with this comprehensive guide. Includes tips for Real-Debrid, add-ons, and more!" />
     <meta
       name="twitter:image"
       content="/stremur.png" />
     <meta
       name="twitter:url"
       content="https://bye.undi.rest" />
-    <meta
-      name="robots"
-      content="index, follow" />
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="/sitemap.xml" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
+        "@type": "WebPage",
         "name": "Sudo-Flix's Stremio Guide",
         "url": "https://bye.undi.rest",
-        "description": "A short, yet comprehensive guide to using Stremio.",
-        "applicationCategory": "Text Editor",
-        "operatingSystem": "Web Browser"
+        "description": "Learn how to set up and use Stremio with this comprehensive guide. Includes tips for Real-Debrid, add-ons, and more!",
+        "keywords": ["Stremio guide", "Stremio setup", "Real-Debrid Stremio", "Stremio add-ons"],
+        "author": {
+          "@type": "Person",
+          "name": "BadDeveloper"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sudo-Flix",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "/stremur.png"
+          }
+        },
+        "datePublished": "2025-04-11",
+        "dateModified": "2025-04-11",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Guide",
+              "item": "https://bye.undi.rest"
+            }
+          ]
+        }
       }
     </script>
     %sveltekit.head%
   </head>
-
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
   </body>
