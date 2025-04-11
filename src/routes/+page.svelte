@@ -36,24 +36,6 @@
     padding: 1.6rem;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .block {
-      border-left: 1px solid #383838;
-      border-right: 1px solid #383838;
-    }
-  }
-
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -215,7 +197,7 @@
     border-left: solid #383838 1px;
     color: #ffffff;
     font-size: 0.9rem;
-    width: 14.5rem;
+    width: 13rem;
     transition:
       transform 0.2s ease-in-out,
       height 0.3s ease,
@@ -244,7 +226,8 @@
 
   .toc a {
     display: block;
-    margin-bottom: 0.38rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.2rem;
     text-decoration: none;
   }
 
@@ -300,6 +283,30 @@
   .jump-to:hover-2 {
     cursor: pointer;
     text-decoration: underline;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .block {
+      border-left: 1px solid #383838;
+      border-right: 1px solid #383838;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .toc {
+      width: 15rem;
+    }
   }
 </style>
 
