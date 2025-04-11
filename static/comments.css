@@ -5,6 +5,7 @@
   border-radius: 0 !important;
   transition: none !important;
 }
+
 main {
   --primary-default: 99, 99, 99;
   --bg-default: 22, 22, 24;
@@ -105,28 +106,38 @@ main .pagination-loader-container {
 main .gsc-loading-image {
   background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
 }
+
 .gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
   text-underline-offset: 4px;
   transition: all 0.2s;
 }
+
 .gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
   transition: all 0.2s;
 }
+
+.gsc-reactions-button {
+  background-color: transparent;
+}
+
 .gsc-right-header {
   border-radius: 0;
 }
+
 .gsc-right-header li {
   border-radius: 0;
   border: none;
 }
+
 .gsc-right-header li:not(.BtnGroup-item--selected) {
   border-radius: 0;
   border: none;
 }
+
 .gsc-right-header li:not(.BtnGroup-item--selected) .btn:hover {
   background-color: transparent;
   color: var(--text-normal-color);
