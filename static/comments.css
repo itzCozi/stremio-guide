@@ -103,13 +103,13 @@ main .pagination-loader-container {
 main .gsc-loading-image {
   background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
 }
-.gsc-comments .gsc-header .gsc-left-header em a {
+.gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
   text-underline-offset: 4px;
   transition: all 0.2s;
 }
-.gsc-comments .gsc-header .gsc-left-header em a {
+.gsc-header .gsc-left-header em a {
   color: var(--text-muted-color);
   text-decoration: none;
   transition: all 0.2s;
@@ -131,7 +131,4 @@ main .gsc-loading-image {
 .gsc-right-header li:not(.BtnGroup-item--selected) .btn:hover {
   background-color: transparent;
   color: var(--text-normal-color);
-}
-.gsc-comment-box-tabs {
-  display: none;
 }
