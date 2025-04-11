@@ -1289,7 +1289,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="fro"
+        data-theme="https://bye.undi.rest/comments.css"
         data-lang="en"
         data-loading="lazy"
         crossorigin="anonymous"
