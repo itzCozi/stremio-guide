@@ -98,6 +98,10 @@ a:hover {
   text-decoration: underline !important;
 }
 
+button a {
+  text-decoration: none !important;
+}
+
 main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }

@@ -6,7 +6,6 @@
   import { BadgeInfo } from "lucide-svelte";
   import { Share } from "lucide-svelte";
   import { Info } from "lucide-svelte";
-  import "@/styles/style.css";
 
   let isTocOpen = false;
   let isPopupVisible = false;
