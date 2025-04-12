@@ -98,7 +98,7 @@ a:hover {
   text-decoration: underline !important;
 }
 
-button a {
+.gsc-comment-box-buttons a {
   text-decoration: none !important;
 }
 
