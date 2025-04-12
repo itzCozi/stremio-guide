@@ -1,6 +1,6 @@
 main {
-  --primary-default: 99, 99, 99;
-  --bg-default: 22, 22, 24;
+  --primary-default: 70, 70, 70;
+  --bg-default: 22, 22, 22;
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
   --color-prettylights-syntax-entity: #d2a8ff;
@@ -34,8 +34,6 @@ main {
   --color-btn-text: rgb(235 235 245 / 86%);
   --color-btn-bg: rgba(var(--bg-default), 1);
   --color-btn-border: rgba(var(--bg-default), 1);
-  --color-btn-shadow: 0 1px 0 rgba(var(--bg-default), 1);
-  --color-btn-inset-shadow: inset 0 1px 0 rgba(var(--bg-default), 1);
   --color-btn-hover-bg: rgba(var(--bg-default), 0.5);
   --color-btn-hover-border: rgba(var(--bg-default), 0.5);
   --color-btn-active-bg: rgba(var(--primary-default), 0.2);
@@ -44,12 +42,9 @@ main {
   --color-btn-primary-text: rgb(255 255 255 / 100%);
   --color-btn-primary-bg: rgba(var(--primary-default), 0.45);
   --color-btn-primary-border: rgba(var(--primary-default), 0.5);
-  --color-btn-primary-shadow: 0 1px 0 rgb(27 31 36 / 10%);
-  --color-btn-primary-inset-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 3%);
   --color-btn-primary-hover-bg: rgba(var(--primary-default), 0.53);
   --color-btn-primary-hover-border: rgba(var(--primary-default), 0.75);
   --color-btn-primary-selected-bg: rgba(var(--primary-default), 0.45);
-  --color-btn-primary-selected-shadow: inset 0 1px 0 rgb(0 45 17 / 20%);
   --color-btn-primary-disabled-text: rgb(255 255 255 / 80%);
   --color-btn-primary-disabled-bg: rgba(var(--primary-default), 0.5);
   --color-btn-primary-disabled-border: rgba(var(--primary-default), 0.5);
@@ -80,8 +75,6 @@ main {
   --color-danger-fg: #f85149;
   --color-danger-muted: rgb(248 81 73 / 40%);
   --color-danger-subtle: rgb(248 81 73 / 10%);
-  --color-primer-shadow-inset:
-    0 1px 0 rgba(var(--bg-default), 1), inset 0 1px 0 rgba(var(--bg-default), 1);
   --color-scale-gray-7: rgb(22 22 24 / 100%);
   --color-scale-blue-8: rgb(16 185 129 / 15%);
   --color-text-link: #65dd65;
@@ -97,6 +90,8 @@ main {
   border: none !important;
   border-radius: 0 !important;
   transition: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 a:hover {

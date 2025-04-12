@@ -83,7 +83,6 @@ img {
   max-width: 100%;
   height: auto;
   margin-block: 1rem;
-  border: solid rgba(0, 0, 0, 0.3) 1px;
 }
 
 .admonition {
