@@ -320,7 +320,7 @@
         Now that you have an account, go to <a
           href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
           rel=""
-          target="_blank">real-debrid.com/subscription</a>
+          target="_blank">torbox.app/subscription</a>
         and purchase a subscription plan.
         <em>(I recommend the PRO option ~10$ USD/mo)</em>
       </li>
