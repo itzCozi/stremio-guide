@@ -99,8 +99,22 @@
         </li>
       </ul>
       <a href="#more">More Questions?</a>
+      <div class="absolute bottom-0 pb-[1rem] pr-[1rem]">
+        <p class="footer">“Malo periculosam libertatem quam quietum servitium”</p>
+        <div class="flex justify-between items-center">
+          <a
+            href="https://t.me/+B3UIJrNsWf0wNzJh"
+            rel=""
+            target="_blank">Telegram</a>
+          <a
+            href="https://github.com/itzcozi/stremio-guide"
+            rel=""
+            target="_blank">Github</a>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="mx-auto block">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -1074,7 +1088,7 @@
           </svg>
         </a>
       </p>
-      <p class="mt-2 footer">
+      <p class="mt-2">
         Created by
         <a
           href="https://github.com/itzcozi"
