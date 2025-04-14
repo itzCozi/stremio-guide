@@ -31,9 +31,8 @@
 
 <div class="items-center justify-center">
   <div class="toc {isTocOpen ? '' : 'collapsed'}">
-    <div class="toc-content">
-      <!-- svelte-ignore a11y_click_events_have_key_events -->
-      <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="toc-content flex flex-col h-full">
+      <!-- Header -->
       <div class="flex items-center justify-between">
         <p class="font-bold text-center">Table of Contents</p>
         <div class="flex items-center">
@@ -44,71 +43,45 @@
       </div>
       <hr class="sm" />
 
-      <a href="#how-to">Intro</a>
-      <ul class="sm">
-        <li>
-          <a href="#preview">Preview</a>
-        </li>
-        <li>
-          <a href="#prerequisites">Prerequisites</a>
-        </li>
-        <li>
-          <a href="#for-da-free">For Free?</a>
-        </li>
-      </ul>
-      <a href="#token">Debrid Service Token</a>
-      <ul class="sm">
-        <li>
-          <a href="#real-debrid-sub">Real-Debrid Subscription</a>
-        </li>
-        <li>
-          <a href="#torbox-sub">Torbox Subscription</a>
-        </li>
-      </ul>
-      <a href="#stremio">Stremio Setup</a>
-      <ul class="sm">
-        <li>
-          <a href="#install">Install</a>
-        </li>
-        <li>
-          <a href="#more-addons">Additional Addons</a>
-        </li>
-      </ul>
-      <a href="#extra">Extra Setup</a>
-      <ul class="sm">
-        <li>
-          <a href="#firestick">FireStick Setup</a>
-        </li>
-        <li>
-          <a href="#android">Android Setup</a>
-        </li>
-        <li>
-          <a href="#usenet">Usenet Setup</a>
-        </li>
-        <li>
-          <a href="#trakt">Logging Into Trakt.tv</a>
-        </li>
-        <li>
-          <a href="#debrid">Different Debrid Providers</a>
-        </li>
-        <li>
-          <a href="#speed-tests">Debrid Speed Tests</a>
-        </li>
-        <li>
-          <a href="#addons">Other Addons</a>
-        </li>
-      </ul>
-      <a href="#more">More Questions?</a>
-      <div class="absolute bottom-0 pb-[1rem] pr-[1rem]">
-        <p class="footer">“Malo periculosam libertatem quam quietum servitium”</p>
+      <!-- TOC Links -->
+      <div class="flex-grow overflow-y-auto">
+        <a href="#how-to">Intro</a>
+        <ul class="sm">
+          <li><a href="#preview">Preview</a></li>
+          <li><a href="#prerequisites">Prerequisites</a></li>
+          <li><a href="#for-da-free">For Free?</a></li>
+        </ul>
+        <a href="#token">Debrid Service Token</a>
+        <ul class="sm">
+          <li><a href="#real-debrid-sub">Real-Debrid Subscription</a></li>
+          <li><a href="#torbox-sub">Torbox Subscription</a></li>
+        </ul>
+        <a href="#stremio">Stremio Setup</a>
+        <ul class="sm">
+          <li><a href="#install">Install</a></li>
+          <li><a href="#more-addons">Additional Addons</a></li>
+        </ul>
+        <a href="#extra">Extra Setup</a>
+        <ul class="sm">
+          <li><a href="#firestick">FireStick Setup</a></li>
+          <li><a href="#android">Android Setup</a></li>
+          <li><a href="#usenet">Usenet Setup</a></li>
+          <li><a href="#trakt">Logging Into Trakt.tv</a></li>
+          <li><a href="#debrid">Different Debrid Providers</a></li>
+          <li><a href="#speed-tests">Debrid Speed Tests</a></li>
+          <li><a href="#addons">Other Addons</a></li>
+        </ul>
+        <a href="#more">More Questions?</a>
+      </div>
+
+      <!-- Footer -->
+      <div class="toc-footer mt-4">
         <div class="flex justify-between items-center">
           <a
             href="https://t.me/+B3UIJrNsWf0wNzJh"
-            rel=""
             target="_blank">Telegram</a>
           <a
             href="https://github.com/itzcozi/stremio-guide"
-            rel=""
             target="_blank">Github</a>
         </div>
       </div>

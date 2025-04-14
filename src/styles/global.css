@@ -94,7 +94,7 @@ ul {
 
 ol.sm,
 ul.sm {
-  padding-left: 1.25rem;
+  padding-left: 1.15rem;
   margin-block: 0.7rem;
   line-height: normal;
   list-style-type: "- ";
@@ -177,14 +177,23 @@ hr {
   border: 0;
   height: 1px;
   margin-block: 1rem;
-  background: #7a7a7a;
+  background: #7e7e7e;
 }
 
 hr.sm {
   border: 0;
   height: 1px;
-  background: #7a7a7a;
+  background: #7e7e7e;
   margin-block: 0.5rem;
+}
+
+.toc-content > .flex-grow {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.toc-footer {
+  text-align: center;
 }
 
 .toc {
@@ -203,6 +212,8 @@ hr.sm {
     height 0s;
   transform: translateX(0);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .toc.collapsed {
@@ -221,6 +232,9 @@ hr.sm {
 
 .toc-content {
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .toc a {
