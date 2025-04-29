@@ -5,8 +5,8 @@
 :root ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border-left: #454545 solid 0.5px;
 }
+
 :root ::-webkit-scrollbar-thumb {
   background-color: #505050;
   cursor: pointer;
@@ -234,6 +234,7 @@ hr.sm {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   height: 100%;
 }
 

@@ -36,6 +36,8 @@
       <div class="flex items-center justify-between">
         <p class="font-bold text-center">Table of Contents</p>
         <div class="flex items-center">
+          <!-- svelte-ignore a11y_click_events_have_key_events -->
+          <!-- svelte-ignore a11y_no_static_element_interactions -->
           <span on:click={toggleToc}>
             <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
           </span>
@@ -75,7 +77,7 @@
       </div>
 
       <!-- Footer -->
-      <div class="toc-footer mt-4">
+      <div class="toc-footer mt-2">
         <div class="flex justify-between items-center">
           <a
             href="https://t.me/+B3UIJrNsWf0wNzJh"
