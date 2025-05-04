@@ -4,7 +4,7 @@
   import { ChevronRight } from "lucide-svelte";
   import { CopyCheck } from "lucide-svelte";
   import { BadgeInfo } from "lucide-svelte";
-  import { Share } from "lucide-svelte";
+  import { HandHeart } from "lucide-svelte";
   import { Info } from "lucide-svelte";
 
   let isTocOpen = false;
@@ -74,6 +74,7 @@
           <li><a href="#addons">Other Addons</a></li>
         </ul>
         <a href="#more">More Questions?</a>
+        <a href="https://donate.cozi.lol">Donate</a>
       </div>
 
       <!-- Footer -->
@@ -96,11 +97,8 @@
     <div class="flex justify-between items-center -m-1">
       <div
         class="cursor-pointer"
-        on:click={() =>
-          copyToClipboard(
-            window.location.origin + `/?id=${Math.random().toString(36).substring(2, 8)}`,
-          )}>
-        <Share class="h-6 w-auto" />
+        on:click={() => window.location.href = "https://donate.cozi.lol"}>
+        <HandHeart class="h-6 w-auto" />
       </div>
       <div
         class="toc-toggle"
