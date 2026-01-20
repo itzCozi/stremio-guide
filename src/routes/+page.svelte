@@ -264,14 +264,14 @@
     <ol>
       <li>
         Head to <a
-          href="http://real-debrid.com/?id=11626869"
+          href="https://real-debrid.com/?id=11626869"
           rel=""
           target="_blank">real-debrid.com</a> and click "Sign Up" in the top right.
       </li>
       <li>Ensure your VPN is turned <em>off</em>, create an account, and then sign in.</li>
       <li>
         Now that you have an account, go to <a
-          href="http://real-debrid.com/?id=11626869"
+          href="https://real-debrid.com/?id=11626869"
           rel=""
           target="_blank">real-debrid.com/premium</a>
         and purchase a premium subscription plan.
@@ -912,7 +912,7 @@
     <ol>
       <li>
         <a
-          href="https://real-debrid.com/speedtest"
+          href="https://real-debrid.com/speedtest?id=11626869"
           rel=""
           target="_blank">Real-Debrid</a>
       </li>
