@@ -61,20 +61,26 @@
         <a href="#stremio">Stremio Setup</a>
         <ul class="sm">
           <li><a href="#install">Install</a></li>
+          <li><a href="#manual-install">Manual Addon Install</a></li>
           <li><a href="#more-addons">Additional Addons</a></li>
         </ul>
         <a href="#extra">Extra Setup</a>
         <ul class="sm">
           <li><a href="#firestick">FireStick Setup</a></li>
           <li><a href="#android">Android Setup</a></li>
+          <li><a href="#samsung-lg">Samsung & LG TV</a></li>
           <li><a href="#usenet">Usenet Setup</a></li>
+          <li><a href="#metadata">Metadata Addons</a></li>
           <li><a href="#trakt">Logging Into Trakt.tv</a></li>
           <li><a href="#debrid">Different Debrid Providers</a></li>
           <li><a href="#speed-tests">Debrid Speed Tests</a></li>
+          <li><a href="#dmm">Debrid Media Manager</a></li>
           <li><a href="#addons">Other Addons</a></li>
+          <li><a href="#rpdb">RPDB (Ratings)</a></li>
+          <li><a href="#devices">Best Streaming Devices</a></li>
+          <li><a href="#addon-manager">Addon Manager</a></li>
         </ul>
         <a href="#more">More Questions?</a>
-        <a href="https://donate.cozi.lol">Donate</a>
       </div>
 
       <!-- Footer -->
@@ -97,7 +103,7 @@
     <div class="flex justify-between items-center -m-1">
       <div
         class="cursor-pointer"
-        on:click={() => window.location.href = "https://donate.cozi.lol"}>
+        on:click={() => (window.location.href = "https://donate.cozi.lol")}>
         <HandHeart class="h-6 w-auto" />
       </div>
       <div
@@ -155,7 +161,7 @@
       stream your favorite content. This step-by-step guide is designed to help you get the most out
       of the best free streaming service available today. Whether you're using a desktop, mobile
       device (Samsung, iOS, Android), or even a FireStick, this guide will walk you through
-      everything you need to know—no matter your skill level.
+      everything you need to know no matter your skill level.
     </p>
     <br />
 
@@ -343,6 +349,30 @@
       >{" "} when using a Debrid service as traffic is routed through their servers.
     </div>
 
+    <div class="admonition info">
+      <div class="flex flex-row gap-1">
+        <a
+          href="https://guides.viren070.me/stremio/technical-details#debrid-services"
+          rel=""
+          title="Debrid vs VPN Explanation"
+          target="_blank">
+          <Info class="h-5 w-auto" />
+        </a>
+        <p class="admonition-title">Debrid vs. VPN</p>
+      </div>
+      <p>
+        <strong>Why Debrid is better/safer:</strong><br />
+        • <strong>Cached Content:</strong> Most popular content is already "cached" on the Debrid
+        service's high-speed servers. This means you stream directly from them (HTTPS) rather than
+        relying on peer-to-peer connections, avoiding buffering from slow seeders.<br />
+        • <strong>Privacy:</strong> Since you connect securely (HTTPS) to the Debrid provider, your
+        ISP only sees traffic to the Debrid service, not what you are watching. You do not join the
+        torrent swarm yourself, so your IP is never exposed to peers or anti-piracy monitors.<br />
+        • <strong>No VPN Needed:</strong> Because the Debrid service acts as a middleman, you don't need
+        a VPN to hide your activity or IP address from torrent swarms.
+      </p>
+    </div>
+
     <h2
       id="stremio"
       class="flex flex-row gap-2 items-center relative">
@@ -441,6 +471,29 @@
         Click the purple "Install" button. If it doesn't open Stremio, right-click the button, copy
         the link, and paste it into Stremio's search bar.
       </li>
+    </ol>
+
+    <p
+      id="manual-install"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#manual-install";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      <strong>Manual Addon Install</strong>
+    </p>
+    <p>
+      If the "Install" button doesn't work or you are on a device where it doesn't trigger the app:
+    </p>
+    <ol>
+      <li>Right-click (or long-press) the "Install" button on the addon page.</li>
+      <li>Select <strong>Copy link address</strong> (or similar).</li>
+      <li>Open Stremio and paste this URL into the <strong>search bar</strong>.</li>
+      <li>Press enter, and a prompt to install the addon should appear.</li>
     </ol>
 
     <div class="admonition">
@@ -570,6 +623,33 @@
     </ol>
 
     <h3
+      id="samsung-lg"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#samsung-lg";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Samsung TV (Tizen) & LG TV (WebOS)
+    </h3>
+    <p>Stremio now has native apps for Samsung (2019+ models) and LG (2020+ models) TVs.</p>
+    <ol>
+      <li>
+        Turn on your TV and navigate to the <strong>App Store</strong> (Samsung Apps or LG Content Store).
+      </li>
+      <li>Search for <strong>"Stremio"</strong>.</li>
+      <li>Download and install the app.</li>
+      <li>
+        Launch the app. It will show a QR code or a link. Scan it with your phone or visit the link
+        on a computer to log in.
+      </li>
+      <li>Once logged in, your addons (like Torrentio) will automatically sync!</li>
+    </ol>
+
+    <h3
       id="usenet"
       class="flex flex-row gap-2 items-center relative">
       <button
@@ -626,6 +706,33 @@
         target="_blank">here</a
       >.
     </em>
+
+    <h3
+      id="metadata"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#metadata";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Metadata Addons: Anime Kitsu vs Cinemeta
+    </h3>
+    <p>
+      <strong>Cinemeta</strong> is the default metadata provider for Stremio, using IMDb IDs (tt...).
+      It works great for movies and western TV shows.
+    </p>
+    <p>
+      However, for <strong>Anime</strong>, Cinemeta often has mapping issues (e.g., seasons not
+      matching correctly).
+    </p>
+    <p>
+      <strong>Anime Kitsu</strong> is recommended for Anime. It uses Kitsu IDs, which are much more accurate
+      for Anime seasons and episodes. Torrentio supports Kitsu IDs natively, so using Anime Kitsu alongside
+      Torrentio ensures you get the correct streams for the correct episodes.
+    </p>
 
     <h3
       id="trakt"
@@ -842,6 +949,40 @@
     </ol>
 
     <h3
+      id="dmm"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#dmm";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Debrid Media Manager
+    </h3>
+    <p>
+      <a
+        href="https://debridmediamanager.com/"
+        target="_blank">Debrid Media Manager (DMM)</a> is a powerful tool to manage your Real-Debrid/AllDebrid
+      cloud.
+    </p>
+    <ul>
+      <li>
+        <strong>Find Cached Content:</strong> DMM allows you to search for movies/shows and instantly
+        see what is cached on Real Client. This is huge for finding content that Torrentio might miss
+        or show as uncached.
+      </li>
+      <li>
+        <strong>Library Management:</strong> You can add cached torrents directly to your Debrid library.
+      </li>
+      <li>
+        <strong>Watch on Stremio:</strong> Once added to your library, you can watch it in Stremio via
+        the "Debrid Search" addon or by enabling the "Debrid Catalog" option in Torrentio.
+      </li>
+    </ul>
+
+    <h3
       id="addons"
       class="flex flex-row gap-2 items-center relative">
       <button
@@ -908,6 +1049,93 @@
         >: Addon for live TV and sports events across the globe.
       </li>
     </ul>
+
+    <h3
+      id="rpdb"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#rpdb";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Rating Poster DB (RPDB)
+    </h3>
+    <p>
+      Want to see IMDb/Rotten Tomatoes ratings directly on the movie posters in Stremio? That's what <a
+        href="https://ratingposterdb.com/"
+        target="_blank">RPDB</a> does.
+    </p>
+    <ul>
+      <li>
+        <strong>Free Tier:</strong> Use the API Key <code>t0-free-rpdb</code> to get basic ratings on
+        posters.
+      </li>
+      <li>
+        <strong>Paid Tier:</strong> Offers textless posters, high-res badges (4K, HDR), and more customization.
+      </li>
+    </ul>
+    <p>
+      To use it, you install the <strong>Cinemeta (with ratings)</strong> addon or configure other addons
+      (like Cyberflix) to use your RPDB API key.
+    </p>
+
+    <h3
+      id="devices"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#devices";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Best Streaming Devices
+    </h3>
+    <p>While Stremio works on most devices, a good streaming stick/box makes a huge difference.</p>
+    <ul>
+      <li>
+        <strong>NVIDIA Shield TV Pro:</strong> The king of streaming devices. Best performance, AI upscaling,
+        and handles all audio formats (TrueHD/Atmos).
+      </li>
+      <li>
+        <strong>Fire TV Stick 4K Max (2nd Gen):</strong> Great budget option with good performance.
+      </li>
+      <li>
+        <strong>Onn. 4K Pro:</strong> Excellent value for money (available in US Walmart). Google TV
+        based.
+      </li>
+      <li><strong>Chromecast with Google TV (4K):</strong> Solid option, easy to customize.</li>
+    </ul>
+
+    <h3
+      id="addon-manager"
+      class="flex flex-row gap-2 items-center relative">
+      <button
+        class="jump-to"
+        type="button"
+        on:click={() => {
+          const url = window.location.origin + "/#addon-manager";
+          copyToClipboard(url);
+          window.location.href = url;
+        }}>#</button>
+      Stremio Addon Manager
+    </h3>
+    <p>
+      Stremio doesn't let you drag-and-drop to reorder addons (catalogs) natively. The order they
+      appear is the order you install them.
+    </p>
+    <p>
+      Use the unofficial <strong
+        ><a
+          href="https://addon-manager.elfhosted.com/"
+          target="_blank">Stremio Addon Manager</a
+        ></strong> to easily reorder, rename, or delete your addons without reinstalling them.
+    </p>
+
     <p>
       <em
         >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
