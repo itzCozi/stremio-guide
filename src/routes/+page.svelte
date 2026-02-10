@@ -1,11 +1,13 @@
 <script>
-  import { TableOfContents } from "lucide-svelte";
-  import { TriangleAlert } from "lucide-svelte";
-  import { ChevronRight } from "lucide-svelte";
-  import { CopyCheck } from "lucide-svelte";
-  import { BadgeInfo } from "lucide-svelte";
-  import { HandHeart } from "lucide-svelte";
-  import { Info } from "lucide-svelte";
+  import { TableOfContents as TableOfContentsIcon, HandHeart } from "lucide-svelte";
+  import {
+    SectionHeading,
+    Admonition,
+    TableOfContents,
+    CopyPopup,
+    Footer,
+    Disclaimer,
+  } from "$components";
 
   let isTocOpen = false;
   let isPopupVisible = false;
@@ -30,72 +32,9 @@
 </script>
 
 <div class="items-center justify-center">
-  <div class="toc {isTocOpen ? '' : 'collapsed'}">
-    <div class="toc-content flex flex-col h-full">
-      <!-- Header -->
-      <div class="flex items-center justify-between">
-        <p class="font-bold text-center">Table of Contents</p>
-        <div class="flex items-center">
-          <!-- svelte-ignore a11y_click_events_have_key_events -->
-          <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <span on:click={toggleToc}>
-            <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
-          </span>
-        </div>
-      </div>
-      <hr class="sm" />
-
-      <!-- TOC Links -->
-      <div class="flex-grow overflow-y-auto">
-        <a href="#how-to">Intro</a>
-        <ul class="sm">
-          <li><a href="#preview">Preview</a></li>
-          <li><a href="#prerequisites">Prerequisites</a></li>
-          <li><a href="#for-da-free">For Free?</a></li>
-        </ul>
-        <a href="#token">Debrid Service Token</a>
-        <ul class="sm">
-          <li><a href="#real-debrid-sub">Real-Debrid Subscription</a></li>
-          <li><a href="#torbox-sub">Torbox Subscription</a></li>
-        </ul>
-        <a href="#stremio">Stremio Setup</a>
-        <ul class="sm">
-          <li><a href="#install">Install</a></li>
-          <li><a href="#manual-install">Manual Addon Install</a></li>
-          <li><a href="#more-addons">Additional Addons</a></li>
-        </ul>
-        <a href="#extra">Extra Setup</a>
-        <ul class="sm">
-          <li><a href="#firestick">FireStick Setup</a></li>
-          <li><a href="#android">Android Setup</a></li>
-          <li><a href="#samsung-lg">Samsung & LG TV</a></li>
-          <li><a href="#usenet">Usenet Setup</a></li>
-          <li><a href="#metadata">Metadata Addons</a></li>
-          <li><a href="#trakt">Logging Into Trakt.tv</a></li>
-          <li><a href="#debrid">Different Debrid Providers</a></li>
-          <li><a href="#speed-tests">Debrid Speed Tests</a></li>
-          <li><a href="#dmm">Debrid Media Manager</a></li>
-          <li><a href="#addons">Other Addons</a></li>
-          <li><a href="#rpdb">RPDB (Ratings)</a></li>
-          <li><a href="#devices">Best Streaming Devices</a></li>
-          <li><a href="#addon-manager">Addon Manager</a></li>
-        </ul>
-        <a href="#more">More Questions?</a>
-      </div>
-
-      <!-- Footer -->
-      <div class="toc-footer mt-2">
-        <div class="flex justify-between items-center">
-          <a
-            href="https://t.me/+B3UIJrNsWf0wNzJh"
-            target="_blank">Telegram</a>
-          <a
-            href="https://github.com/itzcozi/stremio-guide"
-            target="_blank">Github</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <TableOfContents
+    isOpen={isTocOpen}
+    onToggle={toggleToc} />
 
   <div class="mx-auto block">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -109,52 +48,19 @@
       <div
         class="toc-toggle"
         on:click={toggleToc}>
-        <TableOfContents class="h-6 w-auto" />
+        <TableOfContentsIcon class="h-6 w-auto" />
       </div>
     </div>
-    {#if isPopupVisible}
-      <div class="popup">
-        <div class="flex items-center justify-center flex-row gap-2">
-          <CopyCheck class="h-5 w-auto" />
-          Copied to clipboard
-        </div>
-      </div>
-    {/if}
 
-    <h1
+    <CopyPopup visible={isPopupVisible} />
+
+    <SectionHeading
       id="how-to"
-      class="flex flex-row gap-2 justify-center items-center relative">
-      <button
-        class="jump-to absolute font-normal"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#how-to";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={1}>
       How to Use Stremio
-    </h1>
+    </SectionHeading>
 
-    <div class="intro">
-      <div class="flex flex-row gap-1 mb-[0.5rem]">
-        <BadgeInfo class="h-5 w-auto" />
-        <p class="font-bold">Disclaimer</p>
-      </div>
-      <p>
-        This guide is intended for people who read (it's a short guide, so please read it all). This
-        is not a drawn-out piece of text by any means, and if you can't maintain an attention span
-        for this long, <a
-          href="https://www.reddit.com/"
-          rel="">leave</a
-        >. This is not a "how to pirate" guide; this is a "how to use Stremio" guide. If you are
-        looking for a "how to pirate" guide, I suggest you look
-        <a
-          href="https://fmhy.net/beginners-guide"
-          rel=""
-          target="_blank">elsewhere</a
-        >.
-      </p>
-    </div>
+    <Disclaimer />
 
     <p>
       Welcome! As we move beyond Sudo's prime, it's the perfect time to explore professional ways to
@@ -165,19 +71,11 @@
     </p>
     <br />
 
-    <p
+    <SectionHeading
       id="preview"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#preview";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
-      <strong>Preview of Stremio<strong> </strong></strong>
-    </p>
+      level={0}>
+      <strong>Preview of Stremio</strong>
+    </SectionHeading>
     <div class="flex justify-center">
       <img
         alt="Preview"
@@ -186,37 +84,22 @@
         title="Preview" />
     </div>
 
-    <h3
+    <SectionHeading
       id="prerequisites"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#prerequisites";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Prerequisites
-    </h3>
+    </SectionHeading>
     <ol>
       <li>You need the Stremio client.</li>
       <li>You need the appropriate addons for streaming.</li>
       <li>You need a Real-Debrid subscription (~$5 a month).</li>
     </ol>
-    <p
+
+    <SectionHeading
       id="for-da-free"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#for-da-free";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Can I Do This for Free?</strong>
-    </p>
+    </SectionHeading>
     <p>
       Yes. Skip the Debrid subscription and just use the plain Torrentio addon. The setup is the
       same, but you must set the "Debrid Provider" to "None" in the Torrentio configuration. This
@@ -225,19 +108,13 @@
     </p>
 
     <hr />
-    <h2
+    <SectionHeading
       id="token"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to-2"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#token";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}><em>1.</em></button>
+      level={2}
+      numbered={true}
+      number="1.">
       Debrid Service Token
-    </h2>
+    </SectionHeading>
 
     <p>
       What is Debrid? Debrid is a service that allows you to download and stream all kinds of
@@ -248,19 +125,11 @@
     </p>
     <br />
 
-    <p
+    <SectionHeading
       id="real-debrid-sub"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#real-debrid-sub";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Getting Your Real-Debrid Subscription and API Token</strong>
-    </p>
+    </SectionHeading>
     <ol>
       <li>
         Head to <a
@@ -287,19 +156,11 @@
       </li>
     </ol>
 
-    <p
+    <SectionHeading
       id="torbox-sub"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#torbox-sub";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Getting Your Torbox Subscription and API Token</strong>
-    </p>
+    </SectionHeading>
     <ol>
       <li>
         Go to <a
@@ -329,37 +190,25 @@
 
     <em>Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
 
-    <div class="admonition">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
-          rel=""
-          title="User Manual FAQ Reference"
-          target="_blank">
-          <TriangleAlert class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Limits of Debrid Providers</p>
-      </div>
-      Keep in mind that Real-Debrid supports unlimited devices on the same network but restricts usage
-      to a single IP address. If this limitation is an issue, consider using Torbox, which does not track
-      IPs. A {" "}<a
+    <Admonition
+      type="warning"
+      title="Limits of Debrid Providers"
+      href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+      linkTitle="User Manual FAQ Reference">
+      Keep in mind that Real-Debrid supports unlimited devices on the same network but restricts
+      usage to a single IP address. If this limitation is an issue, consider using Torbox, which
+      does not track IPs. A {" "}<a
         href="https://guides.viren070.me/stremio/faq#do-i-need-a-vpn"
         rel=""
         target="_blank">VPN is not required</a
       >{" "} when using a Debrid service as traffic is routed through their servers.
-    </div>
+    </Admonition>
 
-    <div class="admonition info">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://guides.viren070.me/stremio/technical-details#debrid-services"
-          rel=""
-          title="Debrid vs VPN Explanation"
-          target="_blank">
-          <Info class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Debrid vs. VPN</p>
-      </div>
+    <Admonition
+      type="info"
+      title="Debrid vs. VPN"
+      href="https://guides.viren070.me/stremio/technical-details#debrid-services"
+      linkTitle="Debrid vs VPN Explanation">
       <p>
         <strong>Why Debrid is better/safer:</strong><br />
         • <strong>Cached Content:</strong> Most popular content is already "cached" on the Debrid
@@ -371,20 +220,15 @@
         • <strong>No VPN Needed:</strong> Because the Debrid service acts as a middleman, you don't need
         a VPN to hide your activity or IP address from torrent swarms.
       </p>
-    </div>
+    </Admonition>
 
-    <h2
+    <SectionHeading
       id="stremio"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to-2"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#stremio";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}><em>2.</em></button> Stremio Setup
-    </h2>
+      level={2}
+      numbered={true}
+      number="2.">
+      Stremio Setup
+    </SectionHeading>
     <hr />
 
     <p>
@@ -398,19 +242,14 @@
       >, which can recommend new media and track your progress and watch lists.
     </p>
 
-    <div class="admonition info">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://stremio.zendesk.com/"
-          rel=""
-          title="Helpdesk Reference"
-          target="_blank">
-          <BadgeInfo class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Stremio Device Support</p>
-      </div>
-      Stremio is compatible with a wide range of platforms, including Android, iOS, Windows, Mac, Linux,
-      and most TVs, such as Firestick devices. You can find most downloads conveniently available{" "}
+    <Admonition
+      type="info"
+      title="Stremio Device Support"
+      href="https://stremio.zendesk.com/"
+      linkTitle="Helpdesk Reference">
+      Stremio is compatible with a wide range of platforms, including Android, iOS, Windows, Mac,
+      Linux, and most TVs, such as Firestick devices. You can find most downloads conveniently
+      available{" "}
       <a
         rel="noopener noreferrer"
         target="_blank"
@@ -421,21 +260,13 @@
         target="_blank"
         href="https://vidi.norsb.org/">Vidi</a
       >, a specialized fork of Stremio made for Apple platforms.
-    </div>
+    </Admonition>
 
-    <p
+    <SectionHeading
       id="install"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#install";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Installing Stremio &amp; Setting up Torrentio</strong>
-    </p>
+    </SectionHeading>
     <ol>
       <li>
         Download the client by heading to <a
@@ -473,19 +304,11 @@
       </li>
     </ol>
 
-    <p
+    <SectionHeading
       id="manual-install"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#manual-install";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Manual Addon Install</strong>
-    </p>
+    </SectionHeading>
     <p>
       If the "Install" button doesn't work or you are on a device where it doesn't trigger the app:
     </p>
@@ -496,69 +319,42 @@
       <li>Press enter, and a prompt to install the addon should appear.</li>
     </ol>
 
-    <div class="admonition">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://www.reddit.com/r/Stremio/comments/okjz1y/what_is_hardware_accelerated_decoding_and_what/"
-          rel=""
-          title="What is Hardware-Accelerated Decoding Article"
-          target="_blank">
-          <Info class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Hardware-Accelerated Decoding</p>
-      </div>
-      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the player
-      settings (this decodes video using your GPU instead of CPU). This option is only avaliable for
-      Desktops users sadly.
-    </div>
+    <Admonition
+      type="info"
+      title="Hardware-Accelerated Decoding"
+      href="https://www.reddit.com/r/Stremio/comments/okjz1y/what_is_hardware_accelerated_decoding_and_what/"
+      linkTitle="What is Hardware-Accelerated Decoding Article">
+      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the
+      player settings (this decodes video using your GPU instead of CPU). This option is only
+      avaliable for Desktops users sadly.
+    </Admonition>
 
-    <p
+    <SectionHeading
       id="more-addons"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#more-addons";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={0}>
       <strong>Additional Addons May Ask for Your API Key</strong>
-    </p>
+    </SectionHeading>
     <p>
       When installing other addons that aren't Torrentio, you may be asked for your Debrid API token
-      again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds
-      up your streaming experience. Any addons found online from reputable sources, as well as those
-      listed in the "Community Addons" section, are fair game.
+      again. I <em>highly</em> recommend entering your token if prompted, as it significantly speeds up
+      your streaming experience. Any addons found online from reputable sources, as well as those listed
+      in the "Community Addons" section, are fair game.
     </p>
 
-    <h2
+    <SectionHeading
       id="extra"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to-2"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#extra";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}><em>3.</em></button> Extra Setup &amp; Customization
-    </h2>
+      level={2}
+      numbered={true}
+      number="3.">
+      Extra Setup &amp; Customization
+    </SectionHeading>
     <hr />
 
-    <h3
+    <SectionHeading
       id="firestick"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#firestick";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       FireStick Setup
-    </h3>
+    </SectionHeading>
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
@@ -591,19 +387,11 @@
       </li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="android"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#android";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Android Setup
-    </h3>
+    </SectionHeading>
     <p>
       <em
         >Stremio can be installed from the <a
@@ -622,19 +410,11 @@
       <li>Sync addons in the "Addons" menu.</li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="samsung-lg"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#samsung-lg";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Samsung TV (Tizen) & LG TV (WebOS)
-    </h3>
+    </SectionHeading>
     <p>Stremio now has native apps for Samsung (2019+ models) and LG (2020+ models) TVs.</p>
     <ol>
       <li>
@@ -649,19 +429,11 @@
       <li>Once logged in, your addons (like Torrentio) will automatically sync!</li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="usenet"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#usenet";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Usenet Setup
-    </h3>
+    </SectionHeading>
     <!-- https://guides.viren070.me/stremio/setup#usenet -->
     <p>
       Usenet is a decentralized platform for sharing content, organized into "newsgroups," which
@@ -681,8 +453,8 @@
         Now, go to <a
           href="https://torbox.app/subscription?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
           rel=""
-          target="_blank">torbox.app/subscription</a> and purchase the "Pro" plan. This includes the
-        usenet as well as Torbox's Debrid service.
+          target="_blank">torbox.app/subscription</a> and purchase the "Pro" plan. This includes the usenet
+        as well as Torbox's Debrid service.
       </li>
       <li>
         To use Torbox in Stremio, visit <a
@@ -707,19 +479,11 @@
       >.
     </em>
 
-    <h3
+    <SectionHeading
       id="metadata"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#metadata";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Metadata Addons: Anime Kitsu vs Cinemeta
-    </h3>
+    </SectionHeading>
     <p>
       <strong>Cinemeta</strong> is the default metadata provider for Stremio, using IMDb IDs (tt...).
       It works great for movies and western TV shows.
@@ -734,23 +498,15 @@
       Torrentio ensures you get the correct streams for the correct episodes.
     </p>
 
-    <h3
+    <SectionHeading
       id="trakt"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#trakt";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Logging Into
       <a
         href="http://Trakt.tv"
         rel=""
         target="_blank">Trakt.tv</a>
-    </h3>
+    </SectionHeading>
     <ol>
       <li>
         First, create a Trakt account <a
@@ -774,19 +530,11 @@
       </li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="debrid"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#debrid";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Different Debrid Providers
-    </h3>
+    </SectionHeading>
     <p>
       There are multiple Debrid providers available, some better than others. I (and many others)
       recommend Real-Debrid due to its popularity, speed, features, and affordability. However,
@@ -794,23 +542,19 @@
       lack of compatibility with other addons, whereas Real-Debrid is widely supported. However,
       there are cheaper providers such as Torbox, Debrid-Link, and AllDebrid to name a few.
     </p>
-    <div class="admonition">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
-          rel=""
-          title="List of Legal Limitations for Debrid Providers"
-          target="_blank">
-          <Info class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Legal Limitations</p>
-      </div>
-      Before purchasing a Debrid service other than Real-Debrid, please check the laws and regulations
-      of the municipality where the service is based. Some providers operate in countries with strict
-      anti-piracy laws, which may be acceptable if the provider does not succumb to external pressure.
-      In conclusion, I recommend researching the provider and its limitations thoroughly before purchasing
-      a plan.
-    </div>
+
+    <Admonition
+      type="info"
+      title="Legal Limitations"
+      href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+      linkTitle="List of Legal Limitations for Debrid Providers">
+      Before purchasing a Debrid service other than Real-Debrid, please check the laws and
+      regulations of the municipality where the service is based. Some providers operate in
+      countries with strict anti-piracy laws, which may be acceptable if the provider does not
+      succumb to external pressure. In conclusion, I recommend researching the provider and its
+      limitations thoroughly before purchasing a plan.
+    </Admonition>
+
     <ol>
       <li>
         <a
@@ -878,37 +622,25 @@
       </li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="speed-tests"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#speed-tests";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Debrid Speed Tests
-    </h3>
+    </SectionHeading>
     <p>
       Each debrid provider includes links to speed tests. These tests offer valuable insights into
       the connection speeds you can expect when using their services.
     </p>
-    <div class="admonition">
-      <div class="flex flex-row gap-1">
-        <a
-          href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
-          rel=""
-          title="User Manual FAQ Reference"
-          target="_blank">
-          <TriangleAlert class="h-5 w-auto" />
-        </a>
-        <p class="admonition-title">Restricted Access</p>
-      </div>
-      You may need to log in to access these pages. If you encounter any errors while trying to access
-      them, please log in to the Debrid service and then try clicking the link again.
-    </div>
+
+    <Admonition
+      type="warning"
+      title="Restricted Access"
+      href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
+      linkTitle="User Manual FAQ Reference">
+      You may need to log in to access these pages. If you encounter any errors while trying to
+      access them, please log in to the Debrid service and then try clicking the link again.
+    </Admonition>
+
     <ol>
       <li>
         <a
@@ -948,19 +680,11 @@
       </li>
     </ol>
 
-    <h3
+    <SectionHeading
       id="dmm"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#dmm";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Debrid Media Manager
-    </h3>
+    </SectionHeading>
     <p>
       <a
         href="https://debridmediamanager.com/"
@@ -982,23 +706,15 @@
       </li>
     </ul>
 
-    <h3
+    <SectionHeading
       id="addons"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#addons";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Other Addons
-    </h3>
+    </SectionHeading>
     <ul>
       <li>
         <a
-          href="https://stremio-addons.com/subhero.html"
+          href="https://stremio-addons.net/addons/subhero-v2"
           rel=""
           target="_blank">SubHero</a
         >: SubHero is a Stremio addon that provides subtitles for movies and TV shows using the
@@ -1014,18 +730,11 @@
       </li>
       <li>
         <a
-          href="https://stremio-addons.com/usa-tv.html"
+          href="https://stremio-addons.net/addons/usa-tv"
           rel=""
           target="_blank">USA TV</a
         >: Provides access to channels including local channels, news, sports, entertainment, and
         more.
-      </li>
-      <li>
-        <a
-          href="https://stremio-addons.com/cyberflix-catalog.html"
-          rel=""
-          target="_blank">Cyberflix Catalog</a
-        >: Aggregates popular steaming platforms such as Netflix, Amazon Prime or Hulu.
       </li>
       <li>
         <a
@@ -1050,19 +759,11 @@
       </li>
     </ul>
 
-    <h3
+    <SectionHeading
       id="rpdb"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#rpdb";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Rating Poster DB (RPDB)
-    </h3>
+    </SectionHeading>
     <p>
       Want to see IMDb/Rotten Tomatoes ratings directly on the movie posters in Stremio? That's what <a
         href="https://ratingposterdb.com/"
@@ -1082,19 +783,11 @@
       (like Cyberflix) to use your RPDB API key.
     </p>
 
-    <h3
+    <SectionHeading
       id="devices"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#devices";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Best Streaming Devices
-    </h3>
+    </SectionHeading>
     <p>While Stremio works on most devices, a good streaming stick/box makes a huge difference.</p>
     <ul>
       <li>
@@ -1105,25 +798,16 @@
         <strong>Fire TV Stick 4K Max (2nd Gen):</strong> Great budget option with good performance.
       </li>
       <li>
-        <strong>Onn. 4K Pro:</strong> Excellent value for money (available in US Walmart). Google TV
-        based.
+        <strong>Onn. 4K Pro:</strong> Excellent value for money (available in US Walmart). Google TV based.
       </li>
       <li><strong>Chromecast with Google TV (4K):</strong> Solid option, easy to customize.</li>
     </ul>
 
-    <h3
+    <SectionHeading
       id="addon-manager"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#addon-manager";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={3}>
       Stremio Addon Manager
-    </h3>
+    </SectionHeading>
     <p>
       Stremio doesn't let you drag-and-drop to reorder addons (catalogs) natively. The order they
       appear is the order you install them.
@@ -1140,25 +824,17 @@
       <em
         >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
         section of your client for quick install. Other unlisted addons can be downloaded from <a
-          href="https://stremio-addons.com/"
+          href="https://stremio-addons.net/"
           rel=""
           target="_blank">here</a
         >.</em>
     </p>
 
-    <h2
+    <SectionHeading
       id="more"
-      class="flex flex-row gap-2 items-center relative">
-      <button
-        class="jump-to"
-        type="button"
-        on:click={() => {
-          const url = window.location.origin + "/#more";
-          copyToClipboard(url);
-          window.location.href = url;
-        }}>#</button>
+      level={2}>
       More Questions?
-    </h2>
+    </SectionHeading>
     <hr />
 
     <ul>
@@ -1212,91 +888,7 @@
         rel=""
         target="_blank">Telegram</a> for discussions and support regarding Stremio!
     </p>
-    <div class="my-6">
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="itzcozi/stremio-guide"
-        data-repo-id="R_kgDOOU_qwg"
-        data-category="General"
-        data-category-id="DIC_kwDOOU_qws4Co_AB"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="https://bye.undi.rest/comments.css"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-      </script>
-    </div>
-    <footer class="text-center text-type-dimmed text-sm">
-      <p class="flex flex-row justify-center items-center gap-2">
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a
-          href="https://github.com/itzcozi/stremio-guide"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:scale-105 text-dark transition duration-200"
-          title="Github">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 496 512"
-            class="w-5 h-5 fill-current">
-            <path
-              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-            ></path>
-          </svg>
-        </a>
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a
-          href="https://x.com/sudoflix"
-          class="hover:scale-105 text-dark transition duration-200"
-          title="Twitter">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="w-5 h-5 fill-current">
-            <path
-              d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"
-            ></path>
-          </svg>
-        </a>
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a
-          href="https://t.me/+B3UIJrNsWf0wNzJh"
-          class="hover:scale-105 text-dark transition duration-200"
-          title="Telegram Group">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="w-5 h-5 fill-current"
-            ><path d="M23.001 1.999L0 13 6.031 15.307 17 8 10.687 17.552 20 22z"></path></svg>
-        </a>
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a
-          href="mailto:dev@wyzie.ru"
-          class="hover:scale-105 text-dark transition duration-200"
-          title="Email">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1920 1920"
-            class="w-5 h-5 fill-current">
-            <path
-              d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"
-              fill-rule="evenodd"></path>
-          </svg>
-        </a>
-      </p>
-      <p class="mt-2">
-        Created by
-        <a
-          href="https://github.com/itzcozi"
-          class="font-semibold transition duration-100 underline"
-          title="Developer Github link">BadDeveloper</a>
-        with 💚
-      </p>
-    </footer>
+
+    <Footer />
   </div>
 </div>
