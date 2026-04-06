@@ -7,12 +7,12 @@
   export let linkTitle = "";
 </script>
 
-<div class="admonition {type === 'info' ? 'info' : ''}">
-  <div class="flex flex-row gap-1">
+<div class="admonition {type}">
+  <div class="flex flex-row gap-2">
     {#if href}
       <a
         {href}
-        rel=""
+        rel="noopener noreferrer"
         title={linkTitle}
         target="_blank">
         {#if type === "info"}

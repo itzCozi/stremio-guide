@@ -22,13 +22,13 @@
 </div>
 <footer class="text-center text-type-dimmed text-sm">
   <p class="flex flex-row justify-center items-center gap-2">
-    <!-- svelte-ignore a11y_consider_explicit_label -->
     <a
       href="https://github.com/itzcozi/stremio-guide"
       target="_blank"
       rel="noopener noreferrer"
-      class="hover:scale-105 text-dark transition duration-200"
-      title="Github">
+      class="hover:scale-105 text-dark transition duration-200 p-2"
+      title="Github"
+      aria-label="GitHub">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 496 512"
@@ -38,11 +38,11 @@
         ></path>
       </svg>
     </a>
-    <!-- svelte-ignore a11y_consider_explicit_label -->
     <a
       href="https://x.com/sudoflix"
-      class="hover:scale-105 text-dark transition duration-200"
-      title="Twitter">
+      class="hover:scale-105 text-dark transition duration-200 p-2"
+      title="Twitter"
+      aria-label="Twitter">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -52,22 +52,22 @@
         ></path>
       </svg>
     </a>
-    <!-- svelte-ignore a11y_consider_explicit_label -->
     <a
       href="https://t.me/+B3UIJrNsWf0wNzJh"
-      class="hover:scale-105 text-dark transition duration-200"
-      title="Telegram Group">
+      class="hover:scale-105 text-dark transition duration-200 p-2"
+      title="Telegram Group"
+      aria-label="Telegram">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         class="w-5 h-5 fill-current"
         ><path d="M23.001 1.999L0 13 6.031 15.307 17 8 10.687 17.552 20 22z"></path></svg>
     </a>
-    <!-- svelte-ignore a11y_consider_explicit_label -->
     <a
       href="mailto:dev@wyzie.ru"
-      class="hover:scale-105 text-dark transition duration-200"
-      title="Email">
+      class="hover:scale-105 text-dark transition duration-200 p-2"
+      title="Email"
+      aria-label="Email">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 1920"

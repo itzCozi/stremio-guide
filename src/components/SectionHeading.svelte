@@ -5,6 +5,8 @@
   export let level = 3;
   export let numbered = false;
   export let number = "";
+  let className = "";
+  export { className as class };
 
   let isPopupVisible = false;
 
@@ -32,17 +34,13 @@
 {#if level === 1}
   <h1
     {id}
-    class="flex flex-row gap-2 justify-center items-center relative">
-    <button
-      class="jump-to absolute font-normal"
-      type="button"
-      on:click={handleClick}>#</button>
+    class="flex flex-row justify-center items-center {className}">
     <slot />
   </h1>
 {:else if level === 2}
   <h2
     {id}
-    class="flex flex-row gap-2 items-center relative">
+    class="flex flex-row items-center relative {className}">
     <button
       class={numbered ? "jump-to-2" : "jump-to"}
       type="button"
@@ -53,7 +51,7 @@
 {:else if level === 3}
   <h3
     {id}
-    class="flex flex-row gap-2 items-center relative">
+    class="flex flex-row items-center relative {className}">
     <button
       class="jump-to"
       type="button"
@@ -61,13 +59,13 @@
     <slot />
   </h3>
 {:else}
-  <p
+  <h4
     {id}
-    class="flex flex-row gap-2 items-center relative">
+    class="flex flex-row items-center relative {className}">
     <button
       class="jump-to"
       type="button"
       on:click={handleClick}>#</button>
     <slot />
-  </p>
+  </h4>
 {/if}

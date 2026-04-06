@@ -11,11 +11,13 @@
     <div class="flex items-center justify-between">
       <p class="font-bold text-center">Table of Contents</p>
       <div class="flex items-center">
-        <!-- svelte-ignore a11y_click_events_have_key_events -->
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <span on:click={onToggle}>
+        <button
+          type="button"
+          aria-label="Close table of contents"
+          on:click={onToggle}
+          class="p-2">
           <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
-        </span>
+        </button>
       </div>
     </div>
     <hr class="sm" />
@@ -54,6 +56,16 @@
         <li><a href="#rpdb">RPDB (Ratings)</a></li>
         <li><a href="#devices">Best Streaming Devices</a></li>
         <li><a href="#addon-manager">Addon Manager</a></li>
+      </ul>
+      <a href="#faq">Troubleshooting & FAQ</a>
+      <ul class="sm">
+        <li><a href="#faq-no-streams">No Streams Found</a></li>
+        <li><a href="#faq-buffering">Buffering</a></li>
+        <li><a href="#faq-addon-install">Addon Won't Install</a></li>
+        <li><a href="#faq-sync">Syncing Devices</a></li>
+        <li><a href="#faq-download">Downloading Content</a></li>
+        <li><a href="#faq-red-screen">Red Screen / Won't Play</a></li>
+        <li><a href="#faq-subtitles">Subtitle Issues</a></li>
       </ul>
       <a href="#more">More Questions?</a>
     </div>
