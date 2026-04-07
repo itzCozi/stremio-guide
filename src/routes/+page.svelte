@@ -103,9 +103,9 @@
     }
   }
 
-  function handleSearch(e) {
+  function handleSearchSubmit() {
     clearHighlights();
-    if (e.key === "Enter" && searchQuery.trim()) {
+    if (searchQuery.trim()) {
       const query = searchQuery.trim().toLowerCase();
       const content = document.querySelector(".block");
       if (content) highlightMatches(content, query);
@@ -114,11 +114,15 @@
         firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
+  }
+
+  function handleSearchInput() {
     if (!searchQuery.trim()) clearHighlights();
   }
 </script>
 
-<div class="items-center justify-center">
+<a href="#how-to" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1000] focus:bg-[var(--bg-card)] focus:text-[var(--accent)] focus:p-2">Skip to content</a>
+<main class="items-center justify-center">
   <TableOfContents
     isOpen={isTocOpen}
     onToggle={toggleToc} />
@@ -128,14 +132,14 @@
     bind:this={blockEl}
     style:width={blockWidth ? `${blockWidth}px` : null}
     style:max-width={blockWidth ? `${blockWidth}px` : null}>
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
       class="resize-handle resize-handle-left"
+      aria-hidden="true"
       on:pointerdown={(e) => onResizeStart(e, "left")}>
     </div>
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
       class="resize-handle resize-handle-right"
+      aria-hidden="true"
       on:pointerdown={(e) => onResizeStart(e, "right")}>
     </div>
     <div class="flex items-center pb-6 gap-3">
@@ -147,15 +151,15 @@
         aria-label="Donate">
         <HandHeart class="h-6 w-auto" />
       </a>
-      <div class="search-bar mx-auto">
+      <form class="search-bar mx-auto" on:submit|preventDefault={handleSearchSubmit} role="search">
         <Search class="h-4 w-auto search-icon" />
         <input
           type="text"
           placeholder="Search sections..."
           bind:value={searchQuery}
-          on:keydown={handleSearch}
+          on:input={handleSearchInput}
           aria-label="Search guide sections" />
-      </div>
+      </form>
       <button
         type="button"
         class="icon-btn flex-shrink-0"
@@ -1236,4 +1240,4 @@
 
     <Footer />
   </div>
-</div>
+</main>

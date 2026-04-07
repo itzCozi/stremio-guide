@@ -26,7 +26,7 @@
       href="https://github.com/itzcozi/stremio-guide"
       target="_blank"
       rel="noopener noreferrer"
-      class="hover:scale-105 text-dark transition duration-200 p-2"
+      class="hover:scale-105 transition duration-200 p-2"
       title="Github"
       aria-label="GitHub">
       <svg
@@ -40,7 +40,7 @@
     </a>
     <a
       href="https://x.com/sudoflix"
-      class="hover:scale-105 text-dark transition duration-200 p-2"
+      class="hover:scale-105 transition duration-200 p-2"
       title="Twitter"
       aria-label="Twitter">
       <svg
@@ -54,7 +54,7 @@
     </a>
     <a
       href="https://t.me/+B3UIJrNsWf0wNzJh"
-      class="hover:scale-105 text-dark transition duration-200 p-2"
+      class="hover:scale-105 transition duration-200 p-2"
       title="Telegram Group"
       aria-label="Telegram">
       <svg
@@ -65,7 +65,7 @@
     </a>
     <a
       href="mailto:dev@wyzie.ru"
-      class="hover:scale-105 text-dark transition duration-200 p-2"
+      class="hover:scale-105 transition duration-200 p-2"
       title="Email"
       aria-label="Email">
       <svg

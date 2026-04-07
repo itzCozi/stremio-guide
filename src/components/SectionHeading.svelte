@@ -44,6 +44,7 @@
     <button
       class={numbered ? "jump-to-2" : "jump-to"}
       type="button"
+      aria-label="Copy link to section"
       on:click={handleClick}
       >{#if numbered}<em>{number}</em>{:else}#{/if}</button>
     <slot />
@@ -55,17 +56,19 @@
     <button
       class="jump-to"
       type="button"
+      aria-label="Copy link to section"
       on:click={handleClick}>#</button>
     <slot />
   </h3>
 {:else}
-  <h4
+  <p
     {id}
-    class="flex flex-row items-center relative {className}">
+    class="subheading flex flex-row items-center relative {className}">
     <button
       class="jump-to"
       type="button"
+      aria-label="Copy link to section"
       on:click={handleClick}>#</button>
     <slot />
-  </h4>
+  </p>
 {/if}

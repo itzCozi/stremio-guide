@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --bg-primary: #202020;
   --bg-card: #2b2b2b;
   --bg-elevated: #303030;
@@ -10,7 +11,7 @@
   --border-default: #383838;
   --border-muted: #7e7e7e;
   --text-body: #dedede;
-  --text-heading: #ffffff;
+  --text-heading: #f0f5f0;
   --text-strong: #f0f0f0;
   --text-dimmed: #c8c8c8;
   --text-muted: #aaaaaa;
@@ -42,7 +43,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-body);
   font-family: "open sans";
-  font-size: 16.45px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -204,7 +205,7 @@ img {
 code {
   font-family: monospace;
   background-color: var(--bg-elevated);
-  border: solid rgba(0, 0, 0, 0.25) 1px;
+  border: solid var(--border-default) 1px;
   padding: 0.25rem 0.3rem 0.1rem;
 }
 
@@ -321,7 +322,7 @@ hr.sm {
 }
 
 mark.search-highlight {
-  background-color: rgba(101, 221, 101, 0.25);
+  background-color: color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--accent);
   padding: 0.05rem 0.15rem;
   border-radius: 2px;
@@ -461,6 +462,13 @@ mark.search-highlight {
   .resize-handle {
     display: none;
   }
+}
+
+.subheading {
+  font-size: clamp(1rem, 1.5vw + 0.25rem, 1.15rem);
+  color: var(--text-heading);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {

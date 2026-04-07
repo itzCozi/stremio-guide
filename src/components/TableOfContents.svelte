@@ -5,7 +5,7 @@
   export let onToggle;
 </script>
 
-<div class="toc {isOpen ? '' : 'collapsed'}">
+<nav class="toc {isOpen ? '' : 'collapsed'}" aria-label="Table of contents">
   <div class="toc-content flex flex-col h-full">
     <!-- Header -->
     <div class="flex items-center justify-between">
@@ -78,11 +78,13 @@
       <div class="flex justify-between items-center">
         <a
           href="https://t.me/+B3UIJrNsWf0wNzJh"
-          target="_blank">Telegram</a>
+          target="_blank"
+          rel="noopener noreferrer">Telegram</a>
         <a
           href="https://github.com/itzcozi/stremio-guide"
-          target="_blank">Github</a>
+          target="_blank"
+          rel="noopener noreferrer">Github</a>
       </div>
     </div>
   </div>
-</div>
+</nav>
