@@ -64,7 +64,6 @@
         <li><a href="#faq-buffering">Buffering</a></li>
         <li><a href="#faq-addon-install">Addon Won't Install</a></li>
         <li><a href="#faq-sync">Syncing Devices</a></li>
-        <li><a href="#adm-addon-order">Addon Order Doesn't Sync</a></li>
         <li><a href="#faq-download">Downloading Content</a></li>
         <li><a href="#faq-red-screen">Red Screen / Won't Play</a></li>
         <li><a href="#faq-subtitles">Subtitle Issues</a></li>

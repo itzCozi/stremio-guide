@@ -985,19 +985,6 @@
       </li>
     </ol>
 
-    <Admonition
-      id="adm-addon-order"
-      type="info"
-      title="Addon Order Doesn't Sync"
-      href="https://addon-manager.elfhosted.com/"
-      linkTitle="Stremio Addon Manager">
-      While addons themselves sync, the <em>order</em> of addons may not transfer. Use the
-      <a
-        href="https://addon-manager.elfhosted.com/"
-        rel="noopener noreferrer"
-        target="_blank">Stremio Addon Manager</a> to reorder addons on any device.
-    </Admonition>
-
     <SectionHeading
       id="faq-download"
       level={3}>
