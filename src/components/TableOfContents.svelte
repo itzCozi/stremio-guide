@@ -14,7 +14,7 @@
         type="button"
         aria-label="Close table of contents"
         on:click={onToggle}
-        class="flex items-center p-1">
+        class="flex items-center p-1 -mr-2">
         <ChevronRight class="h-[1.25rem] w-auto cursor-pointer" />
       </button>
     </div>
@@ -24,6 +24,7 @@
     <div class="flex-grow overflow-y-auto">
       <a href="#how-to">Intro</a>
       <ul class="sm">
+        <li><a href="#readers-note">Reader's Note</a></li>
         <li><a href="#what-you-need">What You'll Need</a></li>
         <li><a href="#for-da-free">For Free?</a></li>
       </ul>
@@ -66,6 +67,7 @@
         <li><a href="#faq-sync">Syncing Devices</a></li>
         <li><a href="#faq-download">Downloading Content</a></li>
         <li><a href="#faq-red-screen">Red Screen / Won't Play</a></li>
+        <li><a href="#faq-copyright">DMCA Takedowns</a></li>
         <li><a href="#faq-subtitles">Subtitle Issues</a></li>
       </ul>
       <a href="#more">More Questions?</a>

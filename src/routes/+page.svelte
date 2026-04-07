@@ -28,6 +28,45 @@
 
   let searchQuery = "";
 
+  let blockWidth = null;
+  let isResizing = false;
+  let resizeSide = null;
+  let startX = 0;
+  let startWidth = 0;
+  let blockEl;
+
+  const MIN_WIDTH = 320;
+  const MAX_WIDTH_RATIO = 0.95;
+
+  function onResizeStart(e, side) {
+    e.preventDefault();
+    isResizing = true;
+    resizeSide = side;
+    startX = e.clientX;
+    startWidth = blockEl.offsetWidth;
+    document.addEventListener("pointermove", onResizeMove);
+    document.addEventListener("pointerup", onResizeEnd);
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "col-resize";
+  }
+
+  function onResizeMove(e) {
+    if (!isResizing) return;
+    const dx = e.clientX - startX;
+    const delta = resizeSide === "right" ? dx : -dx;
+    const maxWidth = window.innerWidth * MAX_WIDTH_RATIO;
+    blockWidth = Math.min(maxWidth, Math.max(MIN_WIDTH, startWidth + delta * 2));
+  }
+
+  function onResizeEnd() {
+    isResizing = false;
+    resizeSide = null;
+    document.removeEventListener("pointermove", onResizeMove);
+    document.removeEventListener("pointerup", onResizeEnd);
+    document.body.style.userSelect = "";
+    document.body.style.cursor = "";
+  }
+
   function toggleToc() {
     isTocOpen = !isTocOpen;
   }
@@ -84,7 +123,21 @@
     isOpen={isTocOpen}
     onToggle={toggleToc} />
 
-  <div class="mx-auto block">
+  <div
+    class="mx-auto block"
+    bind:this={blockEl}
+    style:width={blockWidth ? `${blockWidth}px` : null}
+    style:max-width={blockWidth ? `${blockWidth}px` : null}>
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      class="resize-handle resize-handle-left"
+      on:pointerdown={(e) => onResizeStart(e, "left")}>
+    </div>
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      class="resize-handle resize-handle-right"
+      on:pointerdown={(e) => onResizeStart(e, "right")}>
+    </div>
     <div class="flex items-center pb-6 gap-3">
       <a
         href="https://donate.cozi.lol"
@@ -129,6 +182,23 @@
       Whether you're using a desktop, mobile device (Samsung, iOS, Android), or even a FireStick,
       this guide will walk you through everything you need to know no matter your skill level.
     </p>
+
+    <SectionHeading
+      id="readers-note"
+      level={0}>
+      <strong>Reader's Note</strong>
+    </SectionHeading>
+    <p>
+      This guide is meant to be read in order. There are 3 steps and then multiple subsections in
+      those steps. If you are looking for a specific topic, I recommend using the table of contents
+      or the search bar to find it. Each colored box in the guide is called an "Admonition" and is
+      used to highlight important information; make sure to read them. The icons next to an
+      admonition will sometimes be a link to a relevant source or reference that could also be of
+      help to you. The guide is also resizable! You can click and drag the sides of the content
+      block. This guide uses Torbox and Real-Debrid for simplicity, but I encourage you to research
+      which Debrid provider best fits your needs before committing to one.
+    </p>
+
     <br />
 
     <div class="flex justify-center">
@@ -179,12 +249,20 @@
       (1+ Gbps). It also caches a lot of torrents, giving you instant download/streaming
       capabilities without the need for seeders.
     </p>
+    <br />
 
-    <SectionHeading
-      id="real-debrid-sub"
-      level={0}>
-      <strong>Getting Your Real-Debrid Subscription and API Token</strong>
-    </SectionHeading>
+    <p>
+      I personally use Real-Debrid, because it was the most popular option when I started but do
+      your own research before sticking with a provider. I recommend looking for a provider that
+      supports a wide range of hosters, has good speeds, and allows copyrighted content (or doesn't
+      care about it).
+
+      <SectionHeading
+        id="real-debrid-sub"
+        level={0}>
+        <strong>Getting Your Real-Debrid Subscription and API Token</strong>
+      </SectionHeading>
+    </p>
     <ol>
       <li>
         Head to <a

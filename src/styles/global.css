@@ -42,18 +42,14 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-body);
   font-family: "open sans";
-  font-size: 16.25px;
-  line-height: 1.73;
+  font-size: 16.45px;
+  line-height: 1.75;
 }
 
 .block {
-  max-width: 58rem;
+  max-width: 60rem;
   background-color: var(--bg-card);
   padding: 1.75rem;
-}
-
-p {
-  margin-bottom: 0.75rem;
 }
 
 h1 {
@@ -235,7 +231,7 @@ hr.sm {
 
 .toc-content > .flex-grow {
   flex-grow: 1;
-  overflow-y: auto;
+  padding-right: 1rem;
 }
 
 .toc-footer {
@@ -251,6 +247,7 @@ hr.sm {
   border-left: solid var(--border-default) 1px;
   color: var(--text-heading);
   font-size: 0.9rem;
+  padding-right: 0.5rem;
   width: 13rem;
   transition:
     transform 0.2s ease-in-out,
@@ -290,7 +287,7 @@ hr.sm {
   display: flex;
   align-items: center;
   flex: 1 1 auto;
-  max-width: 18rem;
+  max-width: 20rem;
   min-width: 0;
   background-color: var(--bg-elevated);
   border: 1px solid var(--border-default);
@@ -334,8 +331,8 @@ mark.search-highlight {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   height: 100%;
+  padding-right: 0.5rem;
 }
 
 .toc a {
@@ -426,6 +423,43 @@ mark.search-highlight {
   .block {
     border-left: 1px solid var(--border-default);
     border-right: 1px solid var(--border-default);
+    position: relative;
+  }
+}
+
+.block {
+  position: relative;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  z-index: 10;
+  border-left: 3px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resize-handle:hover,
+.resize-handle:active {
+  border-left: 3px solid var(--accent);
+}
+
+.resize-handle-left {
+  left: -3px;
+}
+
+.resize-handle-right {
+  right: -3px;
+}
+
+@media (max-width: 767px) {
+  .resize-handle {
+    display: none;
   }
 }
 
