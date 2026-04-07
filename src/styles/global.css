@@ -43,12 +43,17 @@ body {
   color: var(--text-body);
   font-family: "open sans";
   font-size: 16.25px;
+  line-height: 1.73;
 }
 
 .block {
-  max-width: 62rem;
+  max-width: 58rem;
   background-color: var(--bg-card);
-  padding: 1.5rem;
+  padding: 1.75rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
 }
 
 h1 {
@@ -197,7 +202,7 @@ img {
 
 .admonition-title {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 code {
@@ -335,8 +340,8 @@ mark.search-highlight {
 
 .toc a {
   display: block;
-  margin-block: 0.5rem;
-  line-height: 0.9rem;
+  margin-block: 0.35rem;
+  line-height: 1.2;
   text-decoration: none;
 }
 

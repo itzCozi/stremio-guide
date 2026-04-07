@@ -13,7 +13,7 @@
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="https://bye.undi.rest/comments.css"
+    data-theme="https://stremio.ar0.eu/comments.css"
     data-lang="en"
     data-loading="lazy"
     crossorigin="anonymous"

@@ -5,4 +5,4 @@ Disallow: /types/
 Disallow: /src/
 Allow: /
 
-Sitemap: https://bye.undi.rest/sitemap.xml
+Sitemap: https://stremio.ar0.eu/sitemap.xml

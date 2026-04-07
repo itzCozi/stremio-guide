@@ -123,19 +123,14 @@
     <Disclaimer />
 
     <p>
-      As traditional movie websites become less reliable, it's the perfect time to explore professional ways to
-      stream your favorite content. This step-by-step guide is designed to help you get the most out
-      of (probably) the best free streaming solution available today. Whether you're using a desktop, mobile
-      device (Samsung, iOS, Android), or even a FireStick, this guide will walk you through
-      everything you need to know no matter your skill level.
+      As traditional movie websites become less reliable, it's the perfect time to explore
+      professional ways to stream your favorite content. This is a step-by-step guide designed to
+      help you get the most out of (probably) the best free streaming solution available today.
+      Whether you're using a desktop, mobile device (Samsung, iOS, Android), or even a FireStick,
+      this guide will walk you through everything you need to know no matter your skill level.
     </p>
     <br />
 
-    <SectionHeading
-      id="preview"
-      level={0}>
-      <strong>Preview of Stremio</strong>
-    </SectionHeading>
     <div class="flex justify-center">
       <img
         alt="Animated preview of the Stremio interface showing movie and TV show browsing"
@@ -146,14 +141,14 @@
     </div>
 
     <SectionHeading
-      id="prerequisites"
+      id="what-you-need"
       level={3}>
-      Prerequisites
+      What You'll Need
     </SectionHeading>
     <ol>
-      <li>You need the Stremio client.</li>
-      <li>You need the appropriate addons for streaming.</li>
-      <li>You need a Real-Debrid subscription (~$5 a month).</li>
+      <li>The Stremio client (free).</li>
+      <li>The appropriate addons for streaming (free).</li>
+      <li>A Debrid subscription (~$5 a month).</li>
     </ol>
 
     <SectionHeading
@@ -178,13 +173,12 @@
     </SectionHeading>
 
     <p>
-      Debrid is a service that allows you to download and stream all kinds of
-      content, from software, music, and games to adult content and 4K movies (40GB+), hosted on
-      supported premium file hosters like Rapidgator, Uploaded, FileFactory, Turbobit, Nitroflare,
-      etc at great speeds (1+ Gbps). It also caches a lot of torrents, giving you instant
-      download/streaming capabilities without the need for seeders.
+      Debrid is a service that allows you to download and stream all kinds of content, from
+      software, music, and games to adult content and 4K movies (40GB+), hosted on supported premium
+      file hosters like Rapidgator, Uploaded, FileFactory, Turbobit, Nitroflare, etc at great speeds
+      (1+ Gbps). It also caches a lot of torrents, giving you instant download/streaming
+      capabilities without the need for seeders.
     </p>
-    <br />
 
     <SectionHeading
       id="real-debrid-sub"
@@ -252,6 +246,7 @@
     <em>Don't forget to store your API key somewhere safe, as you WILL need it later.</em>
 
     <Admonition
+      id="adm-debrid-limits"
       type="warning"
       title="Limits of Debrid Providers"
       href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
@@ -263,24 +258,6 @@
         rel="noopener noreferrer"
         target="_blank">VPN is not required</a
       >{" "} when using a Debrid service as traffic is routed through their servers.
-    </Admonition>
-
-    <Admonition
-      type="info"
-      title="Debrid vs. VPN"
-      href="https://guides.viren070.me/stremio/technical-details#debrid-services"
-      linkTitle="Debrid vs VPN Explanation">
-      <p>
-        <strong>Why Debrid is better/safer:</strong><br />
-        • <strong>Cached Content:</strong> Most popular content is already "cached" on the Debrid
-        service's high-speed servers. This means you stream directly from them (HTTPS) rather than
-        relying on peer-to-peer connections, avoiding buffering from slow seeders.<br />
-        • <strong>Privacy:</strong> Since you connect securely (HTTPS) to the Debrid provider, your
-        ISP only sees traffic to the Debrid service, not what you are watching. You do not join the
-        torrent swarm yourself, so your IP is never exposed to peers or anti-piracy monitors.<br />
-        • <strong>No VPN Needed:</strong> Because the Debrid service acts as a middleman, you don't need
-        a VPN to hide your activity or IP address from torrent swarms.
-      </p>
     </Admonition>
 
     <SectionHeading
@@ -304,6 +281,7 @@
     </p>
 
     <Admonition
+      id="adm-device-support"
       type="info"
       title="Stremio Device Support"
       href="https://stremio.zendesk.com/"
@@ -320,7 +298,8 @@
         rel="noopener noreferrer"
         target="_blank"
         href="https://vidi.norsb.org/">Vidi</a
-      >, a specialized fork of Stremio made for Apple platforms.
+      >, a specialized fork of Stremio made for Apple platforms or web Stremio. Both of which I
+      won't be covering in this guide.
     </Admonition>
 
     <SectionHeading
@@ -366,6 +345,7 @@
     </ol>
 
     <Admonition
+      id="adm-vpn"
       type="warning"
       title="Turn Off Your VPN"
       href="https://guides.viren070.me/stremio/faq#can-i-use-a-debrid-service-with-a-vpn"
@@ -392,6 +372,7 @@
     </ol>
 
     <Admonition
+      id="adm-hw-decode"
       type="info"
       title="Hardware-Accelerated Decoding"
       href="https://www.reddit.com/r/Stremio/comments/okjz1y/what_is_hardware_accelerated_decoding_and_what/"
@@ -572,8 +553,7 @@
 
     <SectionHeading
       id="trakt"
-      level={3}
-      >
+      level={3}>
       <span class="flex items-center gap-2">
         Logging Into
         <a
@@ -619,6 +599,7 @@
     </p>
 
     <Admonition
+      id="adm-legal"
       type="info"
       title="Legal Limitations"
       href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
@@ -708,6 +689,7 @@
     </p>
 
     <Admonition
+      id="adm-restricted"
       type="warning"
       title="Restricted Access"
       href="https://guides.viren070.me/stremio/setup#which-debrid-service-do-i-use"
@@ -858,43 +840,6 @@
       (like Cyberflix) to use your RPDB API key.
     </p>
 
-    <SectionHeading
-      id="devices"
-      level={3}>
-      Best Streaming Devices
-    </SectionHeading>
-    <p>While Stremio works on most devices, a good streaming stick/box makes a huge difference.</p>
-    <ul>
-      <li>
-        <strong>NVIDIA Shield TV Pro:</strong> The king of streaming devices. Best performance, AI upscaling,
-        and handles all audio formats (TrueHD/Atmos).
-      </li>
-      <li>
-        <strong>Fire TV Stick 4K Max (2nd Gen):</strong> Great budget option with good performance.
-      </li>
-      <li>
-        <strong>Onn. 4K Pro:</strong> Excellent value for money (available in US Walmart). Google TV based.
-      </li>
-      <li><strong>Chromecast with Google TV (4K):</strong> Solid option, easy to customize.</li>
-    </ul>
-
-    <SectionHeading
-      id="addon-manager"
-      level={3}>
-      Stremio Addon Manager
-    </SectionHeading>
-    <p>
-      Stremio doesn't let you drag-and-drop to reorder addons (catalogs) natively. The order they
-      appear is the order you install them.
-    </p>
-    <p>
-      Use the unofficial <strong
-        ><a
-          href="https://addon-manager.elfhosted.com/"
-          target="_blank">Stremio Addon Manager</a
-        ></strong> to easily reorder, rename, or delete your addons without reinstalling them.
-    </p>
-
     <p>
       <em
         >Most of these are "Community Addons" and can be found in the Stremio "Community Addons"
@@ -965,9 +910,9 @@
       <li>
         <strong>Check your internet speed:</strong> Test at
         <a
-          href="https://samknows.com/realspeed/"
+          href="https://speed.cloudflare.com/"
           rel="noopener noreferrer"
-          target="_blank">SamKnows</a
+          target="_blank">Cloudflare Speed Test</a
         >. You need ~25 Mbps for 4K, ~10 Mbps for 1080p.
       </li>
       <li>
@@ -1039,7 +984,9 @@
           target="_blank">web.stremio.com</a> to manage addons from any browser, then sync to your device.
       </li>
     </ol>
+
     <Admonition
+      id="adm-addon-order"
       type="info"
       title="Addon Order Doesn't Sync"
       href="https://addon-manager.elfhosted.com/"
@@ -1095,7 +1042,7 @@
     <ol>
       <li>
         <strong>Expired Debrid subscription:</strong> Check that your plan is still active. If you renewed
-        after expiry, your API token may have changed - reconfigure your addons.
+        after expiry, your API token may have changed requiring you to reconfigure your addons.
       </li>
       <li>
         <strong>Debrid service is down:</strong> Check your provider's status page or social media.
@@ -1107,6 +1054,35 @@
       <li>
         <strong>Audio plays but black screen:</strong> Your device can't decode the video. Try a different
         stream or use an external player like VLC or MX Player.
+      </li>
+    </ol>
+
+    <SectionHeading
+      id="faq-copyright"
+      level={3}>
+      Real-Debrid DMCA Takedowns
+    </SectionHeading>
+    <p>
+      Real-Debrid complies with DMCA takedown requests, which means some torrents may be removed
+      from their servers. If you see this message: <em
+        >"File was removed from debrid service due to copyright infringement"</em>
+    </p>
+    <ol>
+      <li>
+        <strong>Try a different stream:</strong> Select another torrent from the stream list. Different
+        uploads of the same content may still be available.
+      </li>
+      <li>
+        <strong>Use a different addon:</strong> Try MediaFusion or other addons that may source from different
+        torrents than Torrentio.
+      </li>
+      <li>
+        <strong>Use Debrid Media Manager:</strong> Search for alternative cached torrents and add them
+        to your library manually.
+      </li>
+      <li>
+        <strong>Consider Torbox:</strong> Torbox is based in South Africa and is generally less affected
+        by DMCA takedowns compared to Real-Debrid.
       </li>
     </ol>
 
