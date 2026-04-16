@@ -372,7 +372,6 @@ mark.search-highlight {
   color: var(--text-heading);
   padding: 0.5rem;
   z-index: 1000;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 .jump-to {

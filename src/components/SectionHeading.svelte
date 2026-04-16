@@ -1,6 +1,4 @@
 <script>
-  import { CopyCheck } from "lucide-svelte";
-
   export let id;
   export let level = 3;
   export let numbered = false;
@@ -8,25 +6,16 @@
   let className = "";
   export { className as class };
 
-  let isPopupVisible = false;
-
-  function copyToClipboard(textToCopy) {
+  function handleClick() {
+    const url = window.location.origin + "/#" + id;
     navigator.clipboard
-      .writeText(textToCopy)
+      .writeText(url)
       .then(() => {
-        isPopupVisible = true;
-        setTimeout(() => {
-          isPopupVisible = false;
-        }, 3000);
+        window.dispatchEvent(new CustomEvent("linkcopied"));
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);
       });
-  }
-
-  function handleClick() {
-    const url = window.location.origin + "/#" + id;
-    copyToClipboard(url);
     window.location.href = url;
   }
 </script>

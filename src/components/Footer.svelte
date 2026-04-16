@@ -64,7 +64,7 @@
         ><path d="M23.001 1.999L0 13 6.031 15.307 17 8 10.687 17.552 20 22z"></path></svg>
     </a>
     <a
-      href="mailto:dev@wyzie.ru"
+      href="mailto:dev@wyzie.io"
       class="hover:scale-105 transition duration-200 p-2"
       title="Email"
       aria-label="Email">

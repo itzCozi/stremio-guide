@@ -12,19 +12,21 @@
   let isTocOpen = false;
   let isPopupVisible = false;
 
-  function copyToClipboard(textToCopy) {
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        isPopupVisible = true;
-        setTimeout(() => {
-          isPopupVisible = false;
-        }, 3000);
-      })
-      .catch((err) => {
-        console.error("Failed to copy text: ", err);
-      });
+  import { onMount } from "svelte";
+
+  function handleLinkCopied() {
+    isPopupVisible = true;
+    setTimeout(() => {
+      isPopupVisible = false;
+    }, 3000);
   }
+
+  onMount(() => {
+    window.addEventListener("linkcopied", handleLinkCopied);
+    return () => {
+      window.removeEventListener("linkcopied", handleLinkCopied);
+    };
+  });
 
   let searchQuery = "";
 
@@ -121,7 +123,10 @@
   }
 </script>
 
-<a href="#how-to" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1000] focus:bg-[var(--bg-card)] focus:text-[var(--accent)] focus:p-2">Skip to content</a>
+<a
+  href="#how-to"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1000] focus:bg-[var(--bg-card)] focus:text-[var(--accent)] focus:p-2"
+  >Skip to content</a>
 <main class="items-center justify-center">
   <TableOfContents
     isOpen={isTocOpen}
@@ -151,7 +156,10 @@
         aria-label="Donate">
         <HandHeart class="h-6 w-auto" />
       </a>
-      <form class="search-bar mx-auto" on:submit|preventDefault={handleSearchSubmit} role="search">
+      <form
+        class="search-bar mx-auto"
+        on:submit|preventDefault={handleSearchSubmit}
+        role="search">
         <Search class="h-4 w-auto search-icon" />
         <input
           type="text"
@@ -260,13 +268,13 @@
       your own research before sticking with a provider. I recommend looking for a provider that
       supports a wide range of hosters, has good speeds, and allows copyrighted content (or doesn't
       care about it).
-
-      <SectionHeading
-        id="real-debrid-sub"
-        level={0}>
-        <strong>Getting Your Real-Debrid Subscription and API Token</strong>
-      </SectionHeading>
     </p>
+
+    <SectionHeading
+      id="real-debrid-sub"
+      level={0}>
+      <strong>Getting Your Real-Debrid Subscription and API Token</strong>
+    </SectionHeading>
     <ol>
       <li>
         Head to <a
@@ -406,8 +414,7 @@
         Sudo-Flix.
       </li>
       <li>
-        Click the puzzle piece icon labeled "Addons" in the left sidebar, then switch to your
-        browser.
+        Go to <em>Addons</em> (puzzle piece icon in the left sidebar), then switch to your browser.
       </li>
       <li>
         Visit <a
@@ -459,9 +466,9 @@
       title="Hardware-Accelerated Decoding"
       href="https://www.reddit.com/r/Stremio/comments/okjz1y/what_is_hardware_accelerated_decoding_and_what/"
       linkTitle="What is Hardware-Accelerated Decoding Article">
-      I highly recommend enabling "Hardware-accelerated decoding" in the "Advanced" section of the
-      player settings (this decodes video using your GPU instead of CPU). This option is only
-      avaliable for Desktops users sadly.
+      I highly recommend going to <em>Settings</em> &gt; <em>Player</em> &gt; <em>Advanced</em> and enabling
+      "Hardware-accelerated decoding" (this decodes video using your GPU instead of CPU). This option
+      is only available for desktop users sadly.
     </Admonition>
 
     <SectionHeading
@@ -493,7 +500,7 @@
     <ol>
       <li>Go to the home screen of your FireStick and click on your profile on the right.</li>
       <li>
-        Click on "Settings," then "My Fire TV," and click the "About" button 7 times quickly to
+        Go to <em>Settings</em> &gt; <em>My Fire TV</em>, and click "About" 7 times quickly to
         enable developer options (<a
           href="https://www.firesticktricks.com/developer-options-firestick.html"
           rel="noopener noreferrer"
@@ -502,8 +509,8 @@
       </li>
       <li>Head to the Amazon App Store, search for "Downloader," and install it.</li>
       <li>
-        Once "Downloader" is installed, go back to developer settings and turn on "Install Unkown
-        Apps" for "Downloader".
+        Once "Downloader" is installed, go to <em>Settings</em> &gt; <em>My Fire TV</em> &gt;
+        <em>Developer Options</em> and turn on "Install Unknown Apps" for "Downloader".
       </li>
       <li>
         Open Downloader and go to <a
@@ -517,7 +524,7 @@
       </li>
       <li>Sign in to your Stremio account, either on your phone or desktop.</li>
       <li>
-        Once signed in, click on "Addons" and then "Sync Addons" to sync your addons from your
+        Once signed in, go to <em>Addons</em> &gt; <em>Sync Addons</em> to sync your addons from your
         account to your FireStick.
       </li>
     </ol>
@@ -542,7 +549,7 @@
       </li>
       <li>Install the downloaded APK.</li>
       <li>Login to your Stremio account.</li>
-      <li>Sync addons in the "Addons" menu.</li>
+      <li>Go to <em>Addons</em> &gt; <em>Sync Addons</em> to sync your addons.</li>
     </ol>
 
     <SectionHeading
@@ -620,14 +627,10 @@
       Metadata Addons: Anime Kitsu vs Cinemeta
     </SectionHeading>
     <p>
-      <strong>Cinemeta</strong> is the default metadata provider for Stremio, using IMDb IDs (tt...).
-      It works great for movies and western TV shows.
-    </p>
-    <p>
-      However, for <strong>Anime</strong>, Cinemeta often has mapping issues (e.g., seasons not
-      matching correctly).
-    </p>
-    <p>
+      <strong>Cinemeta</strong> is the default metadata provider for Stremio, using IMDb IDs
+      (tt...). It works great for movies and western TV shows However, for <strong>Anime</strong>,
+      Cinemeta often has mapping issues (e.g., seasons not matching correctly).
+      <br />
       <strong>Anime Kitsu</strong> is recommended for Anime. It uses Kitsu IDs, which are much more accurate
       for Anime seasons and episodes. Torrentio supports Kitsu IDs natively, so using Anime Kitsu alongside
       Torrentio ensures you get the correct streams for the correct episodes.
@@ -652,10 +655,9 @@
           target="_blank">here</a
         >.
       </li>
-      <li>Open Stremio and click the gear in the left sidebar labeled "Settings".</li>
+      <li>Open Stremio and go to <em>Settings</em> (gear icon in the left sidebar).</li>
       <li>
-        Scroll down a little and you should see a heading labeled "Trakt Scrobbling", click the
-        "Authenticate" button beside it.
+        Scroll down to <em>Trakt Scrobbling</em> and click the "Authenticate" button beside it.
       </li>
       <li>
         You will be taken to a Trakt page where you will need to authorize Stremio to access your
@@ -1002,7 +1004,9 @@
         slow, try changing the server/route in your Debrid settings.
       </li>
       <li>
-        <strong>Enable hardware-accelerated decoding:</strong> Go to Stremio Settings → Player → Advanced
+        <strong>Enable hardware-accelerated decoding:</strong> Go to <em>Settings</em> &gt;
+        <em>Player</em>
+        &gt; <em>Advanced</em>
         and enable it (desktop only).
       </li>
       <li>
@@ -1010,8 +1014,8 @@
         file size stream rather than the 40GB+ 4K Remux.
       </li>
       <li>
-        <strong>Increase cache size:</strong> In Settings → Streaming, increase the cache size. Set the
-        torrent profile to "Ultra Fast" if you're not using a Debrid service.
+        <strong>Increase cache size:</strong> Go to <em>Settings</em> &gt; <em>Streaming</em> and increase
+        the cache size. Set the torrent profile to "Ultra Fast" if you're not using a Debrid service.
       </li>
     </ol>
 
@@ -1081,12 +1085,12 @@
       <li>
         <strong>Go to your Debrid dashboard:</strong>
         <a
-          href="https://real-debrid.com/torrents"
+          href="https://real-debrid.com/torrents?id=11626869"
           rel="noopener noreferrer"
           target="_blank">Real-Debrid Torrents</a>
         or
         <a
-          href="https://torbox.app/dashboard"
+          href="https://torbox.app/dashboard?referral=85f3efc7-583b-42ab-842d-c3670fb95d2e"
           rel="noopener noreferrer"
           target="_blank">Torbox Dashboard</a
         >.

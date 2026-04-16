@@ -5,7 +5,9 @@
   export let onToggle;
 </script>
 
-<nav class="toc {isOpen ? '' : 'collapsed'}" aria-label="Table of contents">
+<nav
+  class="toc {isOpen ? '' : 'collapsed'}"
+  aria-label="Table of contents">
   <div class="toc-content flex flex-col h-full">
     <!-- Header -->
     <div class="flex items-center justify-between">
